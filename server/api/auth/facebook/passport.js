@@ -14,12 +14,12 @@ module.exports = function(User) {
 
     passport.use(new FacebookTokenStrategy({
       clientID: '1327572307330779',
-      clientSecret: 'c74489b41d88717c005bd3e840d56332'
+      clientSecret: '33a8833009b56348398d09333a582e06'
     },
     function(accessToken, refreshToken, profile, cb) {
       // console.log(profile);
       User.findOneOrCreate(
-        { username: profile.id, name: profile.displayName},
+        { username: profile.id},
         { username: profile.id, name: profile.displayName },
         function (err, user) {
           return cb(err, user);

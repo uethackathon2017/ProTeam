@@ -14,7 +14,7 @@ router.get('/category/:_id', controller.getExByCategory);
 router.get('/exercise/:_id', controller.findExById);
 router.post('/createCategory', controller.createCategory);
 router.post('/createExercise', controller.createExercise);
-// router.put('/editFood', auth.hasRole('admin'), controller.editFood);
+router.put('/editExercise', controller.editExercise);
 // router.delete('/deleteFood/:_id', auth.hasRole('admin'),  controller.deleteFood);
 
 module.exports = router;

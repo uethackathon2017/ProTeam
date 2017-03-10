@@ -116,12 +116,10 @@ module.exports = {
     getAllCategory : function(req, res){
         Category
             .find()
+            .select('_id name items')
             .populate({
                 path: 'items',
-                    options: {
-                    limit: 3
-                },
-                select: '-guide'
+                select: '_id name img'
             })
             .exec(function(err, data){
                 if(err) {
@@ -135,7 +133,7 @@ module.exports = {
     getFoodByCategory : function(req, res){
         if (req.params._id) {
             Category
-                .find({_id:  req.params._id})
+                .findOne({_id:  req.params._id})
                 .populate({
                     path: 'items',
                     select: '-guide'
@@ -145,7 +143,9 @@ module.exports = {
                         console.error(err);
                         res.json({code : 0, message: err});
                     }
-                    res.json({code : 1, result: data});
+                    else {
+                        res.json({code : 1, result: data.items});
+                    }
                 });
         } else {
             res.json({code : 0, message: 'Not found'});
@@ -156,7 +156,8 @@ module.exports = {
     findFoodById : function(req, res){
         if (req.params._id) {
             Food
-                .find({_id:  req.params._id})
+                .findOne({_id:  req.params._id})
+                .select('_id name img guide')
                 .exec(function(err, data){
                     if(err) {
                         console.error(err);
