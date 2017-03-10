@@ -24,8 +24,8 @@ module.exports = function(app) {
 
   var appPath = path.join(config.root, 'app');
   var bowers = path.join(config.root, 'bower_components');
-
   app.use(express.static(appPath));
+
 
 
   if (env === 'development') {

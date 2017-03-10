@@ -14,7 +14,7 @@ router.get('/category/:_id', controller.getFoodByCategory);
 router.get('/food/:_id', controller.findFoodById);
 router.post('/createCategory',auth.hasRole('admin'), controller.createCategory);
 router.post('/createFood',auth.hasRole('admin'), controller.createFood);
-// router.put('/editFood', auth.hasRole('admin'), controller.editFood);
+router.put('/editFood', auth.hasRole('admin'), controller.editFood);
 // router.delete('/deleteFood/:_id', auth.hasRole('admin'),  controller.deleteFood);
 
 module.exports = router;

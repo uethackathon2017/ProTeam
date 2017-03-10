@@ -138,7 +138,7 @@ module.exports = {
       else {
 
         if(req.file){
-          res.json({code: 1, message: 'upload success', result: {url: 'http://techkids.vn:6699/photos/' + req.file.filename}});
+          res.json({code: 1, message: 'upload success', result: {url: 'http://localhost:6699/photos/' + req.file.filename}});
         }
         else {
           res.json({code: 0, message: 'No file sellected'});

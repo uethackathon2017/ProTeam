@@ -35,37 +35,36 @@ module.exports = {
     //     }
     // },
     //
-    // edit: function(req,res){
-    //     if(req.body){
-    //         Event.findById(req.body._id, function(err, data){
-    //             if(err) { // err function of mongoose
-    //                 console.error(err);
-    //                 res.json({code : 0, message: err});
-    //             }
-    //             else {
-    //                 if (data){ //check find a obj by id
-    //                     if(req.body.name) data.name = req.body.name;
-    //                     if(req.body.img) data.img = req.body.img;
-    //                     if(req.body.content) data.content = req.body.content;
-    //                     if(req.body.time) data.time = req.body.time;
-    //                     data.save(function(err, newData){
-    //                         if (err){
-    //                             console.error(err);
-    //                             res.json({code : 0, message: err});
-    //                         }
-    //                         else{
-    //                             res.json({code : 1, result: data._id});
-    //                         }
-    //                     });
-    //
-    //                 }
-    //             }
-    //         });
-    //     }
-    //     else {
-    //         res.json({code: 0, message: 'No data'})
-    //     }
-    // },
+    editFood: function(req,res){
+        if(req.body){
+            Food.findById(req.body._id, function(err, data){
+                if(err) { // err function of mongoose
+                    console.error(err);
+                    res.json({code : 0, message: err});
+                }
+                else {
+                    if (data){ //check find a obj by id
+                        if(req.body.name) data.name = req.body.name;
+                        if(req.body.img) data.img = req.body.img;
+                        if(req.body.guide) data.guide = req.body.guide;
+                        data.save(function(err, newData){
+                            if (err){
+                                console.error(err);
+                                res.json({code : 0, message: err});
+                            }
+                            else{
+                                res.json({code : 1, result: data._id});
+                            }
+                        });
+
+                    }
+                }
+            });
+        }
+        else {
+            res.json({code: 0, message: 'No data'})
+        }
+    },
 
     createCategory: function(req, res) {
         if (req.body) {
