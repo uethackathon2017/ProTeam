@@ -2,7 +2,7 @@
 //  ExcercisViewController.swift
 //  HealthCare
 //
-//  Created by IchIT on 3/5/17.
+//  Created by IchIT on 3/10/17.
 //  Copyright © 2017 Vinh Nguyen. All rights reserved.
 //
 
@@ -21,6 +21,9 @@ class ExcercisViewController: UIViewController,IndicatorInfoProvider,ExcercisCel
         self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
     }
     
+    @IBAction func btnMenuClicked(_ sender: Any) {
+        self.slideMenuController()?.openLeft()
+    }
     //MARK: EXCERCIS CELL DELEGATE
     func btnSeeAllTouchup(_ sender: Any){
         let excerSeeAll = ExcercisSeeAllVC()

@@ -66,16 +66,24 @@ PODS:
   - GTMSessionFetcher/Core (1.1.7)
   - GTMSessionFetcher/Full (1.1.7):
     - GTMSessionFetcher/Core (= 1.1.7)
+  - MBProgressHUD (1.0.0)
+  - PopupDialog (0.5.3)
   - SAMKeychain (1.5.2)
+  - SnapKit (3.2.0)
   - XLPagerTabStrip (7.0.0)
+  - youtube-ios-player-helper (0.1.6)
 
 DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - FacebookShare
   - Google/SignIn
+  - MBProgressHUD (~> 1.0.0)
+  - PopupDialog
   - SAMKeychain
+  - SnapKit
   - XLPagerTabStrip
+  - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -96,9 +104,13 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  PopupDialog: 533dd564f8781633375505b9fbd406f8f146ccc9
   SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
+  youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: 3c744fffc342ae1da9a76858a44fb54f641b575c
+PODFILE CHECKSUM: 5dd5bfd14df6b3de14ea35e1a919fe7bbf24bd48
 
 COCOAPODS: 1.2.0

@@ -28,8 +28,42 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-bg-excercis" translatesAutoresizingMaskIntoConstraints="NO" id="fxb-Z7-GNF">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3MC-lr-kSE">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehK-Lg-Npu">
+                            <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAU-L3-gGK">
+                                    <rect key="frame" x="326" y="0.0" width="44" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="FGs-oh-K08"/>
+                                    </constraints>
+                                    <state key="normal" backgroundImage="menu.png"/>
+                                    <connections>
+                                        <action selector="btnMenuClicked:" destination="-1" eventType="touchUpInside" id="iZt-bF-2im"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="NAU-L3-gGK" firstAttribute="top" secondItem="ehK-Lg-Npu" secondAttribute="top" id="GT6-qS-zvk"/>
+                                <constraint firstAttribute="bottom" secondItem="NAU-L3-gGK" secondAttribute="bottom" id="L5W-5t-Sf5"/>
+                                <constraint firstAttribute="trailing" secondItem="NAU-L3-gGK" secondAttribute="trailing" constant="5" id="QMS-JL-R15"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ehK-Lg-Npu" secondAttribute="trailing" id="FAF-WS-w9p"/>
+                        <constraint firstItem="ehK-Lg-Npu" firstAttribute="leading" secondItem="3MC-lr-kSE" secondAttribute="leading" id="dtw-hd-E5J"/>
+                        <constraint firstAttribute="height" constant="64" id="gMA-5q-M54"/>
+                        <constraint firstItem="ehK-Lg-Npu" firstAttribute="top" secondItem="3MC-lr-kSE" secondAttribute="top" constant="20" id="s5A-Vf-mLt"/>
+                        <constraint firstAttribute="bottom" secondItem="ehK-Lg-Npu" secondAttribute="bottom" id="tN8-X7-3VQ"/>
+                    </constraints>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EXCERCISE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtL-9F-nrc">
-                    <rect key="frame" x="90" y="71" width="195" height="56"/>
+                    <rect key="frame" x="90.5" y="71" width="194.5" height="56"/>
                     <fontDescription key="fontDescription" name="UTMNeoSansIntel-BoldItalic" family="UTM Neo Sans Intel" pointSize="40"/>
                     <color key="textColor" red="0.27843137254901962" green="0.082352941176470587" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -50,9 +84,11 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="3MC-lr-kSE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="57R-qo-dg9"/>
                 <constraint firstAttribute="trailing" secondItem="fxb-Z7-GNF" secondAttribute="trailing" id="9LF-2H-Th6"/>
                 <constraint firstAttribute="trailing" secondItem="0Zf-CA-UEI" secondAttribute="trailing" constant="10" id="Cy6-gT-GR5"/>
                 <constraint firstItem="0Zf-CA-UEI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="NiS-82-s76"/>
+                <constraint firstItem="3MC-lr-kSE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PJ2-tP-IKV"/>
                 <constraint firstItem="gtL-9F-nrc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UdN-MD-ged"/>
                 <constraint firstItem="0Zf-CA-UEI" firstAttribute="top" secondItem="gtL-9F-nrc" secondAttribute="bottom" constant="73" id="WXL-42-TBO"/>
                 <constraint firstItem="fxb-Z7-GNF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="X0n-sQ-shF"/>
@@ -60,11 +96,13 @@
                 <constraint firstAttribute="bottom" secondItem="0Zf-CA-UEI" secondAttribute="bottom" constant="20" id="hog-Un-uLG"/>
                 <constraint firstItem="gtL-9F-nrc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="71" id="i8N-nw-Dkd"/>
                 <constraint firstAttribute="bottom" secondItem="fxb-Z7-GNF" secondAttribute="bottom" id="nYH-6o-bjW"/>
+                <constraint firstAttribute="trailing" secondItem="3MC-lr-kSE" secondAttribute="trailing" id="wQb-B1-oAh"/>
             </constraints>
             <point key="canvasLocation" x="12" y="-174"/>
         </view>
     </objects>
     <resources>
         <image name="img-bg-excercis" width="375" height="647"/>
+        <image name="menu.png" width="71" height="71"/>
     </resources>
 </document>

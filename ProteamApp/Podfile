@@ -7,9 +7,13 @@ target 'HealthCare' do
 
   # Pods for HealthCare
   pod 'XLPagerTabStrip'
+  pod 'SnapKit'
 	pod 'SAMKeychain'
     pod 'FacebookCore'
     pod 'FacebookLogin'
     pod 'FacebookShare'
     pod 'Google/SignIn'
+    pod 'youtube-ios-player-helper'
+    pod 'MBProgressHUD', '~> 1.0.0'
+    pod 'PopupDialog'
 end

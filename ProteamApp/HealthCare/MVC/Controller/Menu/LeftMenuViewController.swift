@@ -2,7 +2,7 @@
 //  LeftMenuViewController.swift
 //  HealthCare
 //
-//  Created by Vinh Nguyen on 3/2/17.
+//  Created by Vinh Nguyen on 3/10/17.
 //  Copyright © 2017 Vinh Nguyen. All rights reserved.
 //
 
@@ -44,8 +44,8 @@ class LeftMenuViewController: BasedTableViewController {
         if cell == nil {
             cell = UITableViewCell.init(style: .default, reuseIdentifier: "UITableViewCell")
         }
-        
-        cell.textLabel?.textColor = UIColor.init(hex: "#471601")
+        cell.textLabel?.font = UIFont.init(name: "UTM-Neo-Sans-Intel", size: 18)
+        cell.textLabel?.textColor = UIColor.init(hex: "#471500")
         
         let bgView: UIView = UIView.init()
         bgView.backgroundColor = UIColor.init(hex: "#ffbe53")
@@ -88,11 +88,18 @@ class LeftMenuViewController: BasedTableViewController {
         } else if indexPath.row == 2 {
             // Sign out
             
+            var checkExistLoginVc: Bool! = false
             for vc in (self.navigationController?.viewControllers)! {
                 if vc.isKind(of: LoginViewController.self) {
-                    self.navigationController?.popToViewController(vc, animated: true)
+                    checkExistLoginVc = true
+                    _ = self.navigationController?.popToViewController(vc, animated: true)
                     break
                 }
+            }
+            if checkExistLoginVc == false {
+                _ = self.navigationController?.popToRootViewController(animated: false)
+                let vc: UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
+                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }

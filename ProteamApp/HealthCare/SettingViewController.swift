@@ -2,7 +2,7 @@
 //  SettingViewController.swift
 //  HealthCare
 //
-//  Created by Vinh Nguyen on 3/6/17.
+//  Created by Vinh Nguyen on 3/10/17.
 //  Copyright © 2017 Vinh Nguyen. All rights reserved.
 //
 
@@ -11,8 +11,6 @@ import UIKit
 class SettingViewController: BasedTableViewController {
 
     var arrTitleCell = ["Remind to drink", "Remind to eat", "Remind to exercise", "Notification"]
-    var btnSwitchRepeatRington: UISwitch!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,8 +25,9 @@ class SettingViewController: BasedTableViewController {
     
     // MARK: - Action
     
-    func btnSwitchRepeatRingtonClicked() {
-        
+    func btnSwitchRepeatRingtonClicked(_ sender: UISwitch) {
+
+
     }
     
     // MARK: - Table View
@@ -69,8 +68,8 @@ class SettingViewController: BasedTableViewController {
             
         } else {
             
-            btnSwitchRepeatRington = UISwitch.init()
-            btnSwitchRepeatRington.addTarget(self, action: #selector(SettingViewController.btnSwitchRepeatRingtonClicked), for: .valueChanged)
+            let btnSwitchRepeatRington:UISwitch = UISwitch()
+            btnSwitchRepeatRington.addTarget(self, action: #selector(SettingViewController.btnSwitchRepeatRingtonClicked(_:)), for: .valueChanged)
             btnSwitchRepeatRington.onTintColor = UIColor.init(hex: "#ffd900")
             cell.accessoryView = btnSwitchRepeatRington
             cell.detailTextLabel?.text = ""
@@ -85,12 +84,11 @@ class SettingViewController: BasedTableViewController {
         if ( indexPath.row != arrTitleCell.count - 1 ) {
             
             let mainStoryboard: UIStoryboard! = UIStoryboard.init(name: "Main", bundle: Bundle.main)
-
-            let vc: ReminderViewController! = mainStoryboard.instantiateViewController(withIdentifier: "ReminderViewController") as! ReminderViewController
-            vc.strTitle = arrTitleCell[indexPath.row]
+            
+            let vc: MainAlarmViewController! = mainStoryboard.instantiateViewController(withIdentifier: "MainAlarmViewController") as! MainAlarmViewController
+            vc.typeView = indexPath.row
             
             self.navigationController?.pushViewController(vc, animated: true)
-//            self.present(vc, animated: true, completion: {})
 
         } else {
             

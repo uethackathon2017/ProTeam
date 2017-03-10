@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  HealthCare
 //
-//  Created by Vinh Nguyen on 3/2/17.
+//  Created by Vinh Nguyen on 3/10/17.
 //  Copyright © 2017 Vinh Nguyen. All rights reserved.
 //
 
@@ -10,11 +10,15 @@ import UIKit
 import FBSDKCoreKit
 import Google
 import GoogleSignIn
+import AudioToolbox
+import AVFoundation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, AVAudioPlayerDelegate, AlarmApplicationDelegate, NotificationViewControllerDelegate {
 
     var window: UIWindow?
+    var audioPlayer: AVAudioPlayer?
+    let alarmScheduler: AlarmSchedulerDelegate = Scheduler()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -32,8 +36,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         // Local Notification
         application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil))
+        alarmScheduler.setupNotificationSettings()
+        window?.tintColor = UIColor.init(hex: "#FFBE53")
         
         return true
+    }
+    
+    // Local Notification
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        var soundName: String = ""
+        if let userInfo = notification.userInfo {
+            soundName = userInfo["soundName"] as! String
+        }
+        playSound(soundName)
+        let mainSb: UIStoryboard! = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        let vc: NotificationViewController! = mainSb.instantiateViewController(withIdentifier: "NotificationViewController") as! NotificationViewController
+        vc.delegate = self
+        vc.notification = notification
+        window?.rootViewController!.present(vc, animated: true, completion: nil)
+    }
+    
+    //snooze notification handler when app in background
+    func application(_ application: UIApplication, handleActionWithIdentifier identifier: String?, for notification: UILocalNotification, completionHandler: @escaping () -> Void) {
+        
+        if identifier == Id.snoozeIdentifier {
+            var soundName: String = ""
+            var index: Int = -1
+            if let userInfo = notification.userInfo {
+                soundName = userInfo["soundName"] as! String
+                index = userInfo["index"] as! Int
+            }
+            alarmScheduler.setNotificationForSnooze(snoozeMinute: 9, soundName: soundName, index: index)
+        }
+        completionHandler()
+    }
+    
+    //print out all registed NSNotification for debug
+    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+        
+        print(notificationSettings.types.rawValue)
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
@@ -123,5 +164,104 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // [END_EXCLUDE]
     }
     // [END disconnect_handler]
+    
+    // MARK: - AlarmApplicationDelegate protocol
+    func playSound(_ soundName: String) {
+        
+        //vibrate phone first
+        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+        //set vibrate callback
+        AudioServicesAddSystemSoundCompletion(SystemSoundID(kSystemSoundID_Vibrate),nil,
+                                              nil,
+                                              { (_:SystemSoundID, _:UnsafeMutableRawPointer?) -> Void in
+                                                print("callback", terminator: "") //todo
+        },
+                                              nil)
+        let url = URL(
+            fileURLWithPath: Bundle.main.path(forResource: soundName, ofType: "mp3")!)
+        
+        var error: NSError?
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+        } catch let error1 as NSError {
+            error = error1
+            audioPlayer = nil
+        }
+        
+        if let err = error {
+            print("audioPlayer error \(err.localizedDescription)")
+        } else {
+            audioPlayer!.delegate = self
+            audioPlayer!.prepareToPlay()
+        }
+        //negative number means loop infinity
+        audioPlayer!.numberOfLoops = -1
+        audioPlayer!.play()
+    }
+    
+    //MARK: - AVAudioPlayerDelegate protocol, todo
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        
+    }
+    
+    func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
+        
+    }
+    
+    //MARK: - NotificationViewControllerDelegate
+    func repeatClicked(notification: UILocalNotification, vc: NotificationViewController) {
+        var isSnooze: Bool = false
+        var soundName: String = ""
+        var index: Int = -1
+        if let userInfo = notification.userInfo {
+            isSnooze = userInfo["snooze"] as! Bool
+            soundName = userInfo["soundName"] as! String
+            index = userInfo["index"] as! Int
+        }
+        //schedule notification for snooze
+        if isSnooze {
+            alarmScheduler.setNotificationForSnooze(snoozeMinute: 9, soundName: soundName, index: index)
+            self.audioPlayer?.stop()
+        }
+        // Dismiss NotificationViewController
+        vc.dismiss(animated: true, completion: nil)
+    }
+    
+    func shutDownClicked(notification: UILocalNotification, vc: NotificationViewController) {
+        var index: Int = -1
+        if let userInfo = notification.userInfo {
+            index = userInfo["index"] as! Int
+        }
+        
+        self.audioPlayer?.stop()
+        let vc = self.window?.rootViewController as! UINavigationController
+        var mainVC: MainAlarmViewController
+        
+        // Turn off cell notificationed
+        for viewController in vc.viewControllers {
+            if viewController.isKind(of: MainAlarmViewController.self) {
+                mainVC = viewController as! MainAlarmViewController
+                if mainVC.alarmModel.alarms[index].repeatWeekdays.isEmpty {
+                    mainVC.alarmModel.alarms[index].enabled = false
+                }
+                let cells = mainVC.tableView.visibleCells
+                for cell in cells {
+                    if cell.tag == index {
+                        let sw = cell.accessoryView as! UISwitch
+                        if mainVC.alarmModel.alarms[index].repeatWeekdays.isEmpty {
+                            sw.setOn(false, animated: false)
+                            cell.backgroundColor = UIColor.groupTableViewBackground
+                            cell.textLabel?.alpha = 0.5
+                            cell.detailTextLabel?.alpha = 0.5
+                        }
+                    }
+                }
+            }
+        }
+        
+        // Dismiss NotificationViewController
+        vc.dismiss(animated: true, completion: nil)
+    }
 }
 

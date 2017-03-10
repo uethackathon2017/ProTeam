@@ -8,9 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		0308F974153CC17BC400638C /* Pods_HealthCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951430F24416B1E0A9807946 /* Pods_HealthCare.framework */; };
+		6177DA931E72CFDA00890BFB /* NeckExcerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6177DA911E72CFDA00890BFB /* NeckExcerciseViewController.swift */; };
+		6177DA941E72CFDA00890BFB /* NeckExcerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6177DA921E72CFDA00890BFB /* NeckExcerciseViewController.xib */; };
+		6177DA9D1E730AF500890BFB /* SalutationPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6177DA9B1E730AF500890BFB /* SalutationPopUp.swift */; };
+		6177DA9E1E730AF500890BFB /* SalutationPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6177DA9C1E730AF500890BFB /* SalutationPopUp.xib */; };
+		61AB25F61E71A57000F5B4B2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AB25F41E71A57000F5B4B2 /* MainViewController.swift */; };
+		61AB25F71E71A57000F5B4B2 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61AB25F51E71A57000F5B4B2 /* MainViewController.xib */; };
+		61AB26041E71A57900F5B4B2 /* ExcercisCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AB25FA1E71A57900F5B4B2 /* ExcercisCell.swift */; };
+		61AB26051E71A57900F5B4B2 /* ExcercisCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61AB25FB1E71A57900F5B4B2 /* ExcercisCell.xib */; };
+		61AB26061E71A57900F5B4B2 /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AB25FD1E71A57900F5B4B2 /* SliderTableViewCell.swift */; };
+		61AB26071E71A57900F5B4B2 /* SliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61AB25FE1E71A57900F5B4B2 /* SliderTableViewCell.xib */; };
+		61AB26081E71A57900F5B4B2 /* ExcercisSeeAllVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AB26001E71A57900F5B4B2 /* ExcercisSeeAllVC.swift */; };
+		61AB26091E71A57900F5B4B2 /* ExcercisSeeAllVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61AB26011E71A57900F5B4B2 /* ExcercisSeeAllVC.xib */; };
+		61AB260A1E71A57900F5B4B2 /* ExcercisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AB26021E71A57900F5B4B2 /* ExcercisViewController.swift */; };
+		61AB260B1E71A57900F5B4B2 /* ExcercisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61AB26031E71A57900F5B4B2 /* ExcercisViewController.xib */; };
+		61AB260E1E71A59400F5B4B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AB260D1E71A59400F5B4B2 /* Constants.swift */; };
+		61AB26131E71A5A300F5B4B2 /* UTM-Neo-Sans-Intel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61AB26101E71A5A300F5B4B2 /* UTM-Neo-Sans-Intel.ttf */; };
+		61AB26141E71A5A300F5B4B2 /* UTM-Neo-Sans-IntelBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61AB26111E71A5A300F5B4B2 /* UTM-Neo-Sans-IntelBold.ttf */; };
+		61AB26151E71A5A300F5B4B2 /* UTM-Neo-Sans-IntelBold_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61AB26121E71A5A300F5B4B2 /* UTM-Neo-Sans-IntelBold_Italic.ttf */; };
+		61AB26191E71A98000F5B4B2 /* ExcercisSeeAllCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AB26171E71A98000F5B4B2 /* ExcercisSeeAllCell.swift */; };
+		61AB261A1E71A98000F5B4B2 /* ExcercisSeeAllCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61AB26181E71A98000F5B4B2 /* ExcercisSeeAllCell.xib */; };
+		61AB261E1E71B2E600F5B4B2 /* PlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AB261C1E71B2E600F5B4B2 /* PlayingView.swift */; };
+		61AB261F1E71B2E600F5B4B2 /* PlayingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61AB261D1E71B2E600F5B4B2 /* PlayingView.xib */; };
 		A342FB271E6DC7ED00FD822C /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A342FB261E6DC7ED00FD822C /* NotificationViewController.swift */; };
 		A342FB2A1E6DCA7F00FD822C /* DetailFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A342FB291E6DCA7F00FD822C /* DetailFoodViewController.swift */; };
-		A34570061E6D327B007AEC8A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34570051E6D327B007AEC8A /* SettingViewController.swift */; };
 		A34570081E6D4E47007AEC8A /* register.png in Resources */ = {isa = PBXBuildFile; fileRef = A34570071E6D4E47007AEC8A /* register.png */; };
 		A356ACBC1E68670500716B68 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = A356ACBB1E68670500716B68 /* menu.png */; };
 		A356ACBE1E686F8900716B68 /* BasedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A356ACBD1E686F8900716B68 /* BasedCollectionViewController.swift */; };
@@ -26,16 +47,28 @@
 		A3929D161E6C71110093403E /* food_background.png in Resources */ = {isa = PBXBuildFile; fileRef = A3929D151E6C71110093403E /* food_background.png */; };
 		A3929D1A1E6C72230093403E /* food_line.png in Resources */ = {isa = PBXBuildFile; fileRef = A3929D181E6C72230093403E /* food_line.png */; };
 		A3929D1C1E6C73340093403E /* food_cake.png in Resources */ = {isa = PBXBuildFile; fileRef = A3929D1B1E6C73340093403E /* food_cake.png */; };
+		A3ADCB7A1E71CAA20083EF20 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADCB791E71CAA20083EF20 /* ReminderViewController.swift */; };
+		A3ADCB7C1E71CABE0083EF20 /* RepeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADCB7B1E71CABE0083EF20 /* RepeatViewController.swift */; };
+		A3ADCB7F1E71CAC70083EF20 /* MainAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADCB7E1E71CAC70083EF20 /* MainAlarmViewController.swift */; };
+		A3ADCB891E71CAF20083EF20 /* AlarmApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADCB811E71CAF20083EF20 /* AlarmApplicationDelegate.swift */; };
+		A3ADCB8A1E71CAF20083EF20 /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADCB821E71CAF20083EF20 /* AlarmModel.swift */; };
+		A3ADCB8B1E71CAF20083EF20 /* AlarmSchedulerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADCB831E71CAF20083EF20 /* AlarmSchedulerDelegate.swift */; };
+		A3ADCB8C1E71CAF20083EF20 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADCB841E71CAF20083EF20 /* Identifier.swift */; };
+		A3ADCB8D1E71CAF20083EF20 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADCB851E71CAF20083EF20 /* Persistable.swift */; };
+		A3ADCB8E1E71CAF20083EF20 /* PropertyReflectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADCB861E71CAF20083EF20 /* PropertyReflectable.swift */; };
+		A3ADCB8F1E71CAF20083EF20 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADCB871E71CAF20083EF20 /* Scheduler.swift */; };
+		A3ADCB901E71CAF20083EF20 /* SegueInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADCB881E71CAF20083EF20 /* SegueInfo.swift */; };
+		A3ADCB921E71CBBA0083EF20 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADCB911E71CBBA0083EF20 /* SettingViewController.swift */; };
 		A3C87F611E696C0A00141702 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C87F601E696C0A00141702 /* FoodViewController.swift */; };
 		A3C87F631E69734500141702 /* menu_white.png in Resources */ = {isa = PBXBuildFile; fileRef = A3C87F621E69734500141702 /* menu_white.png */; };
 		A3C87F651E6974A400141702 /* main_background.png in Resources */ = {isa = PBXBuildFile; fileRef = A3C87F641E6974A400141702 /* main_background.png */; };
+		A3E470011E71D66D00C2C7F1 /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A3E470001E71D66D00C2C7F1 /* bell.mp3 */; };
 		A3EC763D1E679C29006FB57B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC763C1E679C29006FB57B /* AppDelegate.swift */; };
 		A3EC76421E679C29006FB57B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3EC76401E679C29006FB57B /* Main.storyboard */; };
 		A3EC76441E679C29006FB57B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3EC76431E679C29006FB57B /* Assets.xcassets */; };
 		A3EC76471E679C29006FB57B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3EC76451E679C29006FB57B /* LaunchScreen.storyboard */; };
 		A3EC76501E67A04A006FB57B /* BasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC764F1E67A04A006FB57B /* BasedViewController.swift */; };
 		A3EC76521E67A1B5006FB57B /* BasedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC76511E67A1B5006FB57B /* BasedTableViewController.swift */; };
-		A3EC76581E67A455006FB57B /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC76571E67A455006FB57B /* ReminderViewController.swift */; };
 		A3EC76631E67A86A006FB57B /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC765B1E67A86A006FB57B /* Dictionary.swift */; };
 		A3EC76641E67A86A006FB57B /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC765C1E67A86A006FB57B /* NSDate.swift */; };
 		A3EC76651E67A86A006FB57B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC765D1E67A86A006FB57B /* String.swift */; };
@@ -44,7 +77,6 @@
 		A3EC76681E67A86A006FB57B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC76601E67A86A006FB57B /* UIView.swift */; };
 		A3EC76691E67A86A006FB57B /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC76611E67A86A006FB57B /* UIViewController.swift */; };
 		A3EC766A1E67A86A006FB57B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC76621E67A86A006FB57B /* Utilities.swift */; };
-		A3EC767E1E67C442006FB57B /* RepeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC767D1E67C442006FB57B /* RepeatViewController.swift */; };
 		A3EC76841E67D05E006FB57B /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = A3EC76831E67D05E006FB57B /* next.png */; };
 		A3EC76961E67D570006FB57B /* btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = A3EC76951E67D570006FB57B /* btn_back.png */; };
 		A3EC769C1E67D69D006FB57B /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = A3EC769B1E67D69D006FB57B /* background.png */; };
@@ -60,11 +92,32 @@
 
 /* Begin PBXFileReference section */
 		1E2CD94AB9AD418DAB5DF6D2 /* Pods-HealthCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthCare.release.xcconfig"; path = "Pods/Target Support Files/Pods-HealthCare/Pods-HealthCare.release.xcconfig"; sourceTree = "<group>"; };
+		6177DA911E72CFDA00890BFB /* NeckExcerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeckExcerciseViewController.swift; sourceTree = "<group>"; };
+		6177DA921E72CFDA00890BFB /* NeckExcerciseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NeckExcerciseViewController.xib; sourceTree = "<group>"; };
+		6177DA9B1E730AF500890BFB /* SalutationPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalutationPopUp.swift; sourceTree = "<group>"; };
+		6177DA9C1E730AF500890BFB /* SalutationPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SalutationPopUp.xib; sourceTree = "<group>"; };
+		61AB25F41E71A57000F5B4B2 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		61AB25F51E71A57000F5B4B2 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		61AB25FA1E71A57900F5B4B2 /* ExcercisCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcercisCell.swift; sourceTree = "<group>"; };
+		61AB25FB1E71A57900F5B4B2 /* ExcercisCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExcercisCell.xib; sourceTree = "<group>"; };
+		61AB25FD1E71A57900F5B4B2 /* SliderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
+		61AB25FE1E71A57900F5B4B2 /* SliderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderTableViewCell.xib; sourceTree = "<group>"; };
+		61AB26001E71A57900F5B4B2 /* ExcercisSeeAllVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcercisSeeAllVC.swift; sourceTree = "<group>"; };
+		61AB26011E71A57900F5B4B2 /* ExcercisSeeAllVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExcercisSeeAllVC.xib; sourceTree = "<group>"; };
+		61AB26021E71A57900F5B4B2 /* ExcercisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcercisViewController.swift; sourceTree = "<group>"; };
+		61AB26031E71A57900F5B4B2 /* ExcercisViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExcercisViewController.xib; sourceTree = "<group>"; };
+		61AB260D1E71A59400F5B4B2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		61AB26101E71A5A300F5B4B2 /* UTM-Neo-Sans-Intel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UTM-Neo-Sans-Intel.ttf"; sourceTree = "<group>"; };
+		61AB26111E71A5A300F5B4B2 /* UTM-Neo-Sans-IntelBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UTM-Neo-Sans-IntelBold.ttf"; sourceTree = "<group>"; };
+		61AB26121E71A5A300F5B4B2 /* UTM-Neo-Sans-IntelBold_Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UTM-Neo-Sans-IntelBold_Italic.ttf"; sourceTree = "<group>"; };
+		61AB26171E71A98000F5B4B2 /* ExcercisSeeAllCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcercisSeeAllCell.swift; sourceTree = "<group>"; };
+		61AB26181E71A98000F5B4B2 /* ExcercisSeeAllCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExcercisSeeAllCell.xib; sourceTree = "<group>"; };
+		61AB261C1E71B2E600F5B4B2 /* PlayingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingView.swift; sourceTree = "<group>"; };
+		61AB261D1E71B2E600F5B4B2 /* PlayingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayingView.xib; sourceTree = "<group>"; };
 		78BB75B01D5983B960F25346 /* Pods-HealthCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HealthCare/Pods-HealthCare.debug.xcconfig"; sourceTree = "<group>"; };
 		951430F24416B1E0A9807946 /* Pods_HealthCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A342FB261E6DC7ED00FD822C /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationViewController.swift; path = MVC/Controller/Notifi/NotificationViewController.swift; sourceTree = "<group>"; };
 		A342FB291E6DCA7F00FD822C /* DetailFoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailFoodViewController.swift; path = MVC/Controller/DetailFood/DetailFoodViewController.swift; sourceTree = "<group>"; };
-		A34570051E6D327B007AEC8A /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = MVC/Controller/Setting/SettingViewController.swift; sourceTree = "<group>"; };
 		A34570071E6D4E47007AEC8A /* register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = register.png; sourceTree = "<group>"; };
 		A356ACBB1E68670500716B68 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		A356ACBD1E686F8900716B68 /* BasedCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasedCollectionViewController.swift; path = BasedViewController/BasedCollectionViewController.swift; sourceTree = "<group>"; };
@@ -81,9 +134,22 @@
 		A3929D151E6C71110093403E /* food_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food_background.png; sourceTree = "<group>"; };
 		A3929D181E6C72230093403E /* food_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food_line.png; sourceTree = "<group>"; };
 		A3929D1B1E6C73340093403E /* food_cake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food_cake.png; sourceTree = "<group>"; };
+		A3ADCB791E71CAA20083EF20 /* ReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
+		A3ADCB7B1E71CABE0083EF20 /* RepeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatViewController.swift; sourceTree = "<group>"; };
+		A3ADCB7E1E71CAC70083EF20 /* MainAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAlarmViewController.swift; sourceTree = "<group>"; };
+		A3ADCB811E71CAF20083EF20 /* AlarmApplicationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmApplicationDelegate.swift; sourceTree = SOURCE_ROOT; };
+		A3ADCB821E71CAF20083EF20 /* AlarmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = SOURCE_ROOT; };
+		A3ADCB831E71CAF20083EF20 /* AlarmSchedulerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmSchedulerDelegate.swift; sourceTree = SOURCE_ROOT; };
+		A3ADCB841E71CAF20083EF20 /* Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = SOURCE_ROOT; };
+		A3ADCB851E71CAF20083EF20 /* Persistable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = SOURCE_ROOT; };
+		A3ADCB861E71CAF20083EF20 /* PropertyReflectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyReflectable.swift; sourceTree = SOURCE_ROOT; };
+		A3ADCB871E71CAF20083EF20 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = SOURCE_ROOT; };
+		A3ADCB881E71CAF20083EF20 /* SegueInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueInfo.swift; sourceTree = SOURCE_ROOT; };
+		A3ADCB911E71CBBA0083EF20 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		A3C87F601E696C0A00141702 /* FoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodViewController.swift; path = MVC/Controller/Food/FoodViewController.swift; sourceTree = "<group>"; };
 		A3C87F621E69734500141702 /* menu_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_white.png; sourceTree = "<group>"; };
 		A3C87F641E6974A400141702 /* main_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_background.png; sourceTree = "<group>"; };
+		A3E470001E71D66D00C2C7F1 /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
 		A3EC76391E679C29006FB57B /* HealthCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3EC763C1E679C29006FB57B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3EC76411E679C29006FB57B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,7 +158,6 @@
 		A3EC76481E679C29006FB57B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3EC764F1E67A04A006FB57B /* BasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasedViewController.swift; path = BasedViewController/BasedViewController.swift; sourceTree = "<group>"; };
 		A3EC76511E67A1B5006FB57B /* BasedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasedTableViewController.swift; path = BasedViewController/BasedTableViewController.swift; sourceTree = "<group>"; };
-		A3EC76571E67A455006FB57B /* ReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReminderViewController.swift; path = MVC/Controller/Reminder/ReminderViewController.swift; sourceTree = "<group>"; };
 		A3EC765B1E67A86A006FB57B /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		A3EC765C1E67A86A006FB57B /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		A3EC765D1E67A86A006FB57B /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -102,7 +167,6 @@
 		A3EC76611E67A86A006FB57B /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		A3EC76621E67A86A006FB57B /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		A3EC767B1E67B000006FB57B /* HealthCare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "HealthCare-Bridging-Header.h"; path = "Lib/HealthCare-Bridging-Header.h"; sourceTree = "<group>"; };
-		A3EC767D1E67C442006FB57B /* RepeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepeatViewController.swift; path = MVC/Controller/Repeat/RepeatViewController.swift; sourceTree = "<group>"; };
 		A3EC76831E67D05E006FB57B /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
 		A3EC76951E67D570006FB57B /* btn_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_back.png; sourceTree = "<group>"; };
 		A3EC769B1E67D69D006FB57B /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
@@ -137,6 +201,115 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6177DA901E72CFC700890BFB /* NeckExcercise */ = {
+			isa = PBXGroup;
+			children = (
+				6177DA911E72CFDA00890BFB /* NeckExcerciseViewController.swift */,
+				6177DA921E72CFDA00890BFB /* NeckExcerciseViewController.xib */,
+			);
+			name = NeckExcercise;
+			path = ../NeckExcercise;
+			sourceTree = "<group>";
+		};
+		6177DA9A1E730AF500890BFB /* SalutationPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				6177DA9B1E730AF500890BFB /* SalutationPopUp.swift */,
+				6177DA9C1E730AF500890BFB /* SalutationPopUp.xib */,
+			);
+			name = SalutationPopUp;
+			path = MVC/Controller/SalutationPopUp;
+			sourceTree = "<group>";
+		};
+		61AB25F31E71A57000F5B4B2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				61AB25F41E71A57000F5B4B2 /* MainViewController.swift */,
+				61AB25F51E71A57000F5B4B2 /* MainViewController.xib */,
+			);
+			name = Main;
+			path = MVC/Controller/Main;
+			sourceTree = "<group>";
+		};
+		61AB25F81E71A57900F5B4B2 /* Excercis */ = {
+			isa = PBXGroup;
+			children = (
+				61AB25FF1E71A57900F5B4B2 /* ExcercisSeeAll */,
+				61AB25F91E71A57900F5B4B2 /* ExcercisCell */,
+				61AB26021E71A57900F5B4B2 /* ExcercisViewController.swift */,
+				61AB26031E71A57900F5B4B2 /* ExcercisViewController.xib */,
+			);
+			name = Excercis;
+			path = MVC/Controller/Excercis;
+			sourceTree = "<group>";
+		};
+		61AB25F91E71A57900F5B4B2 /* ExcercisCell */ = {
+			isa = PBXGroup;
+			children = (
+				61AB25FA1E71A57900F5B4B2 /* ExcercisCell.swift */,
+				61AB25FB1E71A57900F5B4B2 /* ExcercisCell.xib */,
+				61AB25FC1E71A57900F5B4B2 /* SliderCell */,
+			);
+			path = ExcercisCell;
+			sourceTree = "<group>";
+		};
+		61AB25FC1E71A57900F5B4B2 /* SliderCell */ = {
+			isa = PBXGroup;
+			children = (
+				61AB25FD1E71A57900F5B4B2 /* SliderTableViewCell.swift */,
+				61AB25FE1E71A57900F5B4B2 /* SliderTableViewCell.xib */,
+			);
+			path = SliderCell;
+			sourceTree = "<group>";
+		};
+		61AB25FF1E71A57900F5B4B2 /* ExcercisSeeAll */ = {
+			isa = PBXGroup;
+			children = (
+				6177DA901E72CFC700890BFB /* NeckExcercise */,
+				61AB26161E71A93700F5B4B2 /* ExcercisSeeAllCell */,
+				61AB26001E71A57900F5B4B2 /* ExcercisSeeAllVC.swift */,
+				61AB26011E71A57900F5B4B2 /* ExcercisSeeAllVC.xib */,
+			);
+			path = ExcercisSeeAll;
+			sourceTree = "<group>";
+		};
+		61AB260C1E71A59400F5B4B2 /* Orther */ = {
+			isa = PBXGroup;
+			children = (
+				61AB260D1E71A59400F5B4B2 /* Constants.swift */,
+			);
+			path = Orther;
+			sourceTree = "<group>";
+		};
+		61AB260F1E71A5A300F5B4B2 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				61AB26101E71A5A300F5B4B2 /* UTM-Neo-Sans-Intel.ttf */,
+				61AB26111E71A5A300F5B4B2 /* UTM-Neo-Sans-IntelBold.ttf */,
+				61AB26121E71A5A300F5B4B2 /* UTM-Neo-Sans-IntelBold_Italic.ttf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
+		61AB26161E71A93700F5B4B2 /* ExcercisSeeAllCell */ = {
+			isa = PBXGroup;
+			children = (
+				61AB26171E71A98000F5B4B2 /* ExcercisSeeAllCell.swift */,
+				61AB26181E71A98000F5B4B2 /* ExcercisSeeAllCell.xib */,
+			);
+			path = ExcercisSeeAllCell;
+			sourceTree = "<group>";
+		};
+		61AB261B1E71B29600F5B4B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				61AB261C1E71B2E600F5B4B2 /* PlayingView.swift */,
+				61AB261D1E71B2E600F5B4B2 /* PlayingView.xib */,
+			);
+			name = View;
+			path = MVC/View;
+			sourceTree = "<group>";
+		};
 		A1F29BDC73A05C1B83A86FA5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,7 +338,7 @@
 		A34570041E6D3254007AEC8A /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				A34570051E6D327B007AEC8A /* SettingViewController.swift */,
+				A3ADCB911E71CBBA0083EF20 /* SettingViewController.swift */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -181,17 +354,33 @@
 		A365049E1E6D0EE6005D3C1D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A3ADCB801E71CAE70083EF20 /* Alarm */,
 			);
 			name = Model;
 			path = MVC/Model;
 			sourceTree = "<group>";
 		};
-		A365049F1E6D0EE6005D3C1D /* View */ = {
+		A3ADCB7D1E71CAC70083EF20 /* MainAlarm */ = {
 			isa = PBXGroup;
 			children = (
+				A3ADCB7E1E71CAC70083EF20 /* MainAlarmViewController.swift */,
 			);
-			name = View;
-			path = MVC/View;
+			path = MainAlarm;
+			sourceTree = "<group>";
+		};
+		A3ADCB801E71CAE70083EF20 /* Alarm */ = {
+			isa = PBXGroup;
+			children = (
+				A3ADCB811E71CAF20083EF20 /* AlarmApplicationDelegate.swift */,
+				A3ADCB821E71CAF20083EF20 /* AlarmModel.swift */,
+				A3ADCB831E71CAF20083EF20 /* AlarmSchedulerDelegate.swift */,
+				A3ADCB841E71CAF20083EF20 /* Identifier.swift */,
+				A3ADCB851E71CAF20083EF20 /* Persistable.swift */,
+				A3ADCB861E71CAF20083EF20 /* PropertyReflectable.swift */,
+				A3ADCB871E71CAF20083EF20 /* Scheduler.swift */,
+				A3ADCB881E71CAF20083EF20 /* SegueInfo.swift */,
+			);
+			name = Alarm;
 			sourceTree = "<group>";
 		};
 		A3C87F5F1E696BEB00141702 /* Food */ = {
@@ -223,6 +412,8 @@
 		A3EC763B1E679C29006FB57B /* HealthCare */ = {
 			isa = PBXGroup;
 			children = (
+				A3E470001E71D66D00C2C7F1 /* bell.mp3 */,
+				61AB260C1E71A59400F5B4B2 /* Orther */,
 				A356ACD21E68ACDE00716B68 /* HealthCare.entitlements */,
 				A3EC76821E67D05E006FB57B /* Resources */,
 				A3EC764E1E67A013006FB57B /* BasedViewController */,
@@ -252,8 +443,8 @@
 		A3EC76531E67A3E0006FB57B /* MVC */ = {
 			isa = PBXGroup;
 			children = (
+				61AB261B1E71B29600F5B4B2 /* View */,
 				A365049E1E6D0EE6005D3C1D /* Model */,
-				A365049F1E6D0EE6005D3C1D /* View */,
 				A3EC76551E67A3ED006FB57B /* Controller */,
 			);
 			name = MVC;
@@ -262,6 +453,8 @@
 		A3EC76551E67A3ED006FB57B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				61AB25F81E71A57900F5B4B2 /* Excercis */,
+				61AB25F31E71A57000F5B4B2 /* Main */,
 				A342FB281E6DCA5F00FD822C /* DetailFood */,
 				A342FB251E6DC7BE00FD822C /* Notifi */,
 				A34570041E6D3254007AEC8A /* Setting */,
@@ -269,6 +462,7 @@
 				A356ACBF1E68702200716B68 /* Eat */,
 				A3F2BFB01E67EB9800DAAE3F /* Login */,
 				A3F2BFAD1E67E8A300DAAE3F /* Menu */,
+				A3ADCB7D1E71CAC70083EF20 /* MainAlarm */,
 				A3EC767C1E67C426006FB57B /* Repeat */,
 				A3EC76591E67A459006FB57B /* Reminder */,
 			);
@@ -278,7 +472,8 @@
 		A3EC76591E67A459006FB57B /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
-				A3EC76571E67A455006FB57B /* ReminderViewController.swift */,
+				6177DA9A1E730AF500890BFB /* SalutationPopUp */,
+				A3ADCB791E71CAA20083EF20 /* ReminderViewController.swift */,
 			);
 			name = Reminder;
 			sourceTree = "<group>";
@@ -310,7 +505,7 @@
 		A3EC767C1E67C426006FB57B /* Repeat */ = {
 			isa = PBXGroup;
 			children = (
-				A3EC767D1E67C442006FB57B /* RepeatViewController.swift */,
+				A3ADCB7B1E71CABE0083EF20 /* RepeatViewController.swift */,
 			);
 			name = Repeat;
 			sourceTree = "<group>";
@@ -318,6 +513,7 @@
 		A3EC76821E67D05E006FB57B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				61AB260F1E71A5A300F5B4B2 /* font */,
 				A34570071E6D4E47007AEC8A /* register.png */,
 				A3EC769B1E67D69D006FB57B /* background.png */,
 				A3EC76951E67D570006FB57B /* btn_back.png */,
@@ -438,30 +634,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3929D1A1E6C72230093403E /* food_line.png in Resources */,
+				61AB26151E71A5A300F5B4B2 /* UTM-Neo-Sans-IntelBold_Italic.ttf in Resources */,
 				A3EC76471E679C29006FB57B /* LaunchScreen.storyboard in Resources */,
+				61AB26131E71A5A300F5B4B2 /* UTM-Neo-Sans-Intel.ttf in Resources */,
 				A3EC769C1E67D69D006FB57B /* background.png in Resources */,
+				6177DA941E72CFDA00890BFB /* NeckExcerciseViewController.xib in Resources */,
 				A3EC76441E679C29006FB57B /* Assets.xcassets in Resources */,
 				A356ACCF1E687C6100716B68 /* eat_background.png in Resources */,
 				A356ACBC1E68670500716B68 /* menu.png in Resources */,
 				A34570081E6D4E47007AEC8A /* register.png in Resources */,
 				A356ACCB1E68732800716B68 /* dinner_0.png in Resources */,
 				A356ACC61E68731F00716B68 /* lunch_1.png in Resources */,
+				61AB261F1E71B2E600F5B4B2 /* PlayingView.xib in Resources */,
 				A3F2BFA91E67E56900DAAE3F /* btn_fb.png in Resources */,
 				A3EC76841E67D05E006FB57B /* next.png in Resources */,
 				A3F2BFAC1E67E7E900DAAE3F /* menu_logo.png in Resources */,
+				A3E470011E71D66D00C2C7F1 /* bell.mp3 in Resources */,
 				A3F2BFA61E67E2CE00DAAE3F /* logo.png in Resources */,
 				A356ACC71E68731F00716B68 /* lunch_2.png in Resources */,
 				A3929D161E6C71110093403E /* food_background.png in Resources */,
 				A3929D1C1E6C73340093403E /* food_cake.png in Resources */,
 				A356ACCC1E68732800716B68 /* dinner_1.png in Resources */,
 				A3F194341E67F05000BD9F99 /* Info.plist in Resources */,
+				61AB26091E71A57900F5B4B2 /* ExcercisSeeAllVC.xib in Resources */,
+				61AB26141E71A5A300F5B4B2 /* UTM-Neo-Sans-IntelBold.ttf in Resources */,
 				A3EC76421E679C29006FB57B /* Main.storyboard in Resources */,
 				A356ACC51E68731F00716B68 /* lunch_0.png in Resources */,
 				A3C87F651E6974A400141702 /* main_background.png in Resources */,
 				A3EC76961E67D570006FB57B /* btn_back.png in Resources */,
+				61AB25F71E71A57000F5B4B2 /* MainViewController.xib in Resources */,
+				61AB260B1E71A57900F5B4B2 /* ExcercisViewController.xib in Resources */,
+				61AB26051E71A57900F5B4B2 /* ExcercisCell.xib in Resources */,
 				A356ACD11E68A03200716B68 /* GoogleService-Info.plist in Resources */,
+				61AB26071E71A57900F5B4B2 /* SliderTableViewCell.xib in Resources */,
 				A3F2BFAA1E67E56900DAAE3F /* btn_google.png in Resources */,
+				61AB261A1E71A98000F5B4B2 /* ExcercisSeeAllCell.xib in Resources */,
 				A356ACCD1E68732800716B68 /* dinner_2.png in Resources */,
+				6177DA9E1E730AF500890BFB /* SalutationPopUp.xib in Resources */,
 				A3C87F631E69734500141702 /* menu_white.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,27 +731,46 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3EC76681E67A86A006FB57B /* UIView.swift in Sources */,
-				A34570061E6D327B007AEC8A /* SettingViewController.swift in Sources */,
+				61AB25F61E71A57000F5B4B2 /* MainViewController.swift in Sources */,
+				A3ADCB7A1E71CAA20083EF20 /* ReminderViewController.swift in Sources */,
+				A3ADCB7C1E71CABE0083EF20 /* RepeatViewController.swift in Sources */,
+				A3ADCB901E71CAF20083EF20 /* SegueInfo.swift in Sources */,
 				A3EC76501E67A04A006FB57B /* BasedViewController.swift in Sources */,
+				A3ADCB8B1E71CAF20083EF20 /* AlarmSchedulerDelegate.swift in Sources */,
+				61AB26081E71A57900F5B4B2 /* ExcercisSeeAllVC.swift in Sources */,
+				6177DA9D1E730AF500890BFB /* SalutationPopUp.swift in Sources */,
+				61AB26061E71A57900F5B4B2 /* SliderTableViewCell.swift in Sources */,
 				A3EC76631E67A86A006FB57B /* Dictionary.swift in Sources */,
 				A3F2BFB21E67EBB000DAAE3F /* LoginViewController.swift in Sources */,
 				A3EC76691E67A86A006FB57B /* UIViewController.swift in Sources */,
 				A342FB271E6DC7ED00FD822C /* NotificationViewController.swift in Sources */,
 				A356ACC11E68704A00716B68 /* EatViewController.swift in Sources */,
-				A3EC767E1E67C442006FB57B /* RepeatViewController.swift in Sources */,
+				61AB260E1E71A59400F5B4B2 /* Constants.swift in Sources */,
+				A3ADCB7F1E71CAC70083EF20 /* MainAlarmViewController.swift in Sources */,
 				A3EC76671E67A86A006FB57B /* UITextField.swift in Sources */,
-				A3EC76581E67A455006FB57B /* ReminderViewController.swift in Sources */,
 				A342FB2A1E6DCA7F00FD822C /* DetailFoodViewController.swift in Sources */,
+				A3ADCB8D1E71CAF20083EF20 /* Persistable.swift in Sources */,
 				A356ACBE1E686F8900716B68 /* BasedCollectionViewController.swift in Sources */,
 				A3EC766A1E67A86A006FB57B /* Utilities.swift in Sources */,
 				A3EC763D1E679C29006FB57B /* AppDelegate.swift in Sources */,
+				A3ADCB8E1E71CAF20083EF20 /* PropertyReflectable.swift in Sources */,
 				A3EC76651E67A86A006FB57B /* String.swift in Sources */,
+				A3ADCB891E71CAF20083EF20 /* AlarmApplicationDelegate.swift in Sources */,
 				A3C87F611E696C0A00141702 /* FoodViewController.swift in Sources */,
 				A3EC76661E67A86A006FB57B /* UIColor.swift in Sources */,
+				61AB26041E71A57900F5B4B2 /* ExcercisCell.swift in Sources */,
+				61AB26191E71A98000F5B4B2 /* ExcercisSeeAllCell.swift in Sources */,
+				6177DA931E72CFDA00890BFB /* NeckExcerciseViewController.swift in Sources */,
+				A3ADCB921E71CBBA0083EF20 /* SettingViewController.swift in Sources */,
+				A3ADCB8F1E71CAF20083EF20 /* Scheduler.swift in Sources */,
 				A3EC76641E67A86A006FB57B /* NSDate.swift in Sources */,
 				A3F2BFAF1E67E8C100DAAE3F /* LeftMenuViewController.swift in Sources */,
 				A3F194351E67F05000BD9F99 /* SlideMenuController.swift in Sources */,
+				61AB261E1E71B2E600F5B4B2 /* PlayingView.swift in Sources */,
+				A3ADCB8C1E71CAF20083EF20 /* Identifier.swift in Sources */,
 				A3EC76521E67A1B5006FB57B /* BasedTableViewController.swift in Sources */,
+				61AB260A1E71A57900F5B4B2 /* ExcercisViewController.swift in Sources */,
+				A3ADCB8A1E71CAF20083EF20 /* AlarmModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
