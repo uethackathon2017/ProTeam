@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="UTM-Neo-Sans-IntelBold_Italic.ttf">
+            <string>UTMNeoSansIntel-BoldItalic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExcercisViewController" customModule="HealthCare" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="0Zf-CA-UEI" id="gSb-5y-04J"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-bg-excercis" translatesAutoresizingMaskIntoConstraints="NO" id="fxb-Z7-GNF">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EXCERCISE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtL-9F-nrc">
+                    <rect key="frame" x="90" y="71" width="195" height="56"/>
+                    <fontDescription key="fontDescription" name="UTMNeoSansIntel-BoldItalic" family="UTM Neo Sans Intel" pointSize="40"/>
+                    <color key="textColor" red="0.27843137254901962" green="0.082352941176470587" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Zf-CA-UEI">
+                    <rect key="frame" x="10" y="200" width="355" height="447"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="MdQ-GV-TAM"/>
+                        <outlet property="delegate" destination="-1" id="3o3-4g-HUQ"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="fxb-Z7-GNF" secondAttribute="trailing" id="9LF-2H-Th6"/>
+                <constraint firstAttribute="trailing" secondItem="0Zf-CA-UEI" secondAttribute="trailing" constant="10" id="Cy6-gT-GR5"/>
+                <constraint firstItem="0Zf-CA-UEI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="NiS-82-s76"/>
+                <constraint firstItem="gtL-9F-nrc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UdN-MD-ged"/>
+                <constraint firstItem="0Zf-CA-UEI" firstAttribute="top" secondItem="gtL-9F-nrc" secondAttribute="bottom" constant="73" id="WXL-42-TBO"/>
+                <constraint firstItem="fxb-Z7-GNF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="X0n-sQ-shF"/>
+                <constraint firstItem="fxb-Z7-GNF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dCy-eF-ER9"/>
+                <constraint firstAttribute="bottom" secondItem="0Zf-CA-UEI" secondAttribute="bottom" constant="20" id="hog-Un-uLG"/>
+                <constraint firstItem="gtL-9F-nrc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="71" id="i8N-nw-Dkd"/>
+                <constraint firstAttribute="bottom" secondItem="fxb-Z7-GNF" secondAttribute="bottom" id="nYH-6o-bjW"/>
+            </constraints>
+            <point key="canvasLocation" x="12" y="-174"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="img-bg-excercis" width="375" height="647"/>
+    </resources>
+</document>
