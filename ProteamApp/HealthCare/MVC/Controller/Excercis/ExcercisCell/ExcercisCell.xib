@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="224"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tb0-K0-Baw" id="D96-zA-oXE">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="223"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="223.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FOr-xS-fvm">
@@ -47,6 +47,9 @@
                                 <state key="normal" title="see all &gt;&gt;&gt;">
                                     <color key="titleColor" red="0.27843137254901962" green="0.082352941176470587" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnSeeAllTouchup:" destination="Tb0-K0-Baw" eventType="touchUpInside" id="0lD-Zw-Mdo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -66,6 +69,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="lblTitle" destination="mY4-iK-gJ4" id="uxr-dH-X96"/>
                 <outlet property="tbvTopicExcercis" destination="FOr-xS-fvm" id="8VE-MI-DP8"/>
             </connections>
             <point key="canvasLocation" x="-268.5" y="-811"/>

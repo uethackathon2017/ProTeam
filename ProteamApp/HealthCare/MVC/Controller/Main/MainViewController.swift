@@ -12,15 +12,17 @@ import XLPagerTabStrip
 class MainViewController: ButtonBarPagerTabStripViewController {
 
     override func viewDidLoad() {
+        
         setupPagerTabStrip()
+        
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
             guard changeCurrentIndex == true else { return }
             oldCell?.label.font = UIFont(name: "UTM Avo", size: 14)
-            oldCell?.label.textColor = UIColor(hexString:"000000")
-            newCell?.label.textColor = UIColor(hexString:"ff81a5")
+            oldCell?.label.textColor = UIColor(hex:"000000")
+            newCell?.label.textColor = UIColor(hex:"ff81a5")
             newCell?.label.font = UIFont(name: "UTM Avo", size: 14)
             
             oldCell?.bounds.size.width = 6
@@ -37,7 +39,7 @@ class MainViewController: ButtonBarPagerTabStripViewController {
     func setupPagerTabStrip(){
         settings.style.buttonBarBackgroundColor = UIColor.clear
         settings.style.buttonBarItemBackgroundColor = .clear
-        settings.style.selectedBarBackgroundColor = UIColor(hexString:"f578a2")!
+        settings.style.selectedBarBackgroundColor = UIColor(hex:"f578a2")
         settings.style.selectedBarHeight = 0.0
         settings.style.buttonBarMinimumLineSpacing = 0
         settings.style.buttonBarItemTitleColor = .black
@@ -66,16 +68,4 @@ class MainViewController: ButtonBarPagerTabStripViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

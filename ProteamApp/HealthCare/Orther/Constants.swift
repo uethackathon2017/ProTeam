@@ -19,16 +19,5 @@ struct Constants {
         static let system_name: String                      = UIDevice.current.systemName
         static let system_version: String                   = UIDevice.current.systemVersion
     }
-    struct DelegateObject{
-        var lblChuRe: String?
-        var lblCoDau: String?
-        var date:NSDate?
-        var adress:AnyObject?
-    }
-    struct URLs {
-        static let BaseURL: String = "http://ladaku.touchspace.vn/api/"
-        // static let ApiURL: String = "api/"
-        static let BaseURLMediaUpload = "http://media.touchspace.vn/uploads"
-    }
     
 }

@@ -2,21 +2,18 @@
 //  ReminderViewController.swift
 //  HealthCare
 //
-//  Created by Vinh Nguyen on 3/10/17.
+//  Created by Vinh Nguyen on 3/2/17.
 //  Copyright © 2017 Vinh Nguyen. All rights reserved.
 //
 
 import UIKit
 import MediaPlayer
 
-class ReminderViewController: BasedTableViewController, UIPickerViewDelegate, UIPickerViewDataSource, MPMediaPickerControllerDelegate {
+class ReminderViewController: SettingViewController {
 
     @IBOutlet weak var pickerViewTime: UIPickerView!
-    var btnSwitchRepeatRington: UISwitch!
-    var currentTime: Date!
-    var arrTitleCell = ["Repeat", "Rington", "Salutation", "Repeat Rington"]
     var arrDetailTitleCell = ["Monday, Friday", "Nơi này có anh", "Time to exercises, Vinh !"]
-    
+    var textFieldSalutation: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +22,9 @@ class ReminderViewController: BasedTableViewController, UIPickerViewDelegate, UI
         self.firstInit()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -34,11 +34,15 @@ class ReminderViewController: BasedTableViewController, UIPickerViewDelegate, UI
     
     func firstInit() {
         
+        lblTitle.text = strTitle
+        
+        arrTitleCell = ["Repeat", "Rington", "Salutation", "Repeat Rington"]
+        
         pickerViewTime.tintColor = UIColor.init(hex: "#ffbe53")
         pickerViewTime.shadowColor = UIColor.init(hex: "#ffbe53")
-                
-        currentTime = Date()
-        //var dateString: String! = currentTime.stringDateWithFormat("hh:mm")
+        
+        textFieldSalutation = UITextField()
+        
     }
     
     // MARK: - Actions
@@ -47,68 +51,7 @@ class ReminderViewController: BasedTableViewController, UIPickerViewDelegate, UI
         super.btnBackClicked(sender)
     }
     
-    func btnSwitchRepeatRingtonClicked() {
-        
-    }
-    
-    // MARK: - Picker View
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
-    }
-    
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if component == 0 {
-            return 24
-        }
-        return 60
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? // attributed title is favored if both methods are implemented
-    {
-        if component == 0 {
-            
-            var hour: String!
-            if row < 10 {
-                hour = "0".appending(String(row))
-            } else {
-                hour = String(row)
-            }
-            return NSAttributedString.init(string: hour, attributes: [NSForegroundColorAttributeName : UIColor.init(hex: "#ffbe53")])
-            
-        } else if component == 1 {
-            
-            var minute: String!
-            if row < 10 {
-                minute = "0".appending(String(row))
-            } else {
-                minute = String(row)
-            }
-            return NSAttributedString.init(string: minute, attributes: [NSForegroundColorAttributeName : UIColor.init(hex: "#ffbe53")])
-            
-        }
-        return NSAttributedString.init(string: "")
-    }
-    
-    // returns width of column and height of row for each component.
-    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        return 50
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 40
-    }
-    
     // MARK: - Table View
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrTitleCell.count
-    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
@@ -152,11 +95,7 @@ class ReminderViewController: BasedTableViewController, UIPickerViewDelegate, UI
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //tableView.deselectRow(at: indexPath, animated: true)
         let mainStoryboard: UIStoryboard! = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         if indexPath.row == 0 {
@@ -167,9 +106,72 @@ class ReminderViewController: BasedTableViewController, UIPickerViewDelegate, UI
             let mediaPicker: MPMediaPickerController! = MPMediaPickerController.init(mediaTypes: .music)
             mediaPicker.delegate = self
             self.present(mediaPicker, animated: true, completion: {})
+        } else if indexPath.row == 2 {
+            textFieldSalutation.resignFirstResponder()
         }
-    }
+     }
+    
+    
+    // MARK: - Local Notification
+    
+    
+}
 
+extension ReminderViewController: UIPickerViewDelegate, UIPickerViewDataSource, MPMediaPickerControllerDelegate {
+    
+    // MARK: - Picker View
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if component == 0 {
+            return 24
+        }
+        return 60
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? // attributed title is favored if both methods are implemented
+    {
+        if component == 0 {
+            
+            var hour: String!
+            if row < 10 {
+                hour = "0".appending(String(row))
+            } else {
+                hour = String(row)
+            }
+            return NSAttributedString.init(string: hour, attributes: [NSForegroundColorAttributeName : UIColor.init(hex: "#ffbe53")])
+            
+        } else if component == 1 {
+            
+            var minute: String!
+            if row < 10 {
+                minute = "0".appending(String(row))
+            } else {
+                minute = String(row)
+            }
+            return NSAttributedString.init(string: minute, attributes: [NSForegroundColorAttributeName : UIColor.init(hex: "#ffbe53")])
+            
+        }
+        return NSAttributedString.init(string: "")
+    }
+    
+    // returns width of column and height of row for each component.
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        return 50
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 40
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+    }
+    
     // MARK: - MPMediaPickerControllerDelegate
     
     func mediaPickerDidCancel(_ mediaPicker: MPMediaPickerController) {
@@ -177,6 +179,7 @@ class ReminderViewController: BasedTableViewController, UIPickerViewDelegate, UI
     }
     
     func mediaPicker(_ mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
+        
         self.dismiss(animated: true, completion: nil)
         print("you picked: \(mediaItemCollection)")//This is the picked media item.
         //  If you allow picking multiple media, then mediaItemCollection.items will return array of picked media items(MPMediaItem)

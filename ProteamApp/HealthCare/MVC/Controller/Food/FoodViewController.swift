@@ -11,7 +11,7 @@ import UIKit
 class FoodViewController: BasedCollectionViewController {
     
     var arrFood = [String]()
-    var isLunch: Bool!
+    var isLunch: Bool! = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,5 +50,13 @@ class FoodViewController: BasedCollectionViewController {
         imageView.image = UIImage.init(named: arrFood[indexPath.row])
     
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        let mainStoryboard: UIStoryboard! = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        let vc: UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: "DetailFoodViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

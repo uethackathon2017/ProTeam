@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  HealthCare
 //
-//  Created by Vinh Nguyen on 3/10/17.
+//  Created by Vinh Nguyen on 3/2/17.
 //  Copyright © 2017 Vinh Nguyen. All rights reserved.
 //
 
@@ -15,34 +15,10 @@ import GoogleSignIn
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
-
-    fileprivate func createMenuView() {
-        
-        // create viewController code...
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let mainViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        let leftViewController = storyboard.instantiateViewController(withIdentifier: "LeftMenuViewController") as! LeftMenuViewController
-        
-        let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
-        nvc.isNavigationBarHidden = true
-        
-        UINavigationBar.appearance().tintColor = UIColor(hex: "689F38")
-        
-        var slideMenuController: SlideMenuController!
-        slideMenuController = SlideMenuController.init(mainViewController: nvc, leftMenuViewController: leftViewController)
-        slideMenuController.automaticallyAdjustsScrollViewInsets = true
-//        slideMenuController.delegate = mainViewController
-        self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
-        self.window?.rootViewController = slideMenuController
-        self.window?.makeKeyAndVisible()
-    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-       
-        
+                
         // Facebook
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
@@ -54,10 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         GIDSignIn.sharedInstance().delegate = self
         
-        let excer = MainViewController()
-        //let navi = UINavigationController.init(rootViewController: excer)
-        self.window?.rootViewController = excer
-        self.window?.makeKeyAndVisible()
+        // Local Notification
+        application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil))
         
         return true
     }
@@ -72,8 +46,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     @available(iOS 9.0, *)
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-    
-            return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        
+        guard let source = options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String else { return false }
+        let annotation = options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String
+        return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: source, annotation: annotation)
+        
+        //    return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
 
     }
     
@@ -93,7 +71,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        // Facebook
         FBSDKAppEvents.activateApp()
+        
+        // Google
+        
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

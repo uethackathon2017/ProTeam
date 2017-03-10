@@ -8,10 +8,17 @@
 
 import UIKit
 
-class ExcercisCell: UITableViewCell,UITableViewDelegate,UITableViewDataSource {
-
-   let cellIdentifier = "SliderTableViewCell"
+protocol ExcercisCellDelegate {
+    func btnSeeAllTouchup(_ sender: Any)
+}
+class ExcercisCell: UITableViewCell {
+    
+    let cellIdentifier = "SliderTableViewCell"
     @IBOutlet weak var tbvTopicExcercis: UITableView!
+    @IBOutlet weak var lblTitle: UILabel!
+    
+    var delegate:ExcercisCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,7 +28,7 @@ class ExcercisCell: UITableViewCell,UITableViewDelegate,UITableViewDataSource {
         self.tbvTopicExcercis.showsVerticalScrollIndicator = false
         self.tbvTopicExcercis.showsHorizontalScrollIndicator = false
         self.tbvTopicExcercis.separatorStyle = .none
-        self.tbvTopicExcercis.backgroundColor = UIColor(hexString: "#ffffff")
+        self.tbvTopicExcercis.backgroundColor = UIColor(hex: "#ffffff")
         self.tbvTopicExcercis.frame = CGRect(x: 0,y: 40,width: Constants.Systems.screen_size.width - 14,height: 95)
         tbvTopicExcercis.contentInset = UIEdgeInsets(top: 14,left: 0,bottom:0,right: 0)
         tbvTopicExcercis.delegate = self
@@ -29,6 +36,19 @@ class ExcercisCell: UITableViewCell,UITableViewDelegate,UITableViewDataSource {
         self.tbvTopicExcercis.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
     }
     
+    @IBAction func btnSeeAllTouchup(_ sender: Any) {
+        self.delegate?.btnSeeAllTouchup(sender)
+        
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+}
+
+extension ExcercisCell:UITableViewDelegate,UITableViewDataSource{
     //MARK: TableView Delegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 160
@@ -48,14 +68,5 @@ class ExcercisCell: UITableViewCell,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // let preview = PreviewViewController()
-       // self.delegate?.didTopicCardSliderCell(sender: listCard[indexPath.row])
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

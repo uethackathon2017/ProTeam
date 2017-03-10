@@ -1,22 +1,19 @@
 //
-//  BasedTableViewController.swift
+//  DetailFoodViewController.swift
 //  HealthCare
 //
-//  Created by Vinh Nguyen on 3/2/17.
+//  Created by Vinh Nguyen on 3/6/17.
 //  Copyright © 2017 Vinh Nguyen. All rights reserved.
 //
 
 import UIKit
 
-class BasedTableViewController: BasedViewController, UITableViewDelegate, UITableViewDataSource {
+class DetailFoodViewController: BasedViewController {
 
-    @IBOutlet weak var tableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.tableView.tableFooterView = UIView.init(frame: CGRect.zero)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,20 +31,5 @@ class BasedTableViewController: BasedViewController, UITableViewDelegate, UITabl
         // Pass the selected object to the new view controller.
     }
     */
-    
-    // MARK: - Table View
-    func numberOfSections(in tableView: UITableView) -> Int{
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        let cell: UITableViewCell! = nil
-        return cell
-    }
-    
+
 }

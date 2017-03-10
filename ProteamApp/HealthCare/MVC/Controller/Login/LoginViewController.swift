@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  HealthCare
 //
-//  Created by Vinh Nguyen on 3/10/17.
+//  Created by Vinh Nguyen on 3/2/17.
 //  Copyright © 2017 Vinh Nguyen. All rights reserved.
 //
 
@@ -32,7 +32,7 @@ class LoginViewController: BasedViewController, GIDSignInUIDelegate {
     // MARK: - Action
     
     @IBAction func btnGoogle(_ sender: Any) {
-        let vc: UIViewController! = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ReminderViewController")
+        let vc: SlideMenuController! = createMenuView()
         self.navigationController?.pushViewController(vc, animated: true)
 //        GIDSignIn.sharedInstance().signIn()
     }
@@ -59,9 +59,34 @@ class LoginViewController: BasedViewController, GIDSignInUIDelegate {
 //                }
 //            }
 //        }
-        let vc: UIViewController! = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ReminderViewController")
+        let vc: SlideMenuController! = createMenuView()
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    // MARK: - SlideMenu
+    
+    fileprivate func createMenuView() -> SlideMenuController {
+        
+        // create viewController code...
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let mainViewController = MainViewController()//storyboard.instantiateViewController(withIdentifier: "EatViewController") as! EatViewController
+        let leftViewController = storyboard.instantiateViewController(withIdentifier: "LeftMenuViewController") as! LeftMenuViewController
+        
+        let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
+        nvc.isNavigationBarHidden = true
+        
+        UINavigationBar.appearance().tintColor = UIColor(hex: "689F38")
+        
+        var slideMenuController: SlideMenuController!
+        slideMenuController = SlideMenuController.init(mainViewController: nvc, leftMenuViewController: leftViewController)
+        slideMenuController.automaticallyAdjustsScrollViewInsets = true
+        //        slideMenuController.delegate = mainViewController
+        
+        return slideMenuController
+    }
+    
+    // MARK: - Google
     
     // Implement these methods only if the GIDSignInUIDelegate is not a subclass of
     // UIViewController.

@@ -2,7 +2,7 @@
 //  LeftMenuViewController.swift
 //  HealthCare
 //
-//  Created by Vinh Nguyen on 3/10/17.
+//  Created by Vinh Nguyen on 3/2/17.
 //  Copyright © 2017 Vinh Nguyen. All rights reserved.
 //
 
@@ -14,7 +14,7 @@ enum LeftMenu: Int {
 
 class LeftMenuViewController: BasedTableViewController {
 
-    var arrTitleCell = ["Setting", "Sign Out"]
+    var arrTitleCell = ["Home", "Setting", "Sign out"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,11 +73,27 @@ class LeftMenuViewController: BasedTableViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //tableView.deselectRow(at: indexPath, animated: true)
-        //let mainStoryboard: UIStoryboard! = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+                
+        let mainStoryboard: UIStoryboard! = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        
         if indexPath.row == 0 {
+            // Home
             
+            slideMenuController()?.closeLeft()
         } else if indexPath.row == 1 {
+            // Setting
             
+            let vc: UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: "SettingViewController")
+            self.navigationController?.pushViewController(vc!, animated: true)
+        } else if indexPath.row == 2 {
+            // Sign out
+            
+            for vc in (self.navigationController?.viewControllers)! {
+                if vc.isKind(of: LoginViewController.self) {
+                    self.navigationController?.popToViewController(vc, animated: true)
+                    break
+                }
+            }
         }
     }
 }

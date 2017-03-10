@@ -9,7 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 
-class ExcercisViewController: UIViewController,IndicatorInfoProvider {
+class ExcercisViewController: UIViewController,IndicatorInfoProvider,ExcercisCellDelegate {
     
     let cellIdentifier = "ExcercisCell"
     @IBOutlet weak var tableView: UITableView!
@@ -19,6 +19,13 @@ class ExcercisViewController: UIViewController,IndicatorInfoProvider {
 
         // Do any additional setup after loading the view.
         self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
+    }
+    
+    //MARK: EXCERCIS CELL DELEGATE
+    func btnSeeAllTouchup(_ sender: Any){
+        let excerSeeAll = ExcercisSeeAllVC()
+        self.navigationController?.pushViewController(excerSeeAll, animated: true)
+        print("sell all")
     }
     
     // MARK: - INDICATORINFO Provider
@@ -50,7 +57,7 @@ extension ExcercisViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ExcercisCell
         cell.selectionStyle = .none
- 
+        cell.delegate = self
         return cell
     }
     

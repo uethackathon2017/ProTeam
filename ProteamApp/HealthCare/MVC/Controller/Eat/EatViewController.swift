@@ -2,7 +2,7 @@
 //  EatViewController.swift
 //  HealthCare
 //
-//  Created by Vinh Nguyen on 3/10/17.
+//  Created by Vinh Nguyen on 3/2/17.
 //  Copyright © 2017 Vinh Nguyen. All rights reserved.
 //
 
@@ -41,6 +41,10 @@ class EatViewController: BasedCollectionViewController,IndicatorInfoProvider {
     }
     
     // MARK: - Action
+    
+    override func btnBackClicked(_ sender: Any) {
+        slideMenuController()?.openLeft()
+    }
     
     @IBAction func btnSeeAllLunchClicked(_ sender: Any) {
         let vc: FoodViewController! = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FoodViewController") as! FoodViewController

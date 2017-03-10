@@ -2,7 +2,7 @@
 //  BasedViewController.swift
 //  HealthCare
 //
-//  Created by Vinh Nguyen on 3/10/17.
+//  Created by Vinh Nguyen on 3/2/17.
 //  Copyright © 2017 Vinh Nguyen. All rights reserved.
 //
 
@@ -13,7 +13,8 @@ class BasedViewController: UIViewController {
     @IBOutlet weak var viewCustomNav: UIView!
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var lblTitle: UILabel!
-    
+    var strTitle: String!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +22,9 @@ class BasedViewController: UIViewController {
         if self.btnBack != nil {
             self.btnBack.addTarget(self, action: #selector(btnBackClicked(_:)), for: .touchUpInside)
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
     }
 
     override func didReceiveMemoryWarning() {
