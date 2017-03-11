@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, AVAudi
         application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil))
         alarmScheduler.setupNotificationSettings()
         window?.tintColor = UIColor.init(hex: "#FFA613")
-        
+        let _ = FavouritesViewController.init(nibName: nil, bundle: nil)
         return true
     }
     

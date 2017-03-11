@@ -38,23 +38,8 @@ class MainViewController: ButtonBarPagerTabStripViewController {
             newCell?.backgroundColor = UIColor(hex:"471500")
         }
         self.automaticallyAdjustsScrollViewInsets = false
-        
-        //
-//        let fontFamilyNames = UIFont.familyNames
-//        for familyName in fontFamilyNames {
-//            print("------------------------------")
-//            print("Font Family Name = [\(familyName)]")
-//            let names = UIFont.fontNames(forFamilyName: familyName as! String)
-//            print("Font Names = [\(names)]")
-//        }
 
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        self.navigationController?.navigationBar.isHidden = true
-    }
-    
     @IBAction func btnMenuClicked(_ sender: Any) {
         self.slideMenuController()?.openLeft()
     }

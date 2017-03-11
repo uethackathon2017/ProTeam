@@ -22,7 +22,6 @@ class ExFavouriteViewController: BasedTableViewController, IndicatorInfoProvider
         dataSource.insert("img-demo", at: 1)
         dataSource.insert("img-demo", at: 2)
         
-        self.tableView.backgroundColor = UIColor.clear
         self.tableView.separatorStyle = .none
         self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
        
@@ -40,6 +39,18 @@ class ExFavouriteViewController: BasedTableViewController, IndicatorInfoProvider
         return IndicatorInfo.init(title: "")
     }
     
+    // MARK: - Action
+    
+    func btnDeleteClicked(_ sender: UIButton) {
+        let index = sender.tag
+        self.dataSource.remove(at: index)
+        self.tableView.reloadData()
+    }
+    
+    func btnPlayClicked(_ sender: UIButton) {
+        let index = sender.tag
+    }
+    
     @IBAction func btnBackTouch(_ sender: Any) {
         super.btnBackClicked(sender)
     }
@@ -55,7 +66,17 @@ class ExFavouriteViewController: BasedTableViewController, IndicatorInfoProvider
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 130
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView.init(frame: CGRect.init(x: 0, y: 0, width: self.tableView.bounds.size.width, height: 30))
+        view.backgroundColor = UIColor.white
+        return view
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,6 +87,12 @@ class ExFavouriteViewController: BasedTableViewController, IndicatorInfoProvider
         }
         
         cell.imvContent.image = UIImage.init(named: dataSource[indexPath.row])
+        
+        cell.btnClose.addTarget(self, action: #selector(ExFavouriteViewController.btnDeleteClicked(_ :)), for: .touchUpInside)
+        cell.btnClose.tag = indexPath.row
+        
+        cell.btnPlay.addTarget(self, action: #selector(ExFavouriteViewController.btnPlayClicked(_ :)), for: .touchUpInside)
+        cell.btnPlay.tag = indexPath.row
         
         return cell
     }

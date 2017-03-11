@@ -81,7 +81,7 @@ extension ExcercisSeeAllVC:UICollectionViewDelegate,UICollectionViewDataSource,U
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         let neckExcercise = NeckExcerciseViewController()
-        neckExcercise.youtube_id = exercises[indexPath.row].youtube_id
+        neckExcercise.exercise = exercises[indexPath.row]
         neckExcercise.title = exercises[indexPath.row].name
         self.navigationController?.pushViewController(neckExcercise, animated: true)
        

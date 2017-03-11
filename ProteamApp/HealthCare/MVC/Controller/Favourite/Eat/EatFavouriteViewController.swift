@@ -27,15 +27,26 @@ class EatFavouriteViewController: BasedCollectionViewController, IndicatorInfoPr
         // Dispose of any resources that can be recreated.
     }
    
+    // MARK: - Action
+    
     @IBAction func btnBackTouch(_ sender: Any) {
         super.btnBackClicked(sender)
     }
+    
+    func btnDeleteClicked(_ sender: UIButton) {
+        let index = sender.tag
+        self.dataSource.remove(at: index)
+        self.collectionView1.reloadData()
+    }
+    
     // MARK: - INDICATORINFO Provider
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo.init(title: "")
     }
 
     // MARK: - Collection View
+    
+    
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -50,9 +61,10 @@ class EatFavouriteViewController: BasedCollectionViewController, IndicatorInfoPr
         let cell: FavEatCollectionViewCell! = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! FavEatCollectionViewCell
         
         cell.imvContent.image = UIImage.init(named: dataSource[indexPath.row])
-        
+        cell.btnDelete.addTarget(self, action: #selector(EatFavouriteViewController.btnDeleteClicked(_ :)), for: .touchUpInside)
+        cell.btnDelete.tag = indexPath.row
         
         return cell
     }
-
+    
 }

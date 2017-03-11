@@ -199,4 +199,140 @@ class APIModel: NSObject {
             }
         }
     }
+    
+    //MARK: - Like Exercise
+    class func  likeExercise(_ _id:String,completion:@escaping (_ message:Any)->Void, failure:@escaping (_ errorString: String)->Void){
+        
+        let header = self.getHeaderWithToken()
+        
+        let request = Alamofire.request(Constants.URLs.likeExercise + "\(_id)", method: .post, parameters: nil,encoding: JSONEncoding.default, headers: header)
+        
+        request.responseJSON { response in
+            if let result = response.result.value as? [String : AnyObject] {
+                
+                if let code = result["code"] as? Bool,code == true{
+                    
+                    if let message = result["message"] as? String {
+                        completion(message)
+                        
+                    }
+                } else {
+                    if let results = result["message"] as? [String:Any],let mes = results["message"] {
+                        failure(mes as! String)
+                    }
+                }
+                
+                
+            } else {
+                if response.result.error?._code == -1009{
+                    failure("Vui lòng kiểm tra kêt nối mạng wifi hoặc 3G")
+                } else {
+                    //failure(response.result.error.debugDescription)
+                    failure("Lỗi Server")
+                }
+            }
+        }
+    }
+    
+    //MARK: - Like Exercise
+    class func  unlikeExercise(_ _id:String,completion:@escaping (_ message:Any)->Void, failure:@escaping (_ errorString: String)->Void){
+        
+        let header = self.getHeaderWithToken()
+        
+        let request = Alamofire.request(Constants.URLs.unlikeExercise + "\(_id)", method: .post, parameters: nil,encoding: JSONEncoding.default, headers: header)
+        
+        request.responseJSON { response in
+            if let result = response.result.value as? [String : AnyObject] {
+                
+                if let code = result["code"] as? Bool,code == true{
+                    
+                    if let message = result["message"] as? String {
+                        completion(message)
+                        
+                    }
+                } else {
+                    if let results = result["message"] as? [String:Any],let mes = results["message"] {
+                        failure(mes as! String)
+                    }
+                }
+                
+                
+            } else {
+                if response.result.error?._code == -1009{
+                    failure("Vui lòng kiểm tra kêt nối mạng wifi hoặc 3G")
+                } else {
+                    //failure(response.result.error.debugDescription)
+                    failure("Lỗi Server")
+                }
+            }
+        }
+    }
+    
+    //MARK: - Like FOOD
+    class func  likeFood(_ _id:String,completion:@escaping (_ message:Any)->Void, failure:@escaping (_ errorString: String)->Void){
+        
+        let header = self.getHeaderWithToken()
+        
+        let request = Alamofire.request(Constants.URLs.likeFood + "\(_id)", method: .post, parameters: nil,encoding: JSONEncoding.default, headers: header)
+        
+        request.responseJSON { response in
+            if let result = response.result.value as? [String : AnyObject] {
+                
+                if let code = result["code"] as? Bool,code == true{
+                    
+                    if let message = result["message"] as? String {
+                        completion(message)
+                        
+                    }
+                } else {
+                    if let results = result["message"] as? [String:Any],let mes = results["message"] {
+                        failure(mes as! String)
+                    }
+                }
+                
+                
+            } else {
+                if response.result.error?._code == -1009{
+                    failure("Vui lòng kiểm tra kêt nối mạng wifi hoặc 3G")
+                } else {
+                    //failure(response.result.error.debugDescription)
+                    failure("Lỗi Server")
+                }
+            }
+        }
+    }
+    
+    //MARK: - UnLike FOOD
+    class func  unlikeFood(_ _id:String,completion:@escaping (_ message:Any)->Void, failure:@escaping (_ errorString: String)->Void){
+        
+        let header = self.getHeaderWithToken()
+        
+        let request = Alamofire.request(Constants.URLs.unLikeFood + "\(_id)", method: .post, parameters: nil,encoding: JSONEncoding.default, headers: header)
+        
+        request.responseJSON { response in
+            if let result = response.result.value as? [String : AnyObject] {
+                
+                if let code = result["code"] as? Bool,code == true{
+                    
+                    if let message = result["message"] as? String {
+                        completion(message)
+                        
+                    }
+                } else {
+                    if let results = result["message"] as? [String:Any],let mes = results["message"] {
+                        failure(mes as! String)
+                    }
+                }
+                
+                
+            } else {
+                if response.result.error?._code == -1009{
+                    failure("Vui lòng kiểm tra kêt nối mạng wifi hoặc 3G")
+                } else {
+                    //failure(response.result.error.debugDescription)
+                    failure("Lỗi Server")
+                }
+            }
+        }
+    }
 }

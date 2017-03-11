@@ -27,5 +27,9 @@ struct Constants {
         static let allItemExcerCate = "http://techkids.vn:8886/api/exercise/exercise"
         static let eatCategory = "http://techkids.vn:8886/api/exercise/category/all"
         static let setting = "http://techkids.vn:8886/api/user/setting"
+        static let likeExercise = "http://techkids.vn:8886/api/user/like/exercise/"
+        static let unlikeExercise = "http://techkids.vn:8886/api/user/unlike/exercise/"
+        static let likeFood = "http://techkids.vn:8886/api/user/like/food/"
+        static let unLikeFood = "http://techkids.vn:8886/api/user/unlike/food/"
     }
 }

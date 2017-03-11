@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="451" height="137"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="35V-TD-KFR">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="35V-TD-KFR">
                         <rect key="frame" x="0.0" y="10" width="451" height="117"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </imageView>
@@ -31,22 +31,22 @@
                         <state key="normal" backgroundImage="btn_play.png"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATh-P2-xnU">
-                        <rect key="frame" x="411" y="87" width="40" height="40"/>
+                        <rect key="frame" x="406" y="82" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="cpW-20-pqB"/>
                             <constraint firstAttribute="width" constant="40" id="rvJ-CE-ALT"/>
                         </constraints>
-                        <state key="normal" backgroundImage="btn_close.png"/>
+                        <state key="normal" backgroundImage="icon-delete.png"/>
                     </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="qYd-j0-lks" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Tul-MT-gyk"/>
-                    <constraint firstItem="ATh-P2-xnU" firstAttribute="trailing" secondItem="35V-TD-KFR" secondAttribute="trailing" id="V4C-Nd-wWk"/>
+                    <constraint firstItem="ATh-P2-xnU" firstAttribute="trailing" secondItem="35V-TD-KFR" secondAttribute="trailing" constant="-5" id="V4C-Nd-wWk"/>
                     <constraint firstAttribute="bottom" secondItem="35V-TD-KFR" secondAttribute="bottom" constant="10" id="XoW-j5-EIu"/>
                     <constraint firstItem="qYd-j0-lks" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="YAy-XN-k64"/>
                     <constraint firstAttribute="trailing" secondItem="35V-TD-KFR" secondAttribute="trailing" id="bMh-ma-iL1"/>
                     <constraint firstItem="35V-TD-KFR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="xCW-Kb-SVC"/>
-                    <constraint firstItem="ATh-P2-xnU" firstAttribute="bottom" secondItem="35V-TD-KFR" secondAttribute="bottom" id="xHh-zJ-wHW"/>
+                    <constraint firstItem="ATh-P2-xnU" firstAttribute="bottom" secondItem="35V-TD-KFR" secondAttribute="bottom" constant="-5" id="xHh-zJ-wHW"/>
                     <constraint firstItem="35V-TD-KFR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zRI-Sa-660"/>
                 </constraints>
             </tableViewCellContentView>
@@ -59,7 +59,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="btn_close.png" width="70" height="70"/>
         <image name="btn_play.png" width="128" height="128"/>
+        <image name="icon-delete.png" width="90" height="90"/>
     </resources>
 </document>

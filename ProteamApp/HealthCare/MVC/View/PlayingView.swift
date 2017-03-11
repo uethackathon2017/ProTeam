@@ -50,7 +50,6 @@ class PlayingView: UIView,YTPlayerViewDelegate {
             make.leading.equalTo(self).offset(0)
             make.trailing.equalTo(self).offset(-0)
             make.bottom.equalTo(self).offset(-0)
-            
         }
     }
     
@@ -156,7 +155,6 @@ class PlayingView: UIView,YTPlayerViewDelegate {
         switch (state) {
         case YTPlayerState.unstarted:
             print("")
-            
         break
         case YTPlayerState.playing:
             self.meterTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(UpdateSlider), userInfo: nil, repeats: true)
@@ -174,12 +172,14 @@ class PlayingView: UIView,YTPlayerViewDelegate {
         }
     }
     
+    func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
+        playerView.playVideo()
+    }
     func refreshPlayer(){
         meterTimer?.invalidate()
         sliderProgress.value = 0
         btnPlay.isSelected = true
         lblCurentTime.text = "00:00"
-        
     }
     
     func formatTime(time:CGFloat) ->NSString{

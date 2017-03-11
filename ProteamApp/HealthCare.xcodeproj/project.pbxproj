@@ -37,6 +37,10 @@
 		A32794E91E742AF500053968 /* nodata_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A32794E71E742AF500053968 /* nodata_icon.png */; };
 		A32794EB1E742C9300053968 /* nodata_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A32794EA1E742C9300053968 /* nodata_bg.png */; };
 		A32794EE1E742D6000053968 /* NoDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32794ED1E742D6000053968 /* NoDataViewController.swift */; };
+		A32794F11E743D6F00053968 /* icon-delete.png in Resources */ = {isa = PBXBuildFile; fileRef = A32794F01E743D6F00053968 /* icon-delete.png */; };
+		A32794F61E74434200053968 /* FavouriteTabBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32794F41E74434200053968 /* FavouriteTabBarCell.swift */; };
+		A32794F71E74434200053968 /* FavouriteTabBarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A32794F51E74434200053968 /* FavouriteTabBarCell.xib */; };
+		A32794FB1E744D5C00053968 /* icon_loved.png in Resources */ = {isa = PBXBuildFile; fileRef = A32794FA1E744D5C00053968 /* icon_loved.png */; };
 		A342FB271E6DC7ED00FD822C /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A342FB261E6DC7ED00FD822C /* NotificationViewController.swift */; };
 		A342FB2A1E6DCA7F00FD822C /* DetailFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A342FB291E6DCA7F00FD822C /* DetailFoodViewController.swift */; };
 		A356ACBC1E68670500716B68 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = A356ACBB1E68670500716B68 /* menu.png */; };
@@ -84,13 +88,11 @@
 		A39145671E7398F100A2EB4E /* FavoriteExTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39145651E7398F100A2EB4E /* FavoriteExTableViewCell.swift */; };
 		A39145681E7398F100A2EB4E /* FavoriteExTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A39145661E7398F100A2EB4E /* FavoriteExTableViewCell.xib */; };
 		A391456A1E739A3900A2EB4E /* btn_play.png in Resources */ = {isa = PBXBuildFile; fileRef = A39145691E739A3900A2EB4E /* btn_play.png */; };
-		A391456E1E739B0F00A2EB4E /* btn_close.png in Resources */ = {isa = PBXBuildFile; fileRef = A391456D1E739B0F00A2EB4E /* btn_close.png */; };
 		A39145711E73AAF100A2EB4E /* EatFavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391456F1E73AAF100A2EB4E /* EatFavouriteViewController.swift */; };
 		A39145721E73AAF100A2EB4E /* EatFavouriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A39145701E73AAF100A2EB4E /* EatFavouriteViewController.xib */; };
 		A39145761E73ACBB00A2EB4E /* FavEatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39145741E73ACBB00A2EB4E /* FavEatCollectionViewCell.swift */; };
 		A39145771E73ACBB00A2EB4E /* FavEatCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A39145751E73ACBB00A2EB4E /* FavEatCollectionViewCell.xib */; };
 		A391457C1E73B2E900A2EB4E /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391457A1E73B2E900A2EB4E /* FavouritesViewController.swift */; };
-		A391457D1E73B2E900A2EB4E /* FavouritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A391457B1E73B2E900A2EB4E /* FavouritesViewController.xib */; };
 		A39145811E73C63200A2EB4E /* SalutationPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391457F1E73C63200A2EB4E /* SalutationPopUp.swift */; };
 		A39145821E73C63200A2EB4E /* SalutationPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = A39145801E73C63200A2EB4E /* SalutationPopUp.xib */; };
 		A391458C1E73D28400A2EB4E /* icon-add1.png in Resources */ = {isa = PBXBuildFile; fileRef = A391458B1E73D28400A2EB4E /* icon-add1.png */; };
@@ -166,6 +168,10 @@
 		A32794E71E742AF500053968 /* nodata_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nodata_icon.png; sourceTree = "<group>"; };
 		A32794EA1E742C9300053968 /* nodata_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nodata_bg.png; sourceTree = "<group>"; };
 		A32794ED1E742D6000053968 /* NoDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoDataViewController.swift; path = MVC/Controller/NoData/NoDataViewController.swift; sourceTree = "<group>"; };
+		A32794F01E743D6F00053968 /* icon-delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-delete.png"; sourceTree = "<group>"; };
+		A32794F41E74434200053968 /* FavouriteTabBarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavouriteTabBarCell.swift; path = MVC/Controller/Favourite/CusttomButtonTabBarCell/FavouriteTabBarCell.swift; sourceTree = "<group>"; };
+		A32794F51E74434200053968 /* FavouriteTabBarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FavouriteTabBarCell.xib; path = MVC/Controller/Favourite/CusttomButtonTabBarCell/FavouriteTabBarCell.xib; sourceTree = "<group>"; };
+		A32794FA1E744D5C00053968 /* icon_loved.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_loved.png; sourceTree = "<group>"; };
 		A342FB261E6DC7ED00FD822C /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationViewController.swift; path = MVC/Controller/Notifi/NotificationViewController.swift; sourceTree = "<group>"; };
 		A342FB291E6DCA7F00FD822C /* DetailFoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailFoodViewController.swift; path = MVC/Controller/DetailFood/DetailFoodViewController.swift; sourceTree = "<group>"; };
 		A356ACBB1E68670500716B68 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
@@ -214,13 +220,11 @@
 		A39145651E7398F100A2EB4E /* FavoriteExTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteExTableViewCell.swift; path = CustomCell/FavExCell/FavoriteExTableViewCell.swift; sourceTree = "<group>"; };
 		A39145661E7398F100A2EB4E /* FavoriteExTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FavoriteExTableViewCell.xib; path = CustomCell/FavExCell/FavoriteExTableViewCell.xib; sourceTree = "<group>"; };
 		A39145691E739A3900A2EB4E /* btn_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_play.png; sourceTree = "<group>"; };
-		A391456D1E739B0F00A2EB4E /* btn_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_close.png; sourceTree = "<group>"; };
 		A391456F1E73AAF100A2EB4E /* EatFavouriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EatFavouriteViewController.swift; path = MVC/Controller/Favourite/Eat/EatFavouriteViewController.swift; sourceTree = "<group>"; };
 		A39145701E73AAF100A2EB4E /* EatFavouriteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EatFavouriteViewController.xib; path = MVC/Controller/Favourite/Eat/EatFavouriteViewController.xib; sourceTree = "<group>"; };
 		A39145741E73ACBB00A2EB4E /* FavEatCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavEatCollectionViewCell.swift; path = CustomCell/FavEatCell/FavEatCollectionViewCell.swift; sourceTree = "<group>"; };
 		A39145751E73ACBB00A2EB4E /* FavEatCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FavEatCollectionViewCell.xib; path = CustomCell/FavEatCell/FavEatCollectionViewCell.xib; sourceTree = "<group>"; };
 		A391457A1E73B2E900A2EB4E /* FavouritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavouritesViewController.swift; path = MVC/Controller/Favourite/FavouritesViewController.swift; sourceTree = "<group>"; };
-		A391457B1E73B2E900A2EB4E /* FavouritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FavouritesViewController.xib; path = MVC/Controller/Favourite/FavouritesViewController.xib; sourceTree = "<group>"; };
 		A391457F1E73C63200A2EB4E /* SalutationPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalutationPopUp.swift; sourceTree = "<group>"; };
 		A39145801E73C63200A2EB4E /* SalutationPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SalutationPopUp.xib; sourceTree = "<group>"; };
 		A391458B1E73D28400A2EB4E /* icon-add1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-add1.png"; sourceTree = "<group>"; };
@@ -407,6 +411,15 @@
 			name = NoData;
 			sourceTree = "<group>";
 		};
+		A32794F31E74421900053968 /* CustomButtonBarViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A32794F41E74434200053968 /* FavouriteTabBarCell.swift */,
+				A32794F51E74434200053968 /* FavouriteTabBarCell.xib */,
+			);
+			name = CustomButtonBarViewCell;
+			sourceTree = "<group>";
+		};
 		A342FB251E6DC7BE00FD822C /* Notifi */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,10 +492,10 @@
 		A39145581E73946C00A2EB4E /* Favourite */ = {
 			isa = PBXGroup;
 			children = (
+				A32794F31E74421900053968 /* CustomButtonBarViewCell */,
 				A391455A1E73952400A2EB4E /* Exercise */,
 				A39145591E73951E00A2EB4E /* Eat */,
 				A391457A1E73B2E900A2EB4E /* FavouritesViewController.swift */,
-				A391457B1E73B2E900A2EB4E /* FavouritesViewController.xib */,
 			);
 			name = Favourite;
 			sourceTree = "<group>";
@@ -698,10 +711,10 @@
 		A3EC76821E67D05E006FB57B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A32794F01E743D6F00053968 /* icon-delete.png */,
 				A369E3F21E73F4F7007A3D72 /* a5fa97aef368df714b8ed7faac85a379.png */,
 				A391458F1E73E45500A2EB4E /* background.png */,
 				A3EC76951E67D570006FB57B /* btn_back.png */,
-				A391456D1E739B0F00A2EB4E /* btn_close.png */,
 				A3F2BFA71E67E56900DAAE3F /* btn_fb.png */,
 				A3F2BFA81E67E56900DAAE3F /* btn_google.png */,
 				A39145691E739A3900A2EB4E /* btn_play.png */,
@@ -730,6 +743,7 @@
 				A3929D181E6C72230093403E /* food_line.png */,
 				A385E7331E731274005B493C /* Group 14.png */,
 				A369E3F01E73EB07007A3D72 /* icon_love.png */,
+				A32794FA1E744D5C00053968 /* icon_loved.png */,
 				A391458B1E73D28400A2EB4E /* icon-add1.png */,
 				A3F2BFA51E67E2CE00DAAE3F /* logo.png */,
 				A356ACC21E68731F00716B68 /* lunch_0.png */,
@@ -853,7 +867,6 @@
 				A39145611E7396B900A2EB4E /* fav_eat_logo.png in Resources */,
 				A39145511E737C2000A2EB4E /* exclock.png in Resources */,
 				A356ACCB1E68732800716B68 /* dinner_0.png in Resources */,
-				A391456E1E739B0F00A2EB4E /* btn_close.png in Resources */,
 				A356ACC61E68731F00716B68 /* lunch_1.png in Resources */,
 				61AB261F1E71B2E600F5B4B2 /* PlayingView.xib in Resources */,
 				A3F2BFA91E67E56900DAAE3F /* btn_fb.png in Resources */,
@@ -861,6 +874,7 @@
 				A3F2BFAC1E67E7E900DAAE3F /* menu_logo.png in Resources */,
 				A39145901E73E45500A2EB4E /* background.png in Resources */,
 				A3E470011E71D66D00C2C7F1 /* bell.mp3 in Resources */,
+				A32794FB1E744D5C00053968 /* icon_loved.png in Resources */,
 				A39145821E73C63200A2EB4E /* SalutationPopUp.xib in Resources */,
 				A3F2BFA61E67E2CE00DAAE3F /* logo.png in Resources */,
 				A385E7201E72E1C5005B493C /* DrinkViewController.xib in Resources */,
@@ -871,6 +885,7 @@
 				A32794EB1E742C9300053968 /* nodata_bg.png in Resources */,
 				A3929D161E6C71110093403E /* food_background.png in Resources */,
 				A32794E51E7428CF00053968 /* Somatic-Rounded.otf in Resources */,
+				A32794F11E743D6F00053968 /* icon-delete.png in Resources */,
 				A39145681E7398F100A2EB4E /* FavoriteExTableViewCell.xib in Resources */,
 				A39145721E73AAF100A2EB4E /* EatFavouriteViewController.xib in Resources */,
 				A3929D1C1E6C73340093403E /* food_cake.png in Resources */,
@@ -898,6 +913,7 @@
 				61AB26071E71A57900F5B4B2 /* SliderTableViewCell.xib in Resources */,
 				A39145531E737C2000A2EB4E /* favorite_ex_bg.png in Resources */,
 				A3F2BFAA1E67E56900DAAE3F /* btn_google.png in Resources */,
+				A32794F71E74434200053968 /* FavouriteTabBarCell.xib in Resources */,
 				61AB261A1E71A98000F5B4B2 /* ExcercisSeeAllCell.xib in Resources */,
 				A391456A1E739A3900A2EB4E /* btn_play.png in Resources */,
 				6177DAC01E73D93300890BFB /* detailex_bg.png in Resources */,
@@ -906,7 +922,6 @@
 				A385E7561E732C8C005B493C /* drink_hour.png in Resources */,
 				A39145501E737C2000A2EB4E /* eatmain.png in Resources */,
 				A3C87F631E69734500141702 /* menu_white.png in Resources */,
-				A391457D1E73B2E900A2EB4E /* FavouritesViewController.xib in Resources */,
 				A39145921E73E49D00A2EB4E /* drink_bg.png in Resources */,
 				A369E3F31E73F4F7007A3D72 /* a5fa97aef368df714b8ed7faac85a379.png in Resources */,
 				A39145551E737C2700A2EB4E /* register.png in Resources */,
@@ -1018,6 +1033,7 @@
 				6177DAB81E73797C00890BFB /* ExerciseCategory.swift in Sources */,
 				A385E76F1E733C69005B493C /* NeckExcerciseViewController.swift in Sources */,
 				A3F194351E67F05000BD9F99 /* SlideMenuController.swift in Sources */,
+				A32794F61E74434200053968 /* FavouriteTabBarCell.swift in Sources */,
 				61AB261E1E71B2E600F5B4B2 /* PlayingView.swift in Sources */,
 				A3EC76521E67A1B5006FB57B /* BasedTableViewController.swift in Sources */,
 				A39145811E73C63200A2EB4E /* SalutationPopUp.swift in Sources */,

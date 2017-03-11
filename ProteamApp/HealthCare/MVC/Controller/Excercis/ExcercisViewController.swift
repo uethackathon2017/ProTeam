@@ -65,9 +65,9 @@ class ExcercisViewController: BasedViewController,IndicatorInfoProvider,Excercis
         print("sell all")
     }
     
-    func didSelectRowAtSliderCell(youtube_id:String,title:String){
+    func didSelectRowAtSliderCell(exercise:Exercise,title:String){
         let neckExcercise = NeckExcerciseViewController()
-        neckExcercise.youtube_id = youtube_id
+        neckExcercise.exercise = exercise
         neckExcercise.title = title
         self.navigationController?.pushViewController(neckExcercise, animated: true)
     }

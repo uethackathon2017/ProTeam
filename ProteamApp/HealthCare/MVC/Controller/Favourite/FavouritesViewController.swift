@@ -9,8 +9,21 @@
 import UIKit
 import XLPagerTabStrip
 
-class FavouritesViewController: ButtonBarPagerTabStripViewController {
-
+class FavouritesViewController: BaseButtonBarPagerTabStripViewController<FavouriteTabBarCell> {
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        buttonBarItemSpec = ButtonBarItemSpec.nibFile(nibName: "FavouriteTabBarCell", bundle: Bundle(for: FavouriteTabBarCell.self), width: { (cell: IndicatorInfo) -> CGFloat in
+//            return self.buttonBarView.bounds.size.width/2
+            return 0
+        })
+    }
+    
     override func viewDidLoad() {
         
         setupPagerTabStrip()
@@ -18,33 +31,32 @@ class FavouritesViewController: ButtonBarPagerTabStripViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+        changeCurrentIndexProgressive = { (oldCell: FavouriteTabBarCell?, newCell: FavouriteTabBarCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
             guard changeCurrentIndex == true else { return }
-            oldCell?.label.font = UIFont(name: "UTM Avo", size: 14)
-            oldCell?.layer.borderColor = UIColor(hex:"471500").cgColor
-            oldCell?.layer.borderWidth = 1
-            oldCell?.label.textColor = UIColor.clear
-            newCell?.label.textColor = UIColor(hex:"471500")
-            newCell?.label.font = UIFont(name: "UTM Avo", size: 14)
             
-            oldCell?.bounds.size.width = 8
-            oldCell?.setCornerRadius(radius: ((oldCell?.bounds.size.width)!/2))
-            oldCell?.backgroundColor = UIColor.clear
+            oldCell?.bounds.size.width = self.buttonBarView.bounds.size.width/2
+            oldCell?.bounds.size.height = 80
+            oldCell?.setCornerRadius(radius:20)
+            oldCell?.viewContent.backgroundColor = UIColor.init(hex: "#FAC46B")
+            oldCell?.lblTitle.text = "Foods"
             
-            newCell?.bounds.size.width = 8
-            newCell?.setCornerRadius(radius: ((newCell?.bounds.size.width)!/2))
-            newCell?.backgroundColor = UIColor(hex:"471500")
+            newCell?.bounds.size.width = self.buttonBarView.bounds.size.width/2
+            newCell?.bounds.size.height = 80
+            newCell?.setCornerRadius(radius:20)
+            newCell?.viewContent.backgroundColor = UIColor.white
+            newCell?.lblTitle.text = "Exercises"
         }
         self.automaticallyAdjustsScrollViewInsets = false
     }
     
     @IBAction func btnBackClicked(_ sender: Any) {
         if self.navigationController != nil {
-           self.navigationController!.popViewController(animated: true)
+            self.navigationController!.popViewController(animated: true)
         } else {
             self.dismiss(animated: true, completion: nil)
         }
     }
+   
     func setupPagerTabStrip(){
         settings.style.buttonBarBackgroundColor = UIColor.clear
         settings.style.buttonBarItemBackgroundColor = .clear
@@ -57,20 +69,28 @@ class FavouritesViewController: ButtonBarPagerTabStripViewController {
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let child_1 = ExFavouriteViewController()
-        let child_2 = EatFavouriteViewController()
+        
+        let child_1 = EatFavouriteViewController()
+        let child_2 = ExFavouriteViewController()
         
         return [child_1,child_2]
     }
     
-    override func configureCell(_ cell: ButtonBarViewCell, indicatorInfo: IndicatorInfo) {
-        super.configureCell(cell, indicatorInfo: indicatorInfo)
-        cell.backgroundColor = UIColor.clear
-    }
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        //containerView.contentSize.height = Constants.Systems.screen_size.height + 350
+    }
+    
+    override func configure(cell: FavouriteTabBarCell, for indicatorInfo: IndicatorInfo) {
+        cell.lblTitle.text = indicatorInfo.title
     }
 }

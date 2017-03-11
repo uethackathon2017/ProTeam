@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 protocol ExcercisCellDelegate {
     func btnSeeAllTouchup(_ index: Int)
-    func didSelectRowAtSliderCell(youtube_id:String,title:String)
+    func didSelectRowAtSliderCell(exercise:Exercise,title:String)
 }
 class ExcercisCell: UITableViewCell {
     
@@ -76,8 +76,8 @@ extension ExcercisCell:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let youtube_id = excercises[indexPath.row].youtube_id,let title = excercises[indexPath.row].name {
-            self.delegate?.didSelectRowAtSliderCell(youtube_id: youtube_id,title: title)
+        if let title = excercises[indexPath.row].name {
+            self.delegate?.didSelectRowAtSliderCell(exercise: excercises[indexPath.row],title: title)
         }
         
     }
