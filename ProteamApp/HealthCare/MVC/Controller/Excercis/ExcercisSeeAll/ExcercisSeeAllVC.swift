@@ -7,13 +7,14 @@
 //
 
 import UIKit
-
-class ExcercisSeeAllVC: UIViewController {
+import SDWebImage
+class ExcercisSeeAllVC: BasedViewController {
     
     let cellWidth = Constants.Systems.screen_size.width*(163/375)
     let cellHeight = (Constants.Systems.screen_size.height - 109)*(109/558)
     
     let cellIdentifier = "ExcercisSeeAllCell"
+    var exercises = [Exercise]()
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -21,6 +22,12 @@ class ExcercisSeeAllVC: UIViewController {
         
         // Do any additional setup after loading the view.
         collectionView.register(UINib(nibName:cellIdentifier,bundle:nil), forCellWithReuseIdentifier: cellIdentifier)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    override func btnBackClicked(_ sender: Any) {
+        super.btnBackClicked(Any.self)
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,12 +45,16 @@ extension ExcercisSeeAllVC:UICollectionViewDelegate,UICollectionViewDataSource,U
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return exercises.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let  cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! ExcercisSeeAllCell
+        
+        if let imgVideo = exercises[indexPath.row].thumnail {
+            cell.imgVideo.sd_setImage(with: URL.init(string: imgVideo))
+        }
         
         return cell
     }
@@ -51,8 +62,8 @@ extension ExcercisSeeAllVC:UICollectionViewDelegate,UICollectionViewDataSource,U
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         let neckExcercise = NeckExcerciseViewController()
-        self.present(neckExcercise, animated: true, completion: nil)
-       // self.navigationController?.pushViewController(neckExcercise, animated: true)
+       // self.present(neckExcercise, animated: true, completion: nil)
+        self.navigationController?.pushViewController(neckExcercise, animated: true)
        
     }
     

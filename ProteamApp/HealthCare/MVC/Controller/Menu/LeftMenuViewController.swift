@@ -48,7 +48,7 @@ class LeftMenuViewController: BasedTableViewController {
         cell.textLabel?.textColor = UIColor.init(hex: "#471500")
         
         let bgView: UIView = UIView.init()
-        bgView.backgroundColor = UIColor.init(hex: "#ffbe53")
+        bgView.backgroundColor = UIColor.init(hex: "#FFA613")
         cell.selectedBackgroundView = bgView
         
         cell.textLabel?.text = arrTitleCell[indexPath.row]

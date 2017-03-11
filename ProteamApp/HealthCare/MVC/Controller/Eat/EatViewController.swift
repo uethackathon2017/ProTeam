@@ -18,9 +18,9 @@ class EatViewController: BasedCollectionViewController,IndicatorInfoProvider {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.isHidden = true
         firstInit()
     }
-    
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo.init(title: "")
@@ -47,13 +47,17 @@ class EatViewController: BasedCollectionViewController,IndicatorInfoProvider {
     }
     
     @IBAction func btnSeeAllLunchClicked(_ sender: Any) {
-        let vc: FoodViewController! = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FoodViewController") as! FoodViewController
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FoodViewController") as! FoodViewController
         vc.isLunch = true
+        vc.title = "Lunch"
+        self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func btnSeeAllDinner(_ sender: Any) {
         let vc: FoodViewController! = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FoodViewController") as! FoodViewController
+        vc.title = "Dinner"
+        self.navigationController?.navigationBar.isHidden = false
         vc.isLunch = false
         self.navigationController?.pushViewController(vc, animated: true)
     }

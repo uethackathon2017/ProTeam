@@ -18,6 +18,16 @@ extension UIView {
             ).instantiate(withOwner: self, options: nil)[0] as? UIView
     }
 
+    public func addShadow(_ offset: CGSize, radius: CGFloat, color: UIColor, opacity: Float, cornerRadius: CGFloat? = nil) {
+        self.layer.shadowOffset = offset
+        self.layer.shadowRadius = radius
+        self.layer.shadowOpacity = opacity
+        self.layer.shadowColor = color.cgColor
+        if let r = cornerRadius {
+            self.layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: r).cgPath
+        }
+    }
+    
     @IBInspectable var borderColor: UIColor {
         get {
             return UIColor.clear

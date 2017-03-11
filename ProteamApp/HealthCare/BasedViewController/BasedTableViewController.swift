@@ -16,7 +16,7 @@ class BasedTableViewController: BasedViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.tableView.tableFooterView = UIView.init(frame: CGRect.zero)
+        self.tableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {

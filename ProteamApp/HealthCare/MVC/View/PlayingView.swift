@@ -10,7 +10,6 @@
 import UIKit
 import AVFoundation
 import CoreMedia
-import MBProgressHUD
 import youtube_ios_player_helper
 import SnapKit
 class PlayingView: UIView,YTPlayerViewDelegate {
@@ -25,6 +24,7 @@ class PlayingView: UIView,YTPlayerViewDelegate {
     var meterTimer:Timer?
     var check:Timer?
     var currentSong:String?
+    
     override func awakeFromNib() {
         //        self.animate(duration: 0.4, animations: {
         //            self.center.y += -Constant.Systems.screen_size.height
@@ -33,7 +33,7 @@ class PlayingView: UIView,YTPlayerViewDelegate {
         sliderEditing = false
         sliderProgress.setThumbImage(UIImage(named: "ic-thumb"), for: .normal)
         check = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(checkPlayer), userInfo: nil, repeats: true)
-        showLoadingHUD()
+
     }
     
     //MARK: Play youtube
@@ -190,11 +190,10 @@ class PlayingView: UIView,YTPlayerViewDelegate {
     }
     
     func showLoadingHUD() {
-        let hud = MBProgressHUD.showAdded(to: self, animated: true)
-        hud.label.text = "Loading..."
+
     }
     
     func hideLoadingHUD() {
-        MBProgressHUD.hide(for: self, animated: true)
+        
     }
 }

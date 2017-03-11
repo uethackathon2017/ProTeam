@@ -7,15 +7,18 @@
 //
 
 import UIKit
-
+import SDWebImage
 protocol ExcercisCellDelegate {
-    func btnSeeAllTouchup(_ sender: Any)
+    func btnSeeAllTouchup(_ index: Int)
 }
 class ExcercisCell: UITableViewCell {
     
     let cellIdentifier = "SliderTableViewCell"
     @IBOutlet weak var tbvTopicExcercis: UITableView!
     @IBOutlet weak var lblTitle: UILabel!
+    
+    var excercises = [Exercise]()
+    var index:Int?
     
     var delegate:ExcercisCellDelegate?
     
@@ -37,7 +40,7 @@ class ExcercisCell: UITableViewCell {
     }
     
     @IBAction func btnSeeAllTouchup(_ sender: Any) {
-        self.delegate?.btnSeeAllTouchup(sender)
+        self.delegate?.btnSeeAllTouchup(self.index ?? 0)
         
     }
     
@@ -54,7 +57,7 @@ extension ExcercisCell:UITableViewDelegate,UITableViewDataSource{
         return 160
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return excercises.count
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -63,7 +66,10 @@ extension ExcercisCell:UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! SliderTableViewCell
         cell.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
         cell.selectionStyle = .none
-        cell.imgSlider.image = UIImage.init(named: "img-demo")
+        if let thumnail = excercises[indexPath.row].thumnail {
+            cell.imgSlider.sd_setImage(with: URL.init(string: thumnail))
+        }
+        
         return cell
     }
     

@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="160" height="94"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-card1" translatesAutoresizingMaskIntoConstraints="NO" id="fiR-W9-ypN">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fiR-W9-ypN">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="94"/>
                     </imageView>
                 </subviews>
@@ -35,7 +35,4 @@
             <point key="canvasLocation" x="-84.5" y="-806.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="img-card1" width="90" height="137"/>
-    </resources>
 </document>

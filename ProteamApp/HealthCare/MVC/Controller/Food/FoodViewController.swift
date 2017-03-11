@@ -27,6 +27,11 @@ class FoodViewController: BasedCollectionViewController {
 
     }
 
+    override func btnBackClicked(_ sender: Any) {
+        super.btnBackClicked(Any.self)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

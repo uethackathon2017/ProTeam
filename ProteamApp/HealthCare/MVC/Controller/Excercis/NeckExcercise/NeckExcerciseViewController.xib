@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="UTM-Neo-Sans-IntelBold.ttf">
-            <string>UTMNeoSansIntelBold</string>
+        <array key="UTM-Neo-Sans-Intel.ttf">
+            <string>UTM-Neo-Sans-Intel</string>
         </array>
     </customFonts>
     <objects>
@@ -26,19 +26,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Excercise to improve your posture and bring relief to your neck " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fp6-GR-PS0">
-                    <rect key="frame" x="24" y="64" width="335" height="50.5"/>
+                    <rect key="frame" x="24" y="68" width="335" height="41.5"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="335" id="4TZ-qu-KSk"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="UTMNeoSansIntelBold" family="UTM Neo Sans Intel" pointSize="18"/>
-                    <color key="textColor" red="0.27843137254901962" green="0.082352941176470587" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="UTM-Neo-Sans-Intel" family="UTM Neo Sans Intel" pointSize="15"/>
+                    <color key="textColor" red="0.77254901960784317" green="0.36862745098039218" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Fp6-GR-PS0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="4" id="Qm7-Bz-VR5"/>
-                <constraint firstItem="Fp6-GR-PS0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="rb1-wD-X5V"/>
+                <constraint firstItem="Fp6-GR-PS0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="68" id="rb1-wD-X5V"/>
             </constraints>
             <point key="canvasLocation" x="-85" y="-20"/>
         </view>

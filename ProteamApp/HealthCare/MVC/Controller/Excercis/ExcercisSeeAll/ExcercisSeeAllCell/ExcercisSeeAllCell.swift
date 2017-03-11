@@ -10,6 +10,7 @@ import UIKit
 
 class ExcercisSeeAllCell: UICollectionViewCell {
 
+    @IBOutlet weak var imgVideo: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

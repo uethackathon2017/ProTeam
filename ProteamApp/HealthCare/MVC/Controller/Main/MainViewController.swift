@@ -21,17 +21,19 @@ class MainViewController: ButtonBarPagerTabStripViewController {
         changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
             guard changeCurrentIndex == true else { return }
             oldCell?.label.font = UIFont(name: "UTM Avo", size: 14)
-            oldCell?.label.textColor = UIColor(hex:"000000")
-            newCell?.label.textColor = UIColor(hex:"ff81a5")
+            oldCell?.layer.borderColor = UIColor(hex:"471500").cgColor
+            oldCell?.layer.borderWidth = 1
+            oldCell?.label.textColor = UIColor.clear
+            newCell?.label.textColor = UIColor(hex:"471500")
             newCell?.label.font = UIFont(name: "UTM Avo", size: 14)
             
-            oldCell?.bounds.size.width = 6
+            oldCell?.bounds.size.width = 8
             oldCell?.setCornerRadius(radius: ((oldCell?.bounds.size.width)!/2))
-            oldCell?.backgroundColor = UIColor.red
+            oldCell?.backgroundColor = UIColor.clear
             
-            newCell?.bounds.size.width = 6
+            newCell?.bounds.size.width = 8
             newCell?.setCornerRadius(radius: ((newCell?.bounds.size.width)!/2))
-            newCell?.backgroundColor = UIColor.blue
+            newCell?.backgroundColor = UIColor(hex:"471500")
         }
         self.automaticallyAdjustsScrollViewInsets = false
     }
@@ -53,7 +55,7 @@ class MainViewController: ButtonBarPagerTabStripViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let child_2 = storyboard.instantiateViewController(withIdentifier: "EatViewController") as! EatViewController
 
-        let child_3 = ExcercisViewController()
+        let child_3 = DrinkViewController()
 
         return [child_1,child_2,child_3]
     }

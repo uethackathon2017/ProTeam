@@ -29,6 +29,9 @@
                 <constraint firstItem="3Zf-7K-98J" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="O1d-zN-M2E"/>
                 <constraint firstItem="3Zf-7K-98J" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Vpl-ya-F3d"/>
             </constraints>
+            <connections>
+                <outlet property="imgVideo" destination="3Zf-7K-98J" id="r9I-PN-6P1"/>
+            </connections>
             <point key="canvasLocation" x="-225" y="-78.5"/>
         </collectionViewCell>
     </objects>

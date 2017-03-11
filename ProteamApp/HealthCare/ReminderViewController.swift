@@ -8,7 +8,7 @@
 
 import UIKit
 import MediaPlayer
-import PopupDialog
+
 class ReminderViewController: SettingViewController, RepeatViewControllerDelegate {
 
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -22,8 +22,6 @@ class ReminderViewController: SettingViewController, RepeatViewControllerDelegat
     var mediaID: String!
     
     var arrDetailTitleCell = ["Monday, Friday", "Nơi này có anh", "Time to exercises, Vinh !"]
-    
-    var popup:PopupDialog?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,10 +51,11 @@ class ReminderViewController: SettingViewController, RepeatViewControllerDelegat
         
         lblTitle.text = strTitle
         datePicker.datePickerMode = .time
+        
         arrTitleCell = ["Repeat", "Rington", "Salutation", "Repeat Rington"]
-        datePicker.setValue(UIColor.init(hex: "#ffbe53"), forKey: "textColor")
-        //datePicker.tintColor = UIColor.init(hex: "#ffbe53")
-        datePicker.shadowColor = UIColor.init(hex: "#ffbe53")
+        
+        datePicker.tintColor = UIColor.init(hex: "#FFA613")
+        datePicker.shadowColor = UIColor.init(hex: "#FFA613")
         
     }
     
@@ -82,35 +81,6 @@ class ReminderViewController: SettingViewController, RepeatViewControllerDelegat
         }
     }
     
-    func showFillterView() {
-        let salutation = SalutationPopUp()
-       // fillterVC.delegate = self
-        popup = PopupDialog(viewController: salutation, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: false)
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.btnClosePopUpTouchup(_:)))
-        tap.numberOfTapsRequired = 1
-        popup?.view.addGestureRecognizer(tap)
-        
-        let buttonOne = CancelButton(title: "Huỷ", height: 60){}
-        buttonOne.titleColor = UIColor(hex:"471500")
-        buttonOne.backgroundColor = UIColor(hex:"FFBE53")
-        
-        let buttonTwo = DefaultButton(title: "Chọn", height: 60){
-            
-            print(salutation.txtSalutationName.text ?? "")
-        }
-        
-        buttonTwo.titleColor = UIColor(hex:"471500")
-        buttonTwo.backgroundColor = UIColor(hex:"FFBE53")
-        
-        popup?.addButtons([buttonOne,buttonTwo])
-        present(popup!, animated: true, completion: nil)
-    }
-    
-    func btnClosePopUpTouchup(_ sender: Any){
-        popup?.dismiss()
-    }
-    
     override func btnSwitchRepeatRingtonClicked(_ sender: UISwitch) {
         snoozeEnabled = sender.isOn
     }
@@ -128,7 +98,7 @@ class ReminderViewController: SettingViewController, RepeatViewControllerDelegat
         cell.detailTextLabel?.textColor = UIColor.init(hex: "#e7beac")
         
         let bgView: UIView = UIView.init()
-        bgView.backgroundColor = UIColor.init(hex: "#ffbe53")
+        bgView.backgroundColor = UIColor.init(hex: "#FFA613")
         cell.selectedBackgroundView = bgView
         
         cell.textLabel?.text = arrTitleCell[indexPath.row]
@@ -185,9 +155,10 @@ class ReminderViewController: SettingViewController, RepeatViewControllerDelegat
             self.present(mediaPicker, animated: true, completion: nil)
 
         } else if indexPath.row == 2 {
-            showFillterView()
+            
         }
      }
+    
     
     // MARK: - RepeatViewControllerDelegate
     

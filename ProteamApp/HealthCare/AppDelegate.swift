@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, AVAudi
         // Local Notification
         application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil))
         alarmScheduler.setupNotificationSettings()
-        window?.tintColor = UIColor.init(hex: "#FFBE53")
+        window?.tintColor = UIColor.init(hex: "#FFA613")
         
         return true
     }
