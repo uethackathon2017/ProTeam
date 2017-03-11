@@ -13,14 +13,36 @@ class BasedViewController: UIViewController {
     @IBOutlet weak var viewCustomNav: UIView!
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var lblTitle: UILabel!
-    
+    var strTitle: String!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if self.btnBack != nil {
-            self.btnBack.addTarget(self, action: #selector(btnBackClicked(_:)), for: .touchUpInside)
+        if self.navigationController != nil {
+            Utilities.configNavigationController(navi: self.navigationController!)
+            leftBarButton(imageName: "ic-btn-back")
         }
+        
+    }
+    
+    func leftBarButton(imageName: String){
+        if imageName != "" {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:imageName), style: .plain, target: self, action: #selector(self.btnBackClicked(_:)))
+        }else{
+            self.navigationItem.hidesBackButton = true
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:""), style: .plain, target: self, action:nil)
+        }
+        
+    }
+    
+    func btnBackTouchUp(_ sender: AnyObject){
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
 
     override func didReceiveMemoryWarning() {

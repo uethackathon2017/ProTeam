@@ -4,65 +4,143 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 		<key>FBSDKLoginKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 		<key>FBSDKShareKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>8</integer>
 		</dict>
 		<key>FacebookCore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>FacebookLogin.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>FacebookShare.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>GTMOAuth2.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>10</integer>
 		</dict>
 		<key>GTMSessionFetcher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>11</integer>
 		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>9</integer>
 		</dict>
 		<key>Pods-HealthCare.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
+		<key>PopupDialog.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>13</integer>
 		</dict>
 		<key>SAMKeychain.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>14</integer>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>20</integer>
+		</dict>
+		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
+		<key>SnapKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>15</integer>
+		</dict>
+		<key>XLPagerTabStrip-XLPagerTabStrip.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>18</integer>
+		</dict>
+		<key>XLPagerTabStrip.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>17</integer>
+		</dict>
+		<key>youtube-ios-player-helper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>19</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -72,7 +150,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>278D5B09B95988D60D5307138F15E8F2</key>
+		<key>174F60AC8C95A2A7E26615CC3D787B14</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1FD88D17AC6C5AB968CC3131751DBDB6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>24E9D53546C9BF0A1F40A5B0828CAD77</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2E91C79B1C0700E39DA37F2B0339F69A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,7 +175,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>33F0199A778EA414C8A4FA6F544B5362</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3503AB498C1C8E02482077817D3B5313</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>44CAD6CE523055ED339E87154473A254</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>473B965586F5F474307150EEF8F4EF91</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C965577393AF9ADBF481105255F5C70</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,7 +210,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>66CC0BCF6973BE36F30A8F2CD6FBDF2B</key>
+		<key>641DE583625BAD7A59B2D3DFC2792360</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,7 +225,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>799135C9882559B7B11EF1EFE0CD30AC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>91C4B84034F6A5863BEA9D6BC42FE199</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9D17570AE3843ABED93F70F85B54C7E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A7FEAA14E89971698ACA148F7F7202F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AAF2A6F768F0A0FAF0A652FB059BF7D9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,7 +260,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>C5129244BF14F43481EC3B614716EEAD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D47CA43CA0F72E42D4114DB17E64077E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>DDBCFDE490CDFDABF6F16A26F346932D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F66A9304BF6620085AD737FBB535DBF5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FC06436F0C9CD952FB62582FF46248D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

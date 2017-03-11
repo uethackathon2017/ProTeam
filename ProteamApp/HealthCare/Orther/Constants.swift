@@ -2,7 +2,7 @@
 //  File.swift
 //  HealthCare
 //
-//  Created by IchIT on 3/5/17.
+//  Created by IchIT on 3/10/17.
 //  Copyright © 2017 Vinh Nguyen. All rights reserved.
 //
 
@@ -19,16 +19,12 @@ struct Constants {
         static let system_name: String                      = UIDevice.current.systemName
         static let system_version: String                   = UIDevice.current.systemVersion
     }
-    struct DelegateObject{
-        var lblChuRe: String?
-        var lblCoDau: String?
-        var date:NSDate?
-        var adress:AnyObject?
-    }
-    struct URLs {
-        static let BaseURL: String = "http://ladaku.touchspace.vn/api/"
-        // static let ApiURL: String = "api/"
-        static let BaseURLMediaUpload = "http://media.touchspace.vn/uploads"
-    }
     
+    struct URLs {
+        static let login = "http://techkids.vn:8886/api/auth/facebook"
+        static let excerciseCategory = "http://techkids.vn:8886/api/exercise/category/all"
+        static let eeatCategory = "http://techkids.vn:8886/api/eat/category/all"
+        static let allItemExcerCate = "http://techkids.vn:8886/api/exercise/exercise"
+        static let eatCategory = "http://techkids.vn:8886/api/exercise/category/all"
+    }
 }

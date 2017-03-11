@@ -8,7 +8,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 extension UIViewController {
     
     public func hideKeyboardWhenTappedAround() {
@@ -18,5 +18,16 @@ extension UIViewController {
     
     public func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    final func showProgress(_ title: String? = "") {
+        SVProgressHUD.show()
+    }
+    
+    final func dismissProgress() {
+        // let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        // MRProgressOverlayView.dismissAllOverlaysForView(appDelegate.window, animated: true)
+        SVProgressHUD.dismiss()
+        
     }
 }

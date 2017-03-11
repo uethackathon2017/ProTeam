@@ -2,7 +2,7 @@
 //  FoodViewController.swift
 //  HealthCare
 //
-//  Created by Vinh Nguyen on 3/3/17.
+//  Created by Vinh Nguyen on 3/10/17.
 //  Copyright © 2017 Vinh Nguyen. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import UIKit
 class FoodViewController: BasedCollectionViewController {
     
     var arrFood = [String]()
-    var isLunch: Bool!
+    var isLunch: Bool! = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,11 @@ class FoodViewController: BasedCollectionViewController {
 
     }
 
+    override func btnBackClicked(_ sender: Any) {
+        super.btnBackClicked(Any.self)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -50,5 +55,13 @@ class FoodViewController: BasedCollectionViewController {
         imageView.image = UIImage.init(named: arrFood[indexPath.row])
     
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        let mainStoryboard: UIStoryboard! = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        let vc: UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: "DetailFoodViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

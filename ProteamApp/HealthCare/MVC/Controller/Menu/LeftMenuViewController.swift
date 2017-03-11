@@ -14,7 +14,7 @@ enum LeftMenu: Int {
 
 class LeftMenuViewController: BasedTableViewController {
 
-    var arrTitleCell = ["Setting", "Sign Out"]
+    var arrTitleCell = ["Home", "Setting", "Favourite","Sign out"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,11 +44,11 @@ class LeftMenuViewController: BasedTableViewController {
         if cell == nil {
             cell = UITableViewCell.init(style: .default, reuseIdentifier: "UITableViewCell")
         }
-        
-        cell.textLabel?.textColor = UIColor.init(hex: "#471601")
+        cell.textLabel?.font = UIFont.init(name: "UTM-Neo-Sans-Intel", size: 18)
+        cell.textLabel?.textColor = UIColor.init(hex: "#471500")
         
         let bgView: UIView = UIView.init()
-        bgView.backgroundColor = UIColor.init(hex: "#ffbe53")
+        bgView.backgroundColor = UIColor.init(hex: "#FFA613")
         cell.selectedBackgroundView = bgView
         
         cell.textLabel?.text = arrTitleCell[indexPath.row]
@@ -73,11 +73,42 @@ class LeftMenuViewController: BasedTableViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //tableView.deselectRow(at: indexPath, animated: true)
-        //let mainStoryboard: UIStoryboard! = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+                
+        let mainStoryboard: UIStoryboard! = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        
         if indexPath.row == 0 {
+            // Home
+            
+            slideMenuController()?.closeLeft()
             
         } else if indexPath.row == 1 {
+            // Setting
             
+            let vc: UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: "SettingViewController")
+            self.navigationController?.pushViewController(vc!, animated: true)
+            
+        } else if indexPath.row == 2 {
+            // Favourite
+            
+            let vc = FavouritesViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        } else if indexPath.row == 3 {
+            // Sign out
+            
+            var checkExistLoginVc: Bool! = false
+            for vc in (self.navigationController?.viewControllers)! {
+                if vc.isKind(of: LoginViewController.self) {
+                    checkExistLoginVc = true
+                    _ = self.navigationController?.popToViewController(vc, animated: true)
+                    break
+                }
+            }
+            if checkExistLoginVc == false {
+                _ = self.navigationController?.popToRootViewController(animated: false)
+                let vc: UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
 }

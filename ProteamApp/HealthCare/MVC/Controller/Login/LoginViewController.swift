@@ -14,6 +14,7 @@ import GoogleSignIn
 
 class LoginViewController: BasedViewController, GIDSignInUIDelegate {
 
+    @IBOutlet weak var btnLoginFace: UIButton!
     @IBOutlet weak var btnGoogle: GIDSignInButton!
     
     override func viewDidLoad() {
@@ -21,6 +22,7 @@ class LoginViewController: BasedViewController, GIDSignInUIDelegate {
 
         // Do any additional setup after loading the view.
         GIDSignIn.sharedInstance().uiDelegate = self
+        btnLoginFace.isSelected = false
     
     }
 
@@ -32,36 +34,85 @@ class LoginViewController: BasedViewController, GIDSignInUIDelegate {
     // MARK: - Action
     
     @IBAction func btnGoogle(_ sender: Any) {
-        let vc: UIViewController! = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ReminderViewController")
+        let vc: SlideMenuController! = createMenuView()
+        
         self.navigationController?.pushViewController(vc, animated: true)
 //        GIDSignIn.sharedInstance().signIn()
     }
 
     @IBAction func btnFacebook(_ sender: Any) {
         
-//        if AccessToken.current != nil {
-//            // User is logged in, use 'accessToken' here.
-//            let vc: UIViewController! = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ReminderViewController")
-//            self.navigationController?.pushViewController(vc, animated: true)
-//
-//        } else {
-//            let loginManager = LoginManager()
-//            loginManager.logIn([ .email ], viewController: self) { (LoginResult) in
-//                switch LoginResult {
-//                case .failed(let error):
-//                    print(error)
-//                case .cancelled:
-//                    print("User cancelled login.")
-//                case .success(grantedPermissions: let grantedPermissions, declinedPermissions: let declinedPermissions, token: let accessToken):
-//                    print("Logged in!")
-//                    let vc: UIViewController! = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ReminderViewController")
-//                    self.navigationController?.pushViewController(vc, animated: true)
-//                }
-//            }
-//        }
-        let vc: UIViewController! = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ReminderViewController")
-        self.navigationController?.pushViewController(vc, animated: true)
+        if AccessToken.current != nil {
+            // User is logged in, use 'accessToken' here.
+            let vc: SlideMenuController! = self.createMenuView()
+            self.navigationController?.pushViewController(vc, animated: true)
+
+        } else {
+            let loginManager = LoginManager()
+            loginManager.logIn([ .email ], viewController: self) { (LoginResult) in
+                switch LoginResult {
+                    
+                case .failed(let error):
+                    print(error)
+                    
+                case .cancelled:
+                    print("User cancelled login.")
+                    
+                case .success(grantedPermissions: _, declinedPermissions: _, token: let accessToken):
+                    
+                    self.showProgress()
+                    self.view.isUserInteractionEnabled = false
+                    if self.btnLoginFace.isSelected == false {
+                        
+                        APIModel.loginFace(accessToken.authenticationToken, completion: { (token) in
+                            print("Logged in!")
+                            
+                            self.dismissProgress()
+                            let vc: SlideMenuController! = self.createMenuView()
+                            self.navigationController?.pushViewController(vc, animated: true)
+                            self.btnLoginFace.isSelected = true
+                            self.view.isUserInteractionEnabled = true
+                        }, failure: { (error) in
+                            self.btnLoginFace.isSelected = true
+                            self.view.isUserInteractionEnabled = true
+                            self.dismissProgress()
+                        })
+                    } else {
+                        self.btnLoginFace.isSelected = false
+                        self.view.isUserInteractionEnabled = true
+                    }
+                    
+                }
+            }
+        }
+        
     }
+    
+    // MARK: - SlideMenu
+    
+    fileprivate func createMenuView() -> SlideMenuController {
+        
+        // create viewController code...
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let mainViewController = MainViewController()//storyboard.instantiateViewController(withIdentifier: "EatViewController") as! EatViewController
+        let leftViewController = storyboard.instantiateViewController(withIdentifier: "LeftMenuViewController") as! LeftMenuViewController
+        
+        let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
+        
+        Utilities.configNavigationController(navi: nvc)
+        
+        //UINavigationBar.appearance().tintColor = UIColor(hex: "689F38")
+        
+        var slideMenuController: SlideMenuController!
+        slideMenuController = SlideMenuController.init(mainViewController: nvc, leftMenuViewController: leftViewController)
+        slideMenuController.automaticallyAdjustsScrollViewInsets = true
+        //        slideMenuController.delegate = mainViewController
+        
+        return slideMenuController
+    }
+    
+    // MARK: - Google
     
     // Implement these methods only if the GIDSignInUIDelegate is not a subclass of
     // UIViewController.
