@@ -28,9 +28,9 @@
                     <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuR-2C-yp4">
-                            <rect key="frame" x="326" y="0.0" width="44" height="44"/>
+                            <rect key="frame" x="320" y="0.0" width="45" height="44"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="44" id="Eii-jF-BSH"/>
+                                <constraint firstAttribute="width" constant="45" id="Eii-jF-BSH"/>
                             </constraints>
                             <state key="normal" backgroundImage="menu.png"/>
                             <connections>
@@ -43,7 +43,7 @@
                         <constraint firstAttribute="height" constant="44" id="BHZ-sK-c3a"/>
                         <constraint firstAttribute="bottom" secondItem="nuR-2C-yp4" secondAttribute="bottom" id="aBJ-Ni-uar"/>
                         <constraint firstItem="nuR-2C-yp4" firstAttribute="top" secondItem="UrV-pv-crS" secondAttribute="top" id="fQk-OW-RFf"/>
-                        <constraint firstAttribute="trailing" secondItem="nuR-2C-yp4" secondAttribute="trailing" constant="5" id="yxd-dw-TXb"/>
+                        <constraint firstAttribute="trailing" secondItem="nuR-2C-yp4" secondAttribute="trailing" constant="10" id="yxd-dw-TXb"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="SSv-F4-eOQ" customClass="ButtonBarView" customModule="XLPagerTabStrip">

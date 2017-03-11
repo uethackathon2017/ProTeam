@@ -20,7 +20,6 @@ class ExcercisViewController: BasedViewController,IndicatorInfoProvider,Excercis
         
         // Do any additional setup after loading the view.
         self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
-        
 //        for family: String in UIFont.familyNames
 //        {
 //            print("\(family)")

@@ -45,14 +45,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, AVAudi
     // Local Notification
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
         var soundName: String = ""
+        var salutation: String = ""
         if let userInfo = notification.userInfo {
+            
             soundName = userInfo["soundName"] as! String
+            salutation = userInfo["salutation"] as! String
+            
         }
         playSound(soundName)
         let mainSb: UIStoryboard! = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         let vc: NotificationViewController! = mainSb.instantiateViewController(withIdentifier: "NotificationViewController") as! NotificationViewController
         vc.delegate = self
         vc.notification = notification
+        vc.strSalutation = salutation
         window?.rootViewController!.present(vc, animated: true, completion: nil)
     }
     

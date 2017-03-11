@@ -19,6 +19,7 @@ class NotificationViewController: BasedViewController {
     @IBOutlet weak var btnShutdown: UIButton!
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var lblSalutation: UILabel!
+    var strSalutation: String!
     var delegate: NotificationViewControllerDelegate!
     var notification: UILocalNotification!
     
@@ -33,6 +34,14 @@ class NotificationViewController: BasedViewController {
         btnRepeat.layer.borderWidth = 1
         btnRepeat.layer.borderColor = UIColor.init(hex: "#471500").cgColor
         btnRepeat.layer.cornerRadius = btnShutdown.bounds.size.height / 2
+        
+        lblSalutation.text = strSalutation
+        
+        let date = Date()
+        let hour = Calendar.current.component(.hour, from: date)
+        let minutes = Calendar.current.component(.minute, from: date)
+
+        lblTime.text = String(hour).appending(":").appending(String(minutes))
         
     }
 

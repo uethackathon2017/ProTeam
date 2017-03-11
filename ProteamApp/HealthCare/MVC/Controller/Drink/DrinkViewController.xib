@@ -29,7 +29,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drink_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xkk-PI-BNi">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drink_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xkk-PI-BNi">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axm-nJ-qVM">
@@ -122,7 +122,7 @@
     </objects>
     <resources>
         <image name="Group 14.png" width="334" height="334"/>
-        <image name="drink_background.png" width="750" height="1334"/>
+        <image name="drink_bg.png" width="750" height="1334"/>
         <image name="drink_hour.png" width="45" height="304"/>
         <image name="drink_minute.png" width="24" height="304"/>
         <image name="drink_sec.png" width="21" height="324"/>

@@ -31,9 +31,10 @@ class NeckExcerciseViewController: BasedViewController {
             make.height.equalTo(210)
         }
         viewPlayer.setCornerRadius(radius: 5)
-
+        self.navigationController?.navigationBar.isHidden = false
     }
 
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         

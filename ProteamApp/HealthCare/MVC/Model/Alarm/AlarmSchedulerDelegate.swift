@@ -10,8 +10,10 @@ import Foundation
 
 protocol AlarmSchedulerDelegate {
     func setNotificationWithDate(_ date: Date, onWeekdaysForNotify:[Int], snoozeEnabled: Bool, onSnooze:Bool, soundName: String, index: Int)
+    func setNotificationWithDate(_ date: Date, onWeekdaysForNotify:[Int], snoozeEnabled: Bool, onSnooze:Bool, soundName: String, index: Int, salutation: String)
     //helper
     func setNotificationForSnooze(snoozeMinute: Int, soundName: String, index: Int)
+    func setNotificationForSnooze(snoozeMinute: Int, soundName: String, index: Int, salutation: String)
     func setupNotificationSettings()
     func reSchedule()
 }

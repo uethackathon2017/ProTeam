@@ -17,6 +17,8 @@ class MainViewController: ButtonBarPagerTabStripViewController {
         
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isHidden = true
+        
         // Do any additional setup after loading the view.
         changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
             guard changeCurrentIndex == true else { return }
@@ -37,6 +39,12 @@ class MainViewController: ButtonBarPagerTabStripViewController {
         }
         self.automaticallyAdjustsScrollViewInsets = false
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     @IBAction func btnMenuClicked(_ sender: Any) {
         self.slideMenuController()?.openLeft()
     }

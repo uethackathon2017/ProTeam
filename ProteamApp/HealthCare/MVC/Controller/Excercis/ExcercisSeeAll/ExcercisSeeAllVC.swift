@@ -22,9 +22,13 @@ class ExcercisSeeAllVC: BasedViewController {
         
         // Do any additional setup after loading the view.
         collectionView.register(UINib(nibName:cellIdentifier,bundle:nil), forCellWithReuseIdentifier: cellIdentifier)
-        
+        self.navigationController?.navigationBar.isHidden = false
     }
     
+    override func btnBackClicked(_ sender: Any) {
+        super.btnBackClicked(Any.self)
+        self.navigationController?.navigationBar.isHidden = true
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

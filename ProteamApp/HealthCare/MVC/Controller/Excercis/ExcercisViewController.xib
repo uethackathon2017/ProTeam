@@ -25,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-bg-excercis" translatesAutoresizingMaskIntoConstraints="NO" id="fxb-Z7-GNF">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detailex_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="fxb-Z7-GNF">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3MC-lr-kSE">
@@ -36,7 +36,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EXCERCISE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtL-9F-nrc">
-                    <rect key="frame" x="90.5" y="71" width="194.5" height="56"/>
+                    <rect key="frame" x="90" y="71" width="195" height="56"/>
                     <fontDescription key="fontDescription" name="UTMNeoSansIntel-BoldItalic" family="UTM Neo Sans Intel" pointSize="40"/>
                     <color key="textColor" red="0.27843137254901962" green="0.082352941176470587" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -75,6 +75,6 @@
         </view>
     </objects>
     <resources>
-        <image name="img-bg-excercis" width="375" height="647"/>
+        <image name="detailex_bg.png" width="750" height="1334"/>
     </resources>
 </document>
