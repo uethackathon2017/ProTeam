@@ -22,9 +22,10 @@ module.exports = function(app) {
   // app.use('/logs', scribe.webPanel());
 
 
-  var appPath = path.join(config.root, 'app');
+  var appPath = path.join(config.root, 'server/app');
   var bowers = path.join(config.root, 'bower_components');
   app.use(express.static(appPath));
+  // app.use('/photos',express.static('../app/photos'));
 
 
 

@@ -12,9 +12,9 @@ var router = express.Router();
 router.get('/category/all', controller.getAllCategory);
 router.get('/category/:_id', controller.getExByCategory);
 router.get('/exercise/:_id', controller.findExById);
-router.post('/createCategory', controller.createCategory);
-router.post('/createExercise', controller.createExercise);
-router.put('/editExercise', controller.editExercise);
-// router.delete('/deleteFood/:_id', auth.hasRole('admin'),  controller.deleteFood);
+router.post('/createCategory',auth.hasRole('admin'), controller.createCategory);
+router.post('/createExercise',auth.hasRole('admin'), controller.createExercise);
+router.put('/editExercise',auth.hasRole('admin'), controller.editExercise);
+router.delete('/deleteExercise/:_id', auth.hasRole('admin'),  controller.deleteExercise);
 
 module.exports = router;

@@ -28,7 +28,7 @@ app.use(function (req, res, next) {
 });
 
 app.use(passport.initialize());
-app.use('/photos', express.static('/app/photos'));
+app.use('/photos', express.static('server/app/photos'));
 
 
 var server = http.createServer(app);

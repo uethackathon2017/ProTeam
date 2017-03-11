@@ -17,7 +17,7 @@ var Exercise = new Schema({
         require: true
     },
     thumnail: String,
-    describe: [],
+    describe: String,
     category: { type: Schema.Types.ObjectId, ref: 'CategoryExercise' }
 },{
     timestamps: true

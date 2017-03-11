@@ -19,7 +19,9 @@ var user = new Schema({
     },
     salt: String,
     password: String,
-    setting: {}
+    setting: {},
+    like_exercises: [{ type: Schema.Types.ObjectId, ref: 'Exercise' }],
+    like_foods: [{ type: Schema.Types.ObjectId, ref: 'Food' }]
 });
 
 user.plugin(findOrCreate);
