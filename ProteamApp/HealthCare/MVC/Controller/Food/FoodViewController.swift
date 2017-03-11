@@ -15,7 +15,6 @@ class FoodViewController: BasedCollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         self.navigationController?.navigationBar.isHidden = false
     }
@@ -23,6 +22,10 @@ class FoodViewController: BasedCollectionViewController {
     override func btnBackClicked(_ sender: Any) {
         super.btnBackClicked(Any.self)
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,6 +60,7 @@ class FoodViewController: BasedCollectionViewController {
         
         let mainStoryboard: UIStoryboard! = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         let vc: UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: "DetailFoodViewController")
+        vc.title = "Detail"
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

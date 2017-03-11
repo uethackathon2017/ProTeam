@@ -27,6 +27,8 @@ class DrinkViewController: MainAlarmViewController, IndicatorInfoProvider {
         
         // Init
         
+        self.navigationController?.navigationBar.isHidden = true
+        
         let date = Date()
         let hour = Calendar.current.component(.hour, from: date)
         let minutes = Calendar.current.component(.minute, from: date)
@@ -80,9 +82,10 @@ class DrinkViewController: MainAlarmViewController, IndicatorInfoProvider {
         
         tableView.backgroundColor = UIColor.clear
         tableView.separatorStyle = .none
-        
-//        let btnMenu: UIButton! = self.view.viewWithTag(101) as! UIButton!
-//        btnMenu.addTarget(self, action: #selector(DrinkViewController.btnMenuClicked(_:)), for: .touchUpInside)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {
@@ -190,7 +193,7 @@ class DrinkViewController: MainAlarmViewController, IndicatorInfoProvider {
         cell!.textLabel?.attributedText = str
         cell?.textLabel?.textColor = UIColor.white
         cell?.detailTextLabel?.textColor = UIColor.white
-        cell?.textLabel?.font = UIFont.init(name: "UTM Neo Sans Intel", size: 25)
+        cell?.textLabel?.font = UIFont.init(name: "UTM-Neo-Sans-Intel", size: 25)
         cell!.detailTextLabel?.text = alarm.label
         cell?.backgroundColor = UIColor.clear
         
@@ -218,9 +221,6 @@ class DrinkViewController: MainAlarmViewController, IndicatorInfoProvider {
         
         return cell!
     }
-    
-    
-    
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

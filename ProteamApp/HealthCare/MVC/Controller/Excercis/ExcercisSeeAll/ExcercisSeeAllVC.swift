@@ -20,6 +20,7 @@ class ExcercisSeeAllVC: BasedViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isHidden = false
         // Do any additional setup after loading the view.
         collectionView.register(UINib(nibName:cellIdentifier,bundle:nil), forCellWithReuseIdentifier: cellIdentifier)
         self.navigationController?.navigationBar.isHidden = false
