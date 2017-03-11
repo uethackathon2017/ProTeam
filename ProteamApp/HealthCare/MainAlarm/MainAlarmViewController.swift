@@ -17,7 +17,7 @@ class MainAlarmViewController: BasedTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.allowsSelectionDuringEditing = true
+        self.tableView.allowsSelectionDuringEditing = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +58,10 @@ class MainAlarmViewController: BasedTableViewController {
     }
     
     // MARK: - Action
+    
+    @IBAction func btnBackClick(_ sender: Any) {
+        super.btnBackClicked(sender)
+    }
     
     // Add
     @IBAction func btnAddClicked(_ sender: Any) {

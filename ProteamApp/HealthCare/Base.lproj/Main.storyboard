@@ -35,7 +35,7 @@
                                 <rect key="frame" x="0.0" y="333" width="375" height="334"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login with" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcD-dA-F1f">
-                                        <rect key="frame" x="148" y="50" width="78.5" height="21"/>
+                                        <rect key="frame" x="148" y="50" width="79" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -320,33 +320,9 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7A0-GD-GeH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jNa-84-C7X">
-                                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8t-XM-iZC">
-                                                <rect key="frame" x="326" y="0.0" width="44" height="44"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="44" id="DAP-2q-JMA"/>
-                                                </constraints>
-                                                <state key="normal" backgroundImage="menu.png"/>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="r8t-XM-iZC" firstAttribute="top" secondItem="jNa-84-C7X" secondAttribute="top" id="1DE-V6-h1L"/>
-                                            <constraint firstAttribute="bottom" secondItem="r8t-XM-iZC" secondAttribute="bottom" id="SVf-AG-Qfb"/>
-                                            <constraint firstAttribute="trailing" secondItem="r8t-XM-iZC" secondAttribute="trailing" constant="5" id="ecT-Ig-WOu"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="B6N-5P-JSa"/>
-                                    <constraint firstAttribute="trailing" secondItem="jNa-84-C7X" secondAttribute="trailing" id="NuD-Wq-2yJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="jNa-84-C7X" secondAttribute="bottom" id="WXh-gY-Nzk"/>
-                                    <constraint firstItem="jNa-84-C7X" firstAttribute="leading" secondItem="7A0-GD-GeH" secondAttribute="leading" id="doQ-UQ-VX2"/>
-                                    <constraint firstItem="jNa-84-C7X" firstAttribute="top" secondItem="7A0-GD-GeH" secondAttribute="top" constant="20" id="fIO-p0-IjU"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EAT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfQ-NB-lSB">
@@ -560,7 +536,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnBack" destination="r8t-XM-iZC" id="QfM-wn-nsW"/>
                         <outlet property="collectionView1" destination="QZF-yl-zHm" id="FnH-gz-Ao2"/>
                         <outlet property="collectionView2" destination="SoK-hk-Plt" id="dZy-Ko-jaA"/>
                         <outlet property="viewMain" destination="jmO-nn-1BE" id="vq0-Nz-ykP"/>
@@ -696,6 +671,9 @@
                                                     <constraint firstAttribute="width" constant="44" id="TUW-fR-6pb"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="btn_back.png"/>
+                                                <connections>
+                                                    <action selector="btnBackTouch:" destination="Vg7-OY-BSn" eventType="touchUpInside" id="MOx-Gu-Jh8"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LxQ-SI-huS">
                                                 <rect key="frame" x="157" y="9" width="62" height="27"/>
@@ -759,7 +737,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnBack" destination="pQK-td-AS4" id="yy6-o9-H7A"/>
                         <outlet property="tableView" destination="Jfh-rD-i5e" id="CbB-Oq-HgP"/>
                         <outlet property="viewCustomNav" destination="YBN-n5-aeS" id="1vS-2p-gE8"/>
                     </connections>
@@ -810,7 +787,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tC-fY-ECZ">
-                                <rect key="frame" x="102.5" y="497" width="170" height="50"/>
+                                <rect key="frame" x="103" y="497" width="170" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="4KE-KR-woR"/>
                                     <constraint firstAttribute="width" constant="170" id="hBW-8u-zqT"/>
@@ -924,6 +901,9 @@
                                                     <constraint firstAttribute="width" constant="44" id="xsD-Zq-G2P"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="btn_back.png"/>
+                                                <connections>
+                                                    <action selector="btnBack:" destination="51V-8g-83K" eventType="touchUpInside" id="Lqc-0B-dGS"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUI-oc-ZgM">
                                                 <rect key="frame" x="157" y="9" width="61" height="27"/>
@@ -942,7 +922,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.65098039215686276" blue="0.074509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="PhK-Bl-5pt" secondAttribute="trailing" id="Cbc-DX-dJQ"/>
                                     <constraint firstAttribute="bottom" secondItem="PhK-Bl-5pt" secondAttribute="bottom" id="DTj-wT-Tdt"/>
@@ -990,7 +970,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnBack" destination="CQ0-wU-19J" id="P6O-CR-Lpm"/>
                         <outlet property="lblTitle" destination="WUI-oc-ZgM" id="7aD-SF-1NX"/>
                         <outlet property="tableView" destination="zMO-eI-CkJ" id="aYC-u0-gBe"/>
                         <outlet property="viewCustomNav" destination="4RE-Ic-aUM" id="ken-m6-o7h"/>
@@ -1024,19 +1003,36 @@
                                                     <constraint firstAttribute="width" constant="44" id="JnZ-q8-OEO"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="btn_back.png"/>
+                                                <connections>
+                                                    <action selector="btnBackClick:" destination="Jz7-A2-gCr" eventType="touchUpInside" id="Uyi-8R-pcO"/>
+                                                </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind to exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsY-Y0-FUx">
-                                                <rect key="frame" x="86" y="9" width="203" height="27"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind to exercise" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsY-Y0-FUx">
+                                                <rect key="frame" x="106.5" y="11" width="162" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="20"/>
                                                 <color key="textColor" red="0.2784313725" green="0.086274509799999996" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWe-V6-fWh">
+                                                <rect key="frame" x="326" y="0.0" width="44" height="44"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Save">
+                                                    <color key="titleColor" red="0.2784313725" green="0.08235294118" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btnSaveClicked:" destination="Jz7-A2-gCr" eventType="touchUpInside" id="YvS-cs-OuF"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="gWe-V6-fWh" firstAttribute="width" secondItem="yUN-if-tzT" secondAttribute="width" id="1dd-fa-ckY"/>
+                                            <constraint firstItem="gWe-V6-fWh" firstAttribute="top" secondItem="NxM-19-ldK" secondAttribute="top" id="H8Y-bt-bkK"/>
                                             <constraint firstItem="IsY-Y0-FUx" firstAttribute="centerY" secondItem="NxM-19-ldK" secondAttribute="centerY" id="Ijo-r4-O9t"/>
                                             <constraint firstItem="yUN-if-tzT" firstAttribute="leading" secondItem="NxM-19-ldK" secondAttribute="leading" constant="5" id="PCm-gx-ZHR"/>
                                             <constraint firstAttribute="bottom" secondItem="yUN-if-tzT" secondAttribute="bottom" id="WCT-oN-5Nt"/>
+                                            <constraint firstAttribute="bottom" secondItem="gWe-V6-fWh" secondAttribute="bottom" id="bml-7z-REV"/>
+                                            <constraint firstAttribute="trailing" secondItem="gWe-V6-fWh" secondAttribute="trailing" constant="5" id="tne-YT-bqD"/>
                                             <constraint firstItem="IsY-Y0-FUx" firstAttribute="centerX" secondItem="NxM-19-ldK" secondAttribute="centerX" id="tzi-FT-OMc"/>
                                             <constraint firstItem="yUN-if-tzT" firstAttribute="top" secondItem="NxM-19-ldK" secondAttribute="top" id="zAd-1k-spR"/>
                                         </constraints>
@@ -1062,9 +1058,6 @@
                                                 <date key="date" timeIntervalSinceReferenceDate="510664398.94188797">
                                                     <!--2017-03-08 11:13:18 +0000-->
                                                 </date>
-                                                <connections>
-                                                    <action selector="datePickerValueChanged:" destination="Jz7-A2-gCr" eventType="valueChanged" id="8vm-tm-uqx"/>
-                                                </connections>
                                             </datePicker>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1160,7 +1153,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="847-Uh-eY6"/>
                     <connections>
-                        <outlet property="btnBack" destination="yUN-if-tzT" id="e60-ug-YuN"/>
                         <outlet property="datePicker" destination="pgW-ue-P64" id="sM4-ah-j2e"/>
                         <outlet property="lblTitle" destination="IsY-Y0-FUx" id="rt3-u0-hI0"/>
                         <outlet property="tableView" destination="5Fy-Bo-X9p" id="z8h-6D-I8h"/>
@@ -1200,6 +1192,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="44" id="osB-VQ-OTW"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                                 <state key="normal" title="Add">
                                                     <color key="titleColor" red="0.2784313725" green="0.08235294118" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -1215,6 +1208,9 @@
                                                 <state key="normal" backgroundImage="btn_back.png">
                                                     <color key="titleColor" red="0.2784313725" green="0.08235294118" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnBackClick:" destination="0Zr-Xo-cQB" eventType="touchUpInside" id="SvS-h4-daU"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1286,7 +1282,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnBack" destination="dQw-8k-0xp" id="U28-3k-MaG"/>
                         <outlet property="tableView" destination="r5l-1g-qgv" id="88U-Um-869"/>
                     </connections>
                 </viewController>
@@ -1306,7 +1301,6 @@
         <image name="food_line.png" width="3" height="38"/>
         <image name="logo.png" width="254" height="238"/>
         <image name="main_background.png" width="750" height="1334"/>
-        <image name="menu.png" width="71" height="71"/>
         <image name="menu_logo.png" width="381" height="351"/>
         <image name="menu_white.png" width="71" height="71"/>
         <image name="register.png" width="750" height="1334"/>

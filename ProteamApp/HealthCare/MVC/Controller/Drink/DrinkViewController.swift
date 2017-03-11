@@ -80,6 +80,9 @@ class DrinkViewController: MainAlarmViewController, IndicatorInfoProvider {
         
         tableView.backgroundColor = UIColor.clear
         tableView.separatorStyle = .none
+        
+//        let btnMenu: UIButton! = self.view.viewWithTag(101) as! UIButton!
+//        btnMenu.addTarget(self, action: #selector(DrinkViewController.btnMenuClicked(_:)), for: .touchUpInside)
     }
     
     override func didReceiveMemoryWarning() {
@@ -90,10 +93,11 @@ class DrinkViewController: MainAlarmViewController, IndicatorInfoProvider {
     // MARK: - Action
     
     // Menu
-    
-    override func btnBackClicked(_ sender: Any) {
+    @IBAction func btnMenuClicked(_ sender: Any) {
         self.slideMenuController()?.openLeft()
     }
+   
+    
     
     // Clock
     // Type: 1. Second  2. Minute   3. Hour

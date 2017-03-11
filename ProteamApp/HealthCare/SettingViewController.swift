@@ -15,7 +15,7 @@ class SettingViewController: BasedTableViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +30,9 @@ class SettingViewController: BasedTableViewController {
 
     }
     
+    @IBAction func btnBackTouch(_ sender: Any) {
+        super.btnBackClicked(sender)
+    }
     // MARK: - Table View
     
     override func numberOfSections(in tableView: UITableView) -> Int {

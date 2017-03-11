@@ -20,7 +20,7 @@ class ExcercisViewController: BasedViewController,IndicatorInfoProvider,Excercis
         
         // Do any additional setup after loading the view.
         self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
-        self.navigationController?.navigationBar.isHidden = true
+        
 //        for family: String in UIFont.familyNames
 //        {
 //            print("\(family)")
@@ -61,6 +61,13 @@ class ExcercisViewController: BasedViewController,IndicatorInfoProvider,Excercis
         print("sell all")
     }
     
+    func didSelectRowAtSliderCell(youtube_id:String,title:String){
+        let neckExcercise = NeckExcerciseViewController()
+        neckExcercise.youtube_id = youtube_id
+        neckExcercise.title = title
+        self.navigationController?.pushViewController(neckExcercise, animated: true)
+    }
+    
     // MARK: - INDICATORINFO Provider
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo.init(title: "")
@@ -93,6 +100,7 @@ extension ExcercisViewController: UITableViewDelegate,UITableViewDataSource{
         cell.index = indexPath.row
         if let excers = exerciseCate[indexPath.row].items {
             cell.excercises = excers
+            cell.tbvTopicExcercis.reloadData()
         }
         
         if let name = exerciseCate[indexPath.row].name{

@@ -10,6 +10,7 @@ import UIKit
 import SDWebImage
 protocol ExcercisCellDelegate {
     func btnSeeAllTouchup(_ index: Int)
+    func didSelectRowAtSliderCell(youtube_id:String,title:String)
 }
 class ExcercisCell: UITableViewCell {
     
@@ -41,7 +42,6 @@ class ExcercisCell: UITableViewCell {
     
     @IBAction func btnSeeAllTouchup(_ sender: Any) {
         self.delegate?.btnSeeAllTouchup(self.index ?? 0)
-        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -64,8 +64,10 @@ extension ExcercisCell:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! SliderTableViewCell
+        
         cell.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
         cell.selectionStyle = .none
+        
         if let thumnail = excercises[indexPath.row].thumnail {
             cell.imgSlider.sd_setImage(with: URL.init(string: thumnail))
         }
@@ -74,5 +76,9 @@ extension ExcercisCell:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let youtube_id = excercises[indexPath.row].youtube_id,let title = excercises[indexPath.row].name {
+            self.delegate?.didSelectRowAtSliderCell(youtube_id: youtube_id,title: title)
+        }
+        
     }
 }

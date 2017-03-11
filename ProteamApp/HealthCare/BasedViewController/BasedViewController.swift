@@ -19,9 +19,6 @@ class BasedViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-//        if self.btnBack != nil {
-//            leftBarButton(imageName: "ic-btn-back")
-//        }
         if self.navigationController != nil {
             Utilities.configNavigationController(navi: self.navigationController!)
             leftBarButton(imageName: "ic-btn-back")
@@ -45,6 +42,7 @@ class BasedViewController: UIViewController {
 
     
     override func viewDidAppear(_ animated: Bool) {
+        
     }
 
     override func didReceiveMemoryWarning() {

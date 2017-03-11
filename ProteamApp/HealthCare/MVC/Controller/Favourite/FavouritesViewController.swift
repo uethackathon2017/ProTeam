@@ -1,15 +1,15 @@
 //
-//  MainViewController.swift
+//  FavouritesViewController.swift
 //  HealthCare
 //
-//  Created by IchIT on 3/10/17.
+//  Created by Vinh Nguyen on 3/11/17.
 //  Copyright © 2017 Vinh Nguyen. All rights reserved.
 //
 
 import UIKit
 import XLPagerTabStrip
 
-class MainViewController: ButtonBarPagerTabStripViewController {
+class FavouritesViewController: ButtonBarPagerTabStripViewController {
 
     override func viewDidLoad() {
         
@@ -37,10 +37,14 @@ class MainViewController: ButtonBarPagerTabStripViewController {
         }
         self.automaticallyAdjustsScrollViewInsets = false
     }
-    @IBAction func btnMenuClicked(_ sender: Any) {
-        self.slideMenuController()?.openLeft()
-    }
     
+    @IBAction func btnBackClicked(_ sender: Any) {
+        if self.navigationController != nil {
+           self.navigationController!.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
     func setupPagerTabStrip(){
         settings.style.buttonBarBackgroundColor = UIColor.clear
         settings.style.buttonBarItemBackgroundColor = .clear
@@ -53,21 +57,17 @@ class MainViewController: ButtonBarPagerTabStripViewController {
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let child_1 = ExcercisViewController()
+        let child_1 = ExFavouriteViewController()
+        let child_2 = EatFavouriteViewController()
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let child_2 = storyboard.instantiateViewController(withIdentifier: "EatViewController") as! EatViewController
-
-        let child_3 = DrinkViewController()
-
-        return [child_1,child_2,child_3]
+        return [child_1,child_2]
     }
-
+    
     override func configureCell(_ cell: ButtonBarViewCell, indicatorInfo: IndicatorInfo) {
         super.configureCell(cell, indicatorInfo: indicatorInfo)
         cell.backgroundColor = UIColor.clear
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

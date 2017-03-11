@@ -8,6 +8,7 @@
 
 import UIKit
 import MediaPlayer
+import PopupDialog
 
 class ReminderViewController: SettingViewController, RepeatViewControllerDelegate {
 
@@ -21,7 +22,8 @@ class ReminderViewController: SettingViewController, RepeatViewControllerDelegat
     var mediaItem: MPMediaItem?
     var mediaID: String!
     
-    var arrDetailTitleCell = ["Monday, Friday", "Nơi này có anh", "Time to exercises, Vinh !"]
+    var popup:PopupDialog?
+    var arrDetailTitleCell = ["Monday, Friday", "Music", "Alarm"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +36,6 @@ class ReminderViewController: SettingViewController, RepeatViewControllerDelegat
         alarmModel = Alarms()
         tableView.reloadData()
         super.viewWillAppear(animated)
-    }
-    
-    @IBAction func datePickerValueChanged(_ sender: Any) {
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,9 +57,10 @@ class ReminderViewController: SettingViewController, RepeatViewControllerDelegat
         
     }
     
-    override func btnBackClicked(_ sender: Any) {
-        super.btnBackClicked(sender)
-        
+    // MARK: Action
+    
+    @IBAction func btnSaveClicked(_ sender: Any) {
+        self.btnBackClicked(sender)
         let date = datePicker.date
         let index = segueInfo.curCellIndex
         var tempAlarm = Alarm()
@@ -81,8 +80,48 @@ class ReminderViewController: SettingViewController, RepeatViewControllerDelegat
         }
     }
     
+    @IBAction func btnBackClick(_ sender: Any) {
+        super.btnBackClicked(sender)
+    }
+    
     override func btnSwitchRepeatRingtonClicked(_ sender: UISwitch) {
         snoozeEnabled = sender.isOn
+    }
+    
+    // MARK: - Action
+    
+    func showFillterView() {
+        let salutation = SalutationPopUp()
+        // fillterVC.delegate = self
+        popup = PopupDialog(viewController: salutation, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: false)
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.btnClosePopUpTouchup(_:)))
+        tap.numberOfTapsRequired = 1
+        popup?.view.addGestureRecognizer(tap)
+
+        let buttonOne = CancelButton(title: "Huỷ", height: 60){}
+        buttonOne.titleColor = UIColor(hex:"471500")
+        buttonOne.backgroundColor = UIColor(hex:"FFBE53")
+
+        let buttonTwo = DefaultButton(title: "Chọn", height: 60){
+            
+            self.segueInfo.label = salutation.txtSalutationName.text!
+            
+            let cell = self.tableView.cellForRow(at: IndexPath.init(row: 2, section: 0))
+            cell?.detailTextLabel?.text = self.segueInfo.label
+            
+            print(salutation.txtSalutationName.text ?? "")
+        }
+
+        buttonTwo.titleColor = UIColor(hex:"471500")
+        buttonTwo.backgroundColor = UIColor(hex:"FFBE53")
+
+        popup?.addButtons([buttonOne,buttonTwo])
+        present(popup!, animated: true, completion: nil)
+    }
+    
+    func btnClosePopUpTouchup(_ sender: Any){
+            popup?.dismiss()
     }
     
     // MARK: - Table View
@@ -155,7 +194,7 @@ class ReminderViewController: SettingViewController, RepeatViewControllerDelegat
             self.present(mediaPicker, animated: true, completion: nil)
 
         } else if indexPath.row == 2 {
-            
+            showFillterView()
         }
      }
     

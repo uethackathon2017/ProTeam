@@ -20,7 +20,7 @@ class NeckExcerciseViewController: BasedViewController {
         // Do any additional setup after loading the view.
          viewPlayer = UIView.loadFromNibNamed("PlayingView") as! PlayingView
         if youtube_id != nil {
-            viewPlayer.initPlayerView(videoID: "dyfMD94d2Yc")
+            viewPlayer.initPlayerView(videoID: youtube_id!)
         }
         
         self.view.addSubview(viewPlayer)
@@ -30,8 +30,8 @@ class NeckExcerciseViewController: BasedViewController {
             make.trailing.equalTo(self.view).offset(-20)
             make.height.equalTo(210)
         }
+        viewPlayer.setCornerRadius(radius: 5)
 
-        self.title = "Neck excercise"
     }
 
     override func viewDidLayoutSubviews() {

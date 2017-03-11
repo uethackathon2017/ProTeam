@@ -22,13 +22,9 @@ class ExcercisSeeAllVC: BasedViewController {
         
         // Do any additional setup after loading the view.
         collectionView.register(UINib(nibName:cellIdentifier,bundle:nil), forCellWithReuseIdentifier: cellIdentifier)
-        self.navigationController?.navigationBar.isHidden = false
+        
     }
     
-    override func btnBackClicked(_ sender: Any) {
-        super.btnBackClicked(Any.self)
-        self.navigationController?.navigationBar.isHidden = true
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -62,7 +58,8 @@ extension ExcercisSeeAllVC:UICollectionViewDelegate,UICollectionViewDataSource,U
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         let neckExcercise = NeckExcerciseViewController()
-       // self.present(neckExcercise, animated: true, completion: nil)
+        neckExcercise.youtube_id = exercises[indexPath.row].youtube_id
+        neckExcercise.title = exercises[indexPath.row].name
         self.navigationController?.pushViewController(neckExcercise, animated: true)
        
     }

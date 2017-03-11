@@ -24,7 +24,6 @@ class BasedTableViewController: BasedViewController, UITableViewDelegate, UITabl
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 

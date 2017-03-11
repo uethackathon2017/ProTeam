@@ -8,12 +8,16 @@
 
 import UIKit
 import XLPagerTabStrip
+import SDWebImage
 class EatViewController: BasedCollectionViewController,IndicatorInfoProvider {
     
     @IBOutlet weak var viewMain: UIView!
     var arrLunch = [String]()
     var arrDinner = [String]()
     
+    var eatCategory = [EatCategory]()
+    var lunchs = [Eat]()
+    var dinners = [Eat]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,10 +42,25 @@ class EatViewController: BasedCollectionViewController,IndicatorInfoProvider {
         arrDinner = ["dinner_0", "dinner_1", "dinner_2", "dinner_0", "dinner_1", "dinner_2"]
         
         viewMain.layer.cornerRadius = 20
+        loadData()
+    }
+    
+    func loadData(){
+        self.showProgress()
+        APIModel.getAllEatCategory(completion: { (eats) in
+            print(eats)
+            self.eatCategory = eats
+            self.lunchs = self.eatCategory[0].items!
+            self.dinners = self.eatCategory[0].items!
+            self.collectionView1.reloadData()
+            self.collectionView2.reloadData()
+            self.dismissProgress()
+        }) { (error) in
+            self.dismissProgress()
+        }
     }
     
     // MARK: - Action
-    
     override func btnBackClicked(_ sender: Any) {
         slideMenuController()?.openLeft()
     }
@@ -64,15 +83,19 @@ class EatViewController: BasedCollectionViewController,IndicatorInfoProvider {
     
     // MARK: - Collection View
     
+}
+
+extension EatViewController{
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.collectionView1 {
-            return arrLunch.count
+            
+            return lunchs.count
         } else {
-            return arrDinner.count
+            return dinners.count
         }
     }
     
@@ -86,16 +109,25 @@ class EatViewController: BasedCollectionViewController,IndicatorInfoProvider {
         if collectionView == self.collectionView1 {
             
             //cell.frame = CGRect.init(x: 0, y: 0, width: collectionView1.bounds.size.height, height: collectionView1.bounds.size.height)
-            imageView.image = UIImage.init(named: arrLunch[indexPath.row])
+           // imageView.image = UIImage.init(named: arrLunch[indexPath.row])
+            if let img = lunchs[indexPath.row].img{
+               // imageView.sd_setImage(with: URL.init(string: img))
+                self.showProgress()
+                imageView.sd_setImage(with: URL.init(string: img), completed: { (img, error, type, url) in
+                    self.dismissProgress()
+                })
+            }
             
         } else {
             
             //cell.frame = CGRect.init(x: 0, y: 0, width: collectionView2.bounds.size.height, height: collectionView2.bounds.size.height)
-            imageView.image = UIImage.init(named: arrDinner[indexPath.row])
-            
+            //imageView.image = UIImage.init(named: arrDinner[indexPath.row])
+            if let img = dinners[indexPath.row].img{
+                imageView.sd_setImage(with: URL.init(string: img))
+            }
         }
         
         return cell
     }
-    
+
 }

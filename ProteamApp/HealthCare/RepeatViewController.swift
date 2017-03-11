@@ -31,11 +31,11 @@ class RepeatViewController: BasedTableViewController {
     }
     
     // Action
-    override func btnBackClicked(_ sender: Any) {
+    
+    @IBAction func btnBack(_ sender: Any) {
         super.btnBackClicked(sender)
         self.delegate.backWithObject(self)
     }
-    
     // MARK: - Table View
     
     override func numberOfSections(in tableView: UITableView) -> Int {

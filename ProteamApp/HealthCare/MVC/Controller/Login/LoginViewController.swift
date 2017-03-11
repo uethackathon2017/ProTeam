@@ -35,6 +35,7 @@ class LoginViewController: BasedViewController, GIDSignInUIDelegate {
     
     @IBAction func btnGoogle(_ sender: Any) {
         let vc: SlideMenuController! = createMenuView()
+        
         self.navigationController?.pushViewController(vc, animated: true)
 //        GIDSignIn.sharedInstance().signIn()
     }
@@ -100,6 +101,7 @@ class LoginViewController: BasedViewController, GIDSignInUIDelegate {
         let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
         
         Utilities.configNavigationController(navi: nvc)
+        
         //UINavigationBar.appearance().tintColor = UIColor(hex: "689F38")
         
         var slideMenuController: SlideMenuController!

@@ -77,4 +77,42 @@ class APIModel: NSObject {
         }
     }
     
+    //MARK: - ALL CATEGORY EXERCISE
+    class func  getAllEatCategory(completion:@escaping (_ exerciseCategory:[EatCategory])->Void, failure:@escaping (_ errorString: String)->Void){
+        
+        let request = Alamofire.request(Constants.URLs.eeatCategory, method: .get, parameters: nil, headers: nil)
+        
+        request.responseJSON { response in
+            if let result = response.result.value as? [String : AnyObject] {
+                
+                if let code = result["code"] as? Bool,code == true{
+                    
+                    if let results = result["result"] as? [[String:Any]] {
+                        var tmpEat = [EatCategory]()
+                        for each in results{
+                            if let eatCategory = EatCategory.init(jsonData: each) {
+                                tmpEat.append(eatCategory)
+                            }
+                        }
+                        completion(tmpEat)
+                        
+                    }
+                } else {
+                    if let results = result["message"] as? [String:Any],let mes = results["message"] {
+                        failure(mes as! String)
+                    }
+                }
+                
+                
+            } else {
+                if response.result.error?._code == -1009{
+                    failure("Vui lòng kiểm tra kêt nối mạng wifi hoặc 3G")
+                } else {
+                    //failure(response.result.error.debugDescription)
+                    failure("Lỗi Server")
+                }
+            }
+        }
+    }
+    
 }

@@ -14,7 +14,7 @@ enum LeftMenu: Int {
 
 class LeftMenuViewController: BasedTableViewController {
 
-    var arrTitleCell = ["Home", "Setting", "Sign out"]
+    var arrTitleCell = ["Home", "Setting", "Favourite","Sign out"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,12 +80,20 @@ class LeftMenuViewController: BasedTableViewController {
             // Home
             
             slideMenuController()?.closeLeft()
+            
         } else if indexPath.row == 1 {
             // Setting
             
             let vc: UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: "SettingViewController")
             self.navigationController?.pushViewController(vc!, animated: true)
+            
         } else if indexPath.row == 2 {
+            // Favourite
+            
+            let vc = FavouritesViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        } else if indexPath.row == 3 {
             // Sign out
             
             var checkExistLoginVc: Bool! = false

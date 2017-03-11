@@ -23,6 +23,7 @@ struct Constants {
     struct URLs {
         static let login = "http://techkids.vn:8886/api/auth/facebook"
         static let excerciseCategory = "http://techkids.vn:8886/api/exercise/category/all"
+        static let eeatCategory = "http://techkids.vn:8886/api/eat/category/all"
         static let allItemExcerCate = "http://techkids.vn:8886/api/exercise/exercise"
         static let eatCategory = "http://techkids.vn:8886/api/exercise/category/all"
     }
