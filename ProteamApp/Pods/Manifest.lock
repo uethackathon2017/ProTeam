@@ -6,6 +6,7 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - DZNEmptyDataSet (1.8.1)
   - FacebookCore (0.2.0):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.15)
@@ -79,6 +80,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - DZNEmptyDataSet
   - FacebookCore
   - FacebookLogin
   - FacebookShare
@@ -94,6 +96,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
   FacebookShare: 8e9ee8ea06505e6a1d3d719b0cc63e840fb8aaeb
@@ -119,6 +122,6 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: 227ac6f045f57c4323fdfe0cd05ef5d7264113ef
+PODFILE CHECKSUM: 1c554f0e5fc5715e2825bf391828592b8e5645e1
 
 COCOAPODS: 1.2.0

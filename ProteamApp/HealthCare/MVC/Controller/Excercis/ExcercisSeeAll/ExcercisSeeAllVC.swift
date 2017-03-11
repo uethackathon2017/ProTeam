@@ -8,7 +8,8 @@
 
 import UIKit
 import SDWebImage
-class ExcercisSeeAllVC: BasedViewController {
+import DZNEmptyDataSet
+class ExcercisSeeAllVC: BasedViewController,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate  {
     
     let cellWidth = Constants.Systems.screen_size.width*(163/375)
     let cellHeight = (Constants.Systems.screen_size.height - 109)*(109/558)
@@ -24,11 +25,28 @@ class ExcercisSeeAllVC: BasedViewController {
         // Do any additional setup after loading the view.
         collectionView.register(UINib(nibName:cellIdentifier,bundle:nil), forCellWithReuseIdentifier: cellIdentifier)
         self.navigationController?.navigationBar.isHidden = false
+        self.collectionView.emptyDataSetSource = self
+        self.collectionView.emptyDataSetDelegate = self
     }
     
     override func btnBackClicked(_ sender: Any) {
         super.btnBackClicked(Any.self)
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    //MARK: EmptyData
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        let img = UIImage(named:"nodata_icon")
+        return img!
+    }
+    
+    func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+        return -self.collectionView!.frame.size.height/5
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let attributes = [NSFontAttributeName: UIFont(name: "UTM-Neo-Sans-Intel", size: 16)!]
+        return NSAttributedString(string: "Không có dữ liệu", attributes: attributes)
     }
     
     override func didReceiveMemoryWarning() {

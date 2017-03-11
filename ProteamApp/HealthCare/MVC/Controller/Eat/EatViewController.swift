@@ -105,23 +105,25 @@ extension EatViewController{
         let imageView: UIImageView! = cell.contentView.viewWithTag(101) as! UIImageView
         
         if collectionView == self.collectionView1 {
-            
-            //cell.frame = CGRect.init(x: 0, y: 0, width: collectionView1.bounds.size.height, height: collectionView1.bounds.size.height)
-           // imageView.image = UIImage.init(named: arrLunch[indexPath.row])
             if let img = lunchs[indexPath.row].img{
                 imageView.sd_setImage(with: URL.init(string: img))
             }
             
         } else {
-            
-            //cell.frame = CGRect.init(x: 0, y: 0, width: collectionView2.bounds.size.height, height: collectionView2.bounds.size.height)
-            //imageView.image = UIImage.init(named: arrDinner[indexPath.row])
             if let img = dinners[indexPath.row].img{
                 imageView.sd_setImage(with: URL.init(string: img))
             }
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let mainStoryboard: UIStoryboard! = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        let vc: UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: "DetailFoodViewController")
+        vc.title = "Detail"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

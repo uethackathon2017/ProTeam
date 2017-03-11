@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CF7CB8D2EEF9A36F7FF8F47232413F35'
-               BlueprintName = 'XLPagerTabStrip-XLPagerTabStrip'
+               BlueprintIdentifier = 'D386C75EFD4F03725E4EFB866B600B9A'
+               BlueprintName = 'DZNEmptyDataSet'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'XLPagerTabStrip.bundle'>
+               BuildableName = 'DZNEmptyDataSet.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

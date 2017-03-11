@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+
 class FoodViewController: BasedCollectionViewController {
     
     var arrFood = [Eat]()

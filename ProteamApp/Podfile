@@ -18,4 +18,5 @@ target 'HealthCare' do
     pod 'youtube-ios-player-helper'
     pod 'PopupDialog'
     pod 'SDWebImage'
+    pod 'DZNEmptyDataSet'
 end
