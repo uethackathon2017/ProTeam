@@ -16,4 +16,11 @@ router.post('/upload', auth.hasRole('admin'), controller.upload);
 router.post('/setting', auth.hasRole('user'), controller.editUserSetting);
 router.get('/setting', auth.hasRole('user'), controller.getSetting);
 
+router.post('/like/exercise/:_id', auth.hasRole('user'), controller.likeExercise);
+router.post('/unlike/exercise/:_id', auth.hasRole('user'), controller.unlikeExercise);
+router.post('/like/food/:_id', auth.hasRole('user'), controller.likeFood);
+router.post('/unlike/food/:_id', auth.hasRole('user'), controller.unlikeFood);
+
+router.get('/favorite', auth.hasRole('user'), controller.getFavorite);
+
 module.exports = router;

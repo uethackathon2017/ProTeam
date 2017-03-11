@@ -16,11 +16,18 @@ var Exercise = new Schema({
         type: String,
         require: true
     },
-    describe: [],
+    thumnail: String,
+    describe: String,
     category: { type: Schema.Types.ObjectId, ref: 'CategoryExercise' }
 },{
     timestamps: true
 });
 
+
+Exercise.pre('save', function(next) {
+    this.thumnail = 'https://img.youtube.com/vi/'+this.youtube_id+'/mqdefault.jpg';
+    next();
+
+});
 
 module.exports = mongoose.model('Exercise', Exercise);

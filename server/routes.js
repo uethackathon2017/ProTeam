@@ -7,10 +7,10 @@ module.exports = function(app) {
   app.use('/api/eat', require('./api/eat'));
   app.use('/api/exercise', require('./api/exercise'));
 
-  app.route('/*')
-    .get(function(req, res) {
-      res.sendFile(path.resolve('app' + '/index.html'));
-    });
+  // app.route('/*')
+  //   .get(function(req, res) {
+  //     res.sendFile(path.resolve('app' + '/index.html'));
+  //   });
 
 
 };

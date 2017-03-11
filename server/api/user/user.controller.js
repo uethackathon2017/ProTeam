@@ -76,6 +76,54 @@ module.exports = {
     }
   },
 
+  likeExercise: function (req, res) {
+    User.findOneAndUpdate(
+        { _id : req.user._id},
+        {$addToSet : {like_exercises : req.params._id}},
+        {upsert: true},
+        function (err, ok) {
+            if(err) res.json({code : 0, message: err});
+            res.json({code : 1, message: 'Successful'});
+        }
+    );
+  },
+
+  unlikeExercise: function (req, res) {
+        User.findOneAndUpdate(
+            { _id : req.user._id},
+            {$pull: {like_exercises : req.params._id}},
+            {upsert: true},
+            function (err, ok) {
+                if(err) res.json({code : 0, message: err});
+                res.json({code : 1, message: 'Successful'});
+            }
+        );
+  },
+
+  likeFood: function (req, res) {
+      User.findOneAndUpdate(
+          { _id : req.user._id},
+          {$addToSet : {like_foods : req.params._id}},
+          {upsert: true},
+          function (err, ok) {
+              if(err) res.json({code : 0, message: err});
+              res.json({code : 1, message: 'Successful'});
+          }
+      );
+  },
+
+  unlikeFood: function (req, res) {
+      User.findOneAndUpdate(
+          { _id : req.user._id},
+          {$pull: {like_foods : req.params._id}},
+          {upsert: true},
+          function (err, ok) {
+              if(err) res.json({code : 0, message: err});
+              res.json({code : 1, message: 'Successful'});
+          }
+      );
+  },
+
   editUserSetting: function (req, res) {
       console.log(req.user);
       req.user.setting = req.body.setting;
@@ -92,6 +140,26 @@ module.exports = {
 
   getSetting: function (req, res) {
       res.json({code: 1, result: req.user.setting});
+  },
+
+  getFavorite: function (req, res) {
+      User.findOne({_id: req.user._id})
+          .populate({
+            path: 'like_exercises',
+            select: '_id name thumnail youtube_id describe'
+          })
+          .populate({
+              path: 'like_foods',
+              select: '_id name img guide'
+          })
+          .exec(function (err, data) {
+            if(err) res.json({code: 0, message: err});
+            res.json({code: 1, result: {
+                foods: data.like_foods,
+                exercise: data.like_exercises
+            }});
+
+      });
   },
 
   login: function (req, res) {
@@ -138,7 +206,7 @@ module.exports = {
       else {
 
         if(req.file){
-          res.json({code: 1, message: 'upload success', result: {url: 'http://techkids.vn:6699/photos/' + req.file.filename}});
+          res.json({code: 1, message: 'upload success', result: {url: 'http://localhost:6699/photos/' + req.file.filename}});
         }
         else {
           res.json({code: 0, message: 'No file sellected'});
