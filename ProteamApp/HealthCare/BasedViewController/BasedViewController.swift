@@ -36,11 +36,6 @@ class BasedViewController: UIViewController {
         
     }
     
-    func btnBackTouchUp(_ sender: AnyObject){
-        _ = self.navigationController?.popViewController(animated: true)
-    }
-
-    
     override func viewDidAppear(_ animated: Bool) {
         
     }

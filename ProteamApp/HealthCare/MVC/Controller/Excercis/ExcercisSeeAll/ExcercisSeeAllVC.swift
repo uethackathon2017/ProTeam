@@ -8,10 +8,11 @@
 
 import UIKit
 import SDWebImage
-class ExcercisSeeAllVC: BasedViewController {
+import DZNEmptyDataSet
+class ExcercisSeeAllVC: BasedViewController,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate  {
     
-    let cellWidth = Constants.Systems.screen_size.width*(163/375)
-    let cellHeight = (Constants.Systems.screen_size.height - 109)*(109/558)
+    let cellWidth = Constants.Systems.screen_size.width*(160/375)
+    let cellHeight = (Constants.Systems.screen_size.height - 117)*(117/558)
     
     let cellIdentifier = "ExcercisSeeAllCell"
     var exercises = [Exercise]()
@@ -20,11 +21,33 @@ class ExcercisSeeAllVC: BasedViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isHidden = false
         // Do any additional setup after loading the view.
         collectionView.register(UINib(nibName:cellIdentifier,bundle:nil), forCellWithReuseIdentifier: cellIdentifier)
-        
+        self.navigationController?.navigationBar.isHidden = false
+        self.collectionView.emptyDataSetSource = self
+        self.collectionView.emptyDataSetDelegate = self
     }
     
+    override func btnBackClicked(_ sender: Any) {
+        super.btnBackClicked(Any.self)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    //MARK: EmptyData
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        let img = UIImage(named:"nodata_icon")
+        return img!
+    }
+    
+    func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+        return -self.collectionView!.frame.size.height/5
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let attributes = [NSFontAttributeName: UIFont(name: "UTM-Neo-Sans-Intel", size: 16)!]
+        return NSAttributedString(string: "Không có dữ liệu", attributes: attributes)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -58,7 +81,7 @@ extension ExcercisSeeAllVC:UICollectionViewDelegate,UICollectionViewDataSource,U
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         let neckExcercise = NeckExcerciseViewController()
-        neckExcercise.youtube_id = exercises[indexPath.row].youtube_id
+        neckExcercise.exercise = exercises[indexPath.row]
         neckExcercise.title = exercises[indexPath.row].name
         self.navigationController?.pushViewController(neckExcercise, animated: true)
        

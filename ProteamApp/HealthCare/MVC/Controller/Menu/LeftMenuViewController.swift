@@ -90,7 +90,7 @@ class LeftMenuViewController: BasedTableViewController {
         } else if indexPath.row == 2 {
             // Favourite
             
-            let vc = FavouritesViewController()
+            let vc: UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: "FavouritesViewController")
             self.navigationController?.pushViewController(vc, animated: true)
             
         } else if indexPath.row == 3 {

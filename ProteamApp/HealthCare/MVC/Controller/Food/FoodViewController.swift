@@ -7,29 +7,26 @@
 //
 
 import UIKit
+import SDWebImage
 
 class FoodViewController: BasedCollectionViewController {
     
-    var arrFood = [String]()
+    var arrFood = [Eat]()
     var isLunch: Bool! = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        arrFood = ["lunch_0" , "lunch_1", "lunch_2", "lunch_0" , "lunch_1", "lunch_2", "lunch_0" , "lunch_1", "lunch_2", "lunch_0" , "lunch_1", "lunch_2", "lunch_0" , "lunch_1", "lunch_2", "lunch_0" , "lunch_1", "lunch_2"]
-        
-//        if isLunch == true {
-//            
-//        } else {
-//            
-//        }
-
+        self.navigationController?.navigationBar.isHidden = false
     }
-
+    
     override func btnBackClicked(_ sender: Any) {
         super.btnBackClicked(Any.self)
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,7 +49,9 @@ class FoodViewController: BasedCollectionViewController {
         let cell: UICollectionViewCell! = collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
         
         let imageView: UIImageView! = cell.contentView.viewWithTag(101) as! UIImageView
-        imageView.image = UIImage.init(named: arrFood[indexPath.row])
+        if let img = arrFood[indexPath.row].img{
+            imageView.sd_setImage(with: URL.init(string: img))
+        }
     
         return cell
     }
@@ -61,7 +60,9 @@ class FoodViewController: BasedCollectionViewController {
         collectionView.deselectItem(at: indexPath, animated: true)
         
         let mainStoryboard: UIStoryboard! = UIStoryboard.init(name: "Main", bundle: Bundle.main)
-        let vc: UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: "DetailFoodViewController")
+        let vc: DetailFoodViewController! = mainStoryboard.instantiateViewController(withIdentifier: "DetailFoodViewController") as! DetailFoodViewController
+        vc.title = "Detail"
+        vc._id = arrFood[indexPath.row]._id
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

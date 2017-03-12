@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 protocol ExcercisCellDelegate {
     func btnSeeAllTouchup(_ index: Int)
-    func didSelectRowAtSliderCell(youtube_id:String,title:String)
+    func didSelectRowAtSliderCell(exercise:Exercise,title:String)
 }
 class ExcercisCell: UITableViewCell {
     
@@ -26,18 +26,21 @@ class ExcercisCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.tbvTopicExcercis.translatesAutoresizingMaskIntoConstraints = false
-        self.tbvTopicExcercis.transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
-        
-        self.tbvTopicExcercis.showsVerticalScrollIndicator = false
-        self.tbvTopicExcercis.showsHorizontalScrollIndicator = false
-        self.tbvTopicExcercis.separatorStyle = .none
-        self.tbvTopicExcercis.backgroundColor = UIColor(hex: "#ffffff")
-        self.tbvTopicExcercis.frame = CGRect(x: 0,y: 40,width: Constants.Systems.screen_size.width - 14,height: 95)
-        tbvTopicExcercis.contentInset = UIEdgeInsets(top: 14,left: 0,bottom:0,right: 0)
-        tbvTopicExcercis.delegate = self
-        tbvTopicExcercis.dataSource = self
-        self.tbvTopicExcercis.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        if tbvTopicExcercis != nil {
+            self.tbvTopicExcercis.translatesAutoresizingMaskIntoConstraints = false
+            self.tbvTopicExcercis.transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+            
+            self.tbvTopicExcercis.showsVerticalScrollIndicator = false
+            self.tbvTopicExcercis.showsHorizontalScrollIndicator = false
+            self.tbvTopicExcercis.separatorStyle = .none
+            self.tbvTopicExcercis.backgroundColor = UIColor(hex: "#ffffff")
+            self.tbvTopicExcercis.frame = CGRect(x: 0,y: 40,width: Constants.Systems.screen_size.width - 14,height: 95)
+            tbvTopicExcercis.contentInset = UIEdgeInsets(top: 14,left: 0,bottom:0,right: 0)
+            tbvTopicExcercis.delegate = self
+            tbvTopicExcercis.dataSource = self
+            self.tbvTopicExcercis.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        }
+       
     }
     
     @IBAction func btnSeeAllTouchup(_ sender: Any) {
@@ -76,8 +79,8 @@ extension ExcercisCell:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let youtube_id = excercises[indexPath.row].youtube_id,let title = excercises[indexPath.row].name {
-            self.delegate?.didSelectRowAtSliderCell(youtube_id: youtube_id,title: title)
+        if let title = excercises[indexPath.row].name {
+            self.delegate?.didSelectRowAtSliderCell(exercise: excercises[indexPath.row],title: title)
         }
         
     }

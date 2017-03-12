@@ -25,6 +25,16 @@ struct Constants {
         static let excerciseCategory = "http://techkids.vn:8886/api/exercise/category/all"
         static let eeatCategory = "http://techkids.vn:8886/api/eat/category/all"
         static let allItemExcerCate = "http://techkids.vn:8886/api/exercise/exercise"
+        static let excerSingle = "http://techkids.vn:8886/api/exercise/exercise/"
+        
+        
         static let eatCategory = "http://techkids.vn:8886/api/exercise/category/all"
+        static let setting = "http://techkids.vn:8886/api/user/setting"
+        static let favorite = "http://techkids.vn:8886/api/user/favorite"
+        static let likeExercise = "http://techkids.vn:8886/api/user/like/exercise/"
+        static let unlikeExercise = "http://techkids.vn:8886/api/user/unlike/exercise/"
+        static let likeFood = "http://techkids.vn:8886/api/user/like/food/"
+        static let unLikeFood = "http://techkids.vn:8886/api/user/unlike/food/"
+        static let detailFood = "http://techkids.vn:8886/api/eat/food/"
     }
 }

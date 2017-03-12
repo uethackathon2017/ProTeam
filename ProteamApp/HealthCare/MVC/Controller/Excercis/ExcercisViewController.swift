@@ -12,6 +12,7 @@ import XLPagerTabStrip
 class ExcercisViewController: BasedViewController,IndicatorInfoProvider,ExcercisCellDelegate {
     
     let cellIdentifier = "ExcercisCell"
+    let cellIdentifier1 = "ExcercisCell1"
     @IBOutlet weak var tableView: UITableView!
     
     var exerciseCate = [ExerciseCategory]()
@@ -20,16 +21,15 @@ class ExcercisViewController: BasedViewController,IndicatorInfoProvider,Excercis
         
         // Do any additional setup after loading the view.
         self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        self.tableView.register(UINib(nibName: cellIdentifier1, bundle: nil), forCellReuseIdentifier: cellIdentifier1)
         
-//        for family: String in UIFont.familyNames
-//        {
-//            print("\(family)")
-//            for names: String in UIFont.fontNames(forFamilyName: family)
-//            {
-//                print("== \(names)")
-//            }
-//        }
+        tableView.separatorStyle = .none
         loadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     func loadData(){
@@ -61,9 +61,9 @@ class ExcercisViewController: BasedViewController,IndicatorInfoProvider,Excercis
         print("sell all")
     }
     
-    func didSelectRowAtSliderCell(youtube_id:String,title:String){
+    func didSelectRowAtSliderCell(exercise:Exercise,title:String){
         let neckExcercise = NeckExcerciseViewController()
-        neckExcercise.youtube_id = youtube_id
+        neckExcercise.exercise = exercise
         neckExcercise.title = title
         self.navigationController?.pushViewController(neckExcercise, animated: true)
     }
@@ -83,19 +83,33 @@ class ExcercisViewController: BasedViewController,IndicatorInfoProvider,Excercis
 extension ExcercisViewController: UITableViewDelegate,UITableViewDataSource{
     //MARK: TableView Delegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 50
+        }
         return 150
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        }
         return exerciseCate.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ExcercisCell
+        
+        if indexPath.section == 0 {
+           let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier1, for: indexPath) as! ExcercisCell
+            cell.selectionStyle = .none
+            return cell
+        }
+        
+       let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ExcercisCell
+        
         cell.selectionStyle = .none
         cell.index = indexPath.row
         if let excers = exerciseCate[indexPath.row].items {

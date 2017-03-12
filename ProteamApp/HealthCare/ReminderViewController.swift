@@ -81,7 +81,17 @@ class ReminderViewController: SettingViewController, RepeatViewControllerDelegat
     }
     
     @IBAction func btnBackClick(_ sender: Any) {
-        super.btnBackClicked(sender)
+        let alertController = UIAlertController.init(title: "Are you sure discard change?", message: "", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction.init(title: "YES", style: .cancel, handler: { (UIAlertAction) in
+            super.btnBackClicked(sender)
+        }))
+        alertController.addAction(UIAlertAction.init(title: "NO", style: .default, handler: { (UIAlertAction) in
+            alertController.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alertController, animated: true) {}
+        
     }
     
     override func btnSwitchRepeatRingtonClicked(_ sender: UISwitch) {
@@ -132,9 +142,12 @@ class ReminderViewController: SettingViewController, RepeatViewControllerDelegat
         if cell == nil {
             cell = UITableViewCell.init(style: .value1, reuseIdentifier: "UITableViewCell")
         }
+        cell.textLabel?.font = UIFont.init(name: "UTM-Neo-Sans-Intel", size: 22)
+        cell.textLabel?.textColor = UIColor.init(hex: "#471500")
         
-        cell.textLabel?.textColor = UIColor.init(hex: "#471601")
-        cell.detailTextLabel?.textColor = UIColor.init(hex: "#e7beac")
+        cell.detailTextLabel?.font = UIFont.init(name: "UTM-Neo-Sans-Intel", size: 14)
+        cell.detailTextLabel?.textColor = UIColor.init(hex: "#C55E32")
+        
         
         let bgView: UIView = UIView.init()
         bgView.backgroundColor = UIColor.init(hex: "#FFA613")

@@ -11,6 +11,7 @@ struct Exercise{
     var _id:String! = ""
     var name:String?
     var youtube_id:String?
+    var describe:String?
     var thumnail:String?
     
     init?(jsonData:[String:Any]) {
@@ -19,6 +20,10 @@ struct Exercise{
         
         if let thumnail = jsonData["thumnail"] as? String {
             self.thumnail = thumnail
+        }
+        
+        if let describe = jsonData["describe"] as? String {
+            self.describe = describe
         }
         
         if let youtube_id = jsonData["youtube_id"] as? String {
