@@ -44,6 +44,19 @@ class DrinkViewController: MainAlarmViewController, IndicatorInfoProvider {
         for _ in 0...(seconds+30) {
             self.actionWithImageView(self.imvSec, angle: 30, delay: 0, type: 1)
         }
+        
+        // Update alarm
+        alarmModel = Alarms()
+        tableView.reloadData()
+        //dynamically append the edit button
+        if alarmModel.count != 0 {
+            self.navigationItem.leftBarButtonItem = editButtonItem
+        }
+        else {
+            self.navigationItem.leftBarButtonItem = nil
+        }
+        //unschedule all the notifications, faster than calling the cancelAllNotifications func
+        UIApplication.shared.scheduledLocalNotifications = nil
     }
     
     override func viewDidLoad() {
@@ -94,6 +107,21 @@ class DrinkViewController: MainAlarmViewController, IndicatorInfoProvider {
     }
     
     // MARK: - Action
+    
+    // Switch Tap
+    override func switchTapped(_ sender: UISwitch) {
+        let index = sender.tag
+        alarmModel.alarms[index].enabled = sender.isOn
+        if sender.isOn {
+            print("switch on")
+            alarmScheduler.setNotificationWithDate(alarmModel.alarms[index].date, onWeekdaysForNotify: alarmModel.alarms[index].repeatWeekdays, snoozeEnabled: alarmModel.alarms[index].snoozeEnabled, onSnooze: false, soundName: alarmModel.alarms[index].mediaLabel, index: index, salutation: alarmModel.alarms[index].label)
+
+        }
+        else {
+            print("switch off")
+            alarmScheduler.reSchedule()
+        }
+    }
     
     // Menu
     @IBAction func btnMenuClicked(_ sender: Any) {

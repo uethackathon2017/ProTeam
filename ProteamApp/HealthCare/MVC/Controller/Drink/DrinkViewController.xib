@@ -32,8 +32,8 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drink_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xkk-PI-BNi">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axm-nJ-qVM">
-                    <rect key="frame" x="146.5" y="71" width="83.5" height="49"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axm-nJ-qVM">
+                    <rect key="frame" x="142" y="71" width="92.5" height="49"/>
                     <fontDescription key="fontDescription" name="UTMNeoSansIntelBold" family="UTM Neo Sans Intel" pointSize="35"/>
                     <color key="textColor" red="0.2784313725" green="0.086274509799999996" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>

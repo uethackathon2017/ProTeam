@@ -14,6 +14,7 @@ class ExcercisViewController: BasedViewController,IndicatorInfoProvider,Excercis
     let cellIdentifier = "ExcercisCell"
     let cellIdentifier1 = "ExcercisCell1"
     @IBOutlet weak var tableView: UITableView!
+    var freshControl = UIRefreshControl()
     
     var exerciseCate = [ExerciseCategory]()
     override func viewDidLoad() {
@@ -22,6 +23,11 @@ class ExcercisViewController: BasedViewController,IndicatorInfoProvider,Excercis
         // Do any additional setup after loading the view.
         self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         self.tableView.register(UINib(nibName: cellIdentifier1, bundle: nil), forCellReuseIdentifier: cellIdentifier1)
+        
+        freshControl.addTarget(self, action: #selector(EatViewController.loadData), for: .valueChanged)
+        self.tableView.addSubview(freshControl)
+        
+        freshControl.beginRefreshing()
         
         tableView.separatorStyle = .none
         loadData()
@@ -41,6 +47,7 @@ class ExcercisViewController: BasedViewController,IndicatorInfoProvider,Excercis
         }) { (error) in
             self.dismissProgress()
         }
+        freshControl.endRefreshing()
     }
     
     @IBAction func btnMenuClicked(_ sender: Any) {
@@ -126,6 +133,6 @@ extension ExcercisViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

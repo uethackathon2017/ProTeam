@@ -178,6 +178,7 @@ class MainAlarmViewController: BasedTableViewController {
         
         //tag is used to indicate which row had been touched
         sw.tag = indexPath.row
+        sw.onTintColor = UIColor.init(hex: "#FFD900")
         sw.addTarget(self, action: #selector(MainAlarmViewController.switchTapped(_:)), for: UIControlEvents.touchUpInside)
         if alarm.enabled {
             sw.setOn(true, animated: false)

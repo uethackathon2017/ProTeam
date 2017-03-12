@@ -14,11 +14,15 @@ class ExFavouriteViewController: BasedTableViewController, IndicatorInfoProvider
     var dataSource = [String]()
     var cellIdentifier:String! = "FavoriteExTableViewCell"
     var arrExcer = [Exercise]()
+    var freshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        dataSource = ["fav_ex_logo", "fav_eat_logo", "fav_ex_logo"]
+        freshControl.addTarget(self, action: #selector(self.loadData), for: .valueChanged)
+        self.tableView.addSubview(freshControl)
+        self.freshControl.beginRefreshing()
         
         self.tableView.separatorStyle = .none
         self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
@@ -35,9 +39,12 @@ class ExFavouriteViewController: BasedTableViewController, IndicatorInfoProvider
             self.tableView.emptyDataSetDelegate = self
             self.tableView.reloadEmptyDataSet()
             self.dismissProgress()
+            self.freshControl.endRefreshing()
         }) { (error) in
             self.dismissProgress()
+            self.freshControl.endRefreshing()
         }
+        
     }
     
     //MARK: EmptyData
@@ -87,11 +94,17 @@ class ExFavouriteViewController: BasedTableViewController, IndicatorInfoProvider
     
     func btnPlayClicked(_ sender: UIButton) {
         let index = sender.tag
+        playVideoWithIndex(index: index)
+    }
+    
+    func playVideoWithIndex(index: Int) {
         let exercise = arrExcer[index]
         let neckExcercise = NeckExcerciseViewController()
         neckExcercise.exercise = exercise
         neckExcercise.title = exercise.name
-        self.navigationController?.pushViewController(neckExcercise, animated: true)
+        neckExcercise.isPop = false
+        self.present(neckExcercise, animated: true, completion: nil)
+       
     }
     
     @IBAction func btnBackTouch(_ sender: Any) {
@@ -131,6 +144,8 @@ class ExFavouriteViewController: BasedTableViewController, IndicatorInfoProvider
         
         if let img = arrExcer[indexPath.row].thumnail {
             cell.imvContent.sd_setImage(with: URL.init(string: img))
+//            cell.imvContent.contentMode = .scaleAspectFill
+//            cell.imvContent.clipsToBounds = true
         }
         
         
@@ -146,9 +161,9 @@ class ExFavouriteViewController: BasedTableViewController, IndicatorInfoProvider
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //tableView.deselectRow(at: indexPath, animated: true)
-       print(indexPath.row)
-        
+        tableView.deselectRow(at: indexPath, animated: true)
+        print(indexPath.row)
+        playVideoWithIndex(index: indexPath.row)
     }
 
 }

@@ -42,9 +42,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kp-iZ-kDX">
-                                <rect key="frame" x="291" y="0.0" width="69" height="33"/>
-                                <fontDescription key="fontDescription" name="UTM-Neo-Sans-Intel" family="UTM Neo Sans Intel" pointSize="15"/>
-                                <state key="normal" title="see all &gt;&gt;&gt;">
+                                <rect key="frame" x="283" y="0.0" width="77" height="34"/>
+                                <fontDescription key="fontDescription" name="UTM-Neo-Sans-Intel" family="UTM Neo Sans Intel" pointSize="16"/>
+                                <state key="normal" title="See All &gt;&gt;&gt;">
                                     <color key="titleColor" red="0.27843137254901962" green="0.082352941176470587" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>

@@ -104,6 +104,8 @@ class EatFavouriteViewController: BasedCollectionViewController, IndicatorInfoPr
         
         if let img = arrEat[indexPath.row].img {
             cell.imvContent.sd_setImage(with: URL.init(string: img))
+            cell.imvContent.contentMode = .scaleAspectFill
+            cell.imvContent.clipsToBounds = true            
         }
         
         cell.btnDelete.addTarget(self, action: #selector(EatFavouriteViewController.btnDeleteClicked(_ :)), for: .touchUpInside)
@@ -115,9 +117,9 @@ class EatFavouriteViewController: BasedCollectionViewController, IndicatorInfoPr
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let leftAndRightPaddings: CGFloat = 5
         let numberOfItemsPerRow: CGFloat = 3.0
-        
+            
         self.view.layoutIfNeeded()
-        let bounds = Constants.Systems.screen_size
+        let bounds = collectionView1.bounds
         let width = (bounds.width - leftAndRightPaddings*(numberOfItemsPerRow+1)) / numberOfItemsPerRow
         return CGSize.init(width: width, height: width)
     }

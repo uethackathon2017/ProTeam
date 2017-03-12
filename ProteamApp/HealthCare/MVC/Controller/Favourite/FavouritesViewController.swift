@@ -38,13 +38,11 @@ class FavouritesViewController: BaseButtonBarPagerTabStripViewController<Favouri
             oldCell?.bounds.size.height = 80
             oldCell?.setCornerRadius(radius:20)
             oldCell?.viewContent.backgroundColor = UIColor.init(hex: "#FAC46B")
-            //oldCell?.lblTitle.text = "Exercises"
             
             newCell?.bounds.size.width = self.buttonBarView.bounds.size.width/2
             newCell?.bounds.size.height = 80
             newCell?.setCornerRadius(radius:20)
             newCell?.viewContent.backgroundColor = UIColor.white
-            //newCell?.lblTitle.text = "Foods"
         }
         self.automaticallyAdjustsScrollViewInsets = false
     }

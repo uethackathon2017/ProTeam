@@ -108,6 +108,7 @@
 		A3ADCB7F1E71CAC70083EF20 /* MainAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADCB7E1E71CAC70083EF20 /* MainAlarmViewController.swift */; };
 		A3ADCB921E71CBBA0083EF20 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADCB911E71CBBA0083EF20 /* SettingViewController.swift */; };
 		A3B93AF11E74DDB100386694 /* DetailFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B93AF01E74DDB100386694 /* DetailFood.swift */; };
+		A3B93AF31E74F7C800386694 /* no_image.png in Resources */ = {isa = PBXBuildFile; fileRef = A3B93AF21E74F7C800386694 /* no_image.png */; };
 		A3C87F611E696C0A00141702 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C87F601E696C0A00141702 /* FoodViewController.swift */; };
 		A3C87F631E69734500141702 /* menu_white.png in Resources */ = {isa = PBXBuildFile; fileRef = A3C87F621E69734500141702 /* menu_white.png */; };
 		A3C87F651E6974A400141702 /* main_background.png in Resources */ = {isa = PBXBuildFile; fileRef = A3C87F641E6974A400141702 /* main_background.png */; };
@@ -243,6 +244,7 @@
 		A3ADCB7E1E71CAC70083EF20 /* MainAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAlarmViewController.swift; sourceTree = "<group>"; };
 		A3ADCB911E71CBBA0083EF20 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		A3B93AF01E74DDB100386694 /* DetailFood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailFood.swift; sourceTree = "<group>"; };
+		A3B93AF21E74F7C800386694 /* no_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_image.png; sourceTree = "<group>"; };
 		A3C87F601E696C0A00141702 /* FoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodViewController.swift; path = MVC/Controller/Food/FoodViewController.swift; sourceTree = "<group>"; };
 		A3C87F621E69734500141702 /* menu_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_white.png; sourceTree = "<group>"; };
 		A3C87F641E6974A400141702 /* main_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_background.png; sourceTree = "<group>"; };
@@ -728,7 +730,6 @@
 		A3EC76821E67D05E006FB57B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A32794F01E743D6F00053968 /* icon-delete.png */,
 				A369E3F21E73F4F7007A3D72 /* a5fa97aef368df714b8ed7faac85a379.png */,
 				A391458F1E73E45500A2EB4E /* background.png */,
 				A3EC76951E67D570006FB57B /* btn_back.png */,
@@ -762,6 +763,7 @@
 				A369E3F01E73EB07007A3D72 /* icon_love.png */,
 				A32794FA1E744D5C00053968 /* icon_loved.png */,
 				A391458B1E73D28400A2EB4E /* icon-add1.png */,
+				A32794F01E743D6F00053968 /* icon-delete.png */,
 				A3F2BFA51E67E2CE00DAAE3F /* logo.png */,
 				A356ACC21E68731F00716B68 /* lunch_0.png */,
 				A356ACC31E68731F00716B68 /* lunch_1.png */,
@@ -771,6 +773,7 @@
 				A3C87F621E69734500141702 /* menu_white.png */,
 				A356ACBB1E68670500716B68 /* menu.png */,
 				A3EC76831E67D05E006FB57B /* next.png */,
+				A3B93AF21E74F7C800386694 /* no_image.png */,
 				A32794EA1E742C9300053968 /* nodata_bg.png */,
 				61DBCE521E74E8FA00E6E669 /* nodata_icon.png */,
 				A39145541E737C2700A2EB4E /* register.png */,
@@ -885,6 +888,7 @@
 				A356ACBC1E68670500716B68 /* menu.png in Resources */,
 				A39145611E7396B900A2EB4E /* fav_eat_logo.png in Resources */,
 				A39145511E737C2000A2EB4E /* exclock.png in Resources */,
+				A3B93AF31E74F7C800386694 /* no_image.png in Resources */,
 				A356ACCB1E68732800716B68 /* dinner_0.png in Resources */,
 				A356ACC61E68731F00716B68 /* lunch_1.png in Resources */,
 				61AB261F1E71B2E600F5B4B2 /* PlayingView.xib in Resources */,

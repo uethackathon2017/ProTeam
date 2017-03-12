@@ -19,6 +19,7 @@ class DetailFoodViewController: BasedViewController {
     @IBOutlet weak var btnLove: UIButton!
     var isFavourite: Bool! = false
     var _id: String!
+    var detailFood: DetailFood!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,9 @@ class DetailFoodViewController: BasedViewController {
         self.viewHeader.layer.cornerRadius = 5
         self.viewTail.layer.cornerRadius = 5
         self.txtViewContentFood.layer.cornerRadius = 5
-        //self.txtViewContentFood.attributedText =
+        
+        self.txtViewContentFood.isEditable = false
+        
         updateButtonLove()
         loadData()
     }
@@ -53,10 +56,12 @@ class DetailFoodViewController: BasedViewController {
     func loadData() {
         self.showProgress()
         APIModel.getDetailFood(self._id, completion: { (result) in
-            let detailFood:DetailFood! = result as! DetailFood
-            let content: NSAttributedString = (detailFood.guide)!.html2AttributedString!
-            self.lblFood.text = detailFood.name
-            self.imvOfFood.sd_setImage(with: URL.init(string: detailFood.img!), placeholderImage: UIImage.init(named: ""))
+            self.detailFood = result as! DetailFood
+            let content: NSAttributedString = (self.detailFood.guide)!.html2AttributedString!
+            self.lblFood.text = self.detailFood.name
+            self.imvOfFood.sd_setImage(with: URL.init(string: self.detailFood.img!), placeholderImage: UIImage.init(named: "no_image"))
+            self.imvOfFood.contentMode = .scaleAspectFill
+            self.imvOfFood.clipsToBounds = true
             self.txtViewContentFood.attributedText = content
             self.dismissProgress()
         }) { (fail) in
@@ -76,7 +81,30 @@ class DetailFoodViewController: BasedViewController {
     }
     
     @IBAction func btnLoveClicked(_ sender: Any) {
-        self.isFavourite = !self.isFavourite
-        updateButtonLove()
+        if btnLove.isSelected == false {
+            
+            btnLove.isUserInteractionEnabled = false
+            
+            APIModel.likeFood(self.detailFood._id, completion: { (mes) in
+                self.btnLove.setImage(UIImage(named: "icon_loved"), for: .normal)
+                self.btnLove.isUserInteractionEnabled = true
+            }, failure: { (fail) in
+                self.btnLove.isUserInteractionEnabled = true
+
+            })
+            
+        } else {
+            
+            btnLove.isUserInteractionEnabled = false
+            
+            APIModel.unlikeFood(self.detailFood._id, completion: { (mes) in
+                self.btnLove.setImage(UIImage(named: "icon_love"), for: .normal)
+                self.btnLove.isUserInteractionEnabled = true
+            }, failure: { (fail) in
+                self.btnLove.isUserInteractionEnabled = true
+            })
+            
+        }
+        btnLove.isSelected = !btnLove.isSelected
     }
 }

@@ -27,6 +27,7 @@ class FoodViewController: BasedCollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,6 +35,8 @@ class FoodViewController: BasedCollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    
     // MARK: - Collection View
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -51,6 +54,8 @@ class FoodViewController: BasedCollectionViewController {
         let imageView: UIImageView! = cell.contentView.viewWithTag(101) as! UIImageView
         if let img = arrFood[indexPath.row].img{
             imageView.sd_setImage(with: URL.init(string: img))
+            imageView.contentMode = .scaleAspectFill
+            imageView.clipsToBounds = true
         }
     
         return cell

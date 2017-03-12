@@ -31,15 +31,19 @@ class LoginViewController: BasedViewController, GIDSignInUIDelegate,EAIntroDeleg
         page.bgImage = UIImage(named:"intro1")
         
         let page1 = EAIntroPage()
-        page1.bgImage = UIImage(named:"intro1")
+        page1.bgImage = UIImage(named:"intro2")
         
         let page2 = EAIntroPage()
-        page2.bgImage = UIImage(named:"intro1")
+        page2.bgImage = UIImage(named:"intro3")
         
         
         let intro = EAIntroView(frame: self.view.bounds, andPages: [page,page1,page2])
         intro?.delegate = self
-        intro?.skipButton.setTitle("Skip >>", for: .normal)
+        
+        let attStringSaySomething = NSAttributedString(string: "Skip >>", attributes: [NSFontAttributeName: UIFont(name: "UTMNeoSansIntelBold", size: 20)!,  NSForegroundColorAttributeName: UIColor(hex:"#471500") as Any])
+        
+        intro?.skipButton.setAttributedTitle(attStringSaySomething, for: .normal)
+
         intro?.show(in: self.view, animateDuration: 0.3)
     }
     

@@ -16,6 +16,12 @@ class NeckExcerciseViewController: BasedViewController {
     var exercise = Exercise()
     var btnLike = UIButton(type: .custom)
     var textView = UITextView()
+    
+    @IBOutlet weak var lblTitleNavi: UILabel!
+    
+    var isPop = true
+    @IBOutlet weak var customNavi: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,12 +45,27 @@ class NeckExcerciseViewController: BasedViewController {
             make.trailing.equalTo(self.view).offset(-20)
             make.bottom.equalTo(self.view).offset(-20)
         }
-        
+        lblTitleNavi.text = self.title
         
         viewPlayer.setCornerRadius(radius: 5)
         self.navigationController?.navigationBar.isHidden = false
+        if !isPop {
+            customNavi.isHidden = false
+        }else{
+            customNavi.isHidden = true
+        }
         createRightBar()
         loadData()
+    }
+    
+    
+    @IBAction func btnBackToucup(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     func loadData(){

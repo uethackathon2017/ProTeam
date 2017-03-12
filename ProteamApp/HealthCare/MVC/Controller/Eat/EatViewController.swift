@@ -16,9 +16,19 @@ class EatViewController: BasedCollectionViewController,IndicatorInfoProvider {
     var eatCategory = [EatCategory]()
     var lunchs = [Eat]()
     var dinners = [Eat]()
+    var freshControl: UIRefreshControl! = UIRefreshControl()
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        freshControl.addTarget(self, action: #selector(EatViewController.loadData), for: .valueChanged)
+        self.collectionView1.addSubview(freshControl)
+        self.collectionView2.addSubview(freshControl)
+        
+        freshControl.beginRefreshing()
+        
         // Do any additional setup after loading the view.
         self.navigationController?.navigationBar.isHidden = true
         viewMain.layer.cornerRadius = 20
@@ -53,9 +63,13 @@ class EatViewController: BasedCollectionViewController,IndicatorInfoProvider {
             self.collectionView1.reloadData()
             self.collectionView2.reloadData()
             self.dismissProgress()
+            self.freshControl.endRefreshing()
         }) { (error) in
             self.dismissProgress()
+            self.freshControl.endRefreshing()
         }
+        
+        
     }
     
     // MARK: - Action
@@ -107,11 +121,15 @@ extension EatViewController{
         if collectionView == self.collectionView1 {
             if let img = lunchs[indexPath.row].img{
                 imageView.sd_setImage(with: URL.init(string: img))
+                imageView.contentMode = .scaleAspectFill
+                imageView.clipsToBounds = true
             }
             
         } else {
             if let img = dinners[indexPath.row].img{
                 imageView.sd_setImage(with: URL.init(string: img))
+                imageView.contentMode = .scaleAspectFill
+                imageView.clipsToBounds = true
             }
         }
         
