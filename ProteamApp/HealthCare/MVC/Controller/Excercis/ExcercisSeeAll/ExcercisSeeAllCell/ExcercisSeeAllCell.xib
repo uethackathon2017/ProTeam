@@ -21,12 +21,17 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-demo" translatesAutoresizingMaskIntoConstraints="NO" id="3Zf-7K-98J">
                         <rect key="frame" x="0.0" y="0.0" width="163" height="109"/>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-play" translatesAutoresizingMaskIntoConstraints="NO" id="vYO-7U-0Zo">
+                        <rect key="frame" x="49" y="22" width="64" height="64"/>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="vYO-7U-0Zo" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="0I7-WA-6TH"/>
                 <constraint firstAttribute="trailing" secondItem="3Zf-7K-98J" secondAttribute="trailing" id="6Kj-I9-8Jh"/>
                 <constraint firstAttribute="bottom" secondItem="3Zf-7K-98J" secondAttribute="bottom" id="J2P-we-dRt"/>
                 <constraint firstItem="3Zf-7K-98J" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="O1d-zN-M2E"/>
+                <constraint firstItem="vYO-7U-0Zo" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="VgJ-Ea-WH4"/>
                 <constraint firstItem="3Zf-7K-98J" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Vpl-ya-F3d"/>
             </constraints>
             <connections>
@@ -36,6 +41,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="ic-play" width="64" height="64"/>
         <image name="img-demo" width="150" height="95"/>
     </resources>
 </document>

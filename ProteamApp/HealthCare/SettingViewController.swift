@@ -53,7 +53,7 @@ class SettingViewController: BasedTableViewController {
         if cell == nil {
             cell = UITableViewCell.init(style: .default, reuseIdentifier: "UITableViewCell")
         }
-        
+        cell.textLabel?.font = UIFont.init(name: "UTM-Neo-Sans-Intel", size: 22)
         cell.textLabel?.textColor = UIColor.init(hex: "#471601")
         cell.detailTextLabel?.textColor = UIColor.init(hex: "#e7beac")
         

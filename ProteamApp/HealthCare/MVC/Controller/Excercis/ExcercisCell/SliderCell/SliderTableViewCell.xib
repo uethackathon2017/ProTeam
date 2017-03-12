@@ -21,9 +21,14 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fiR-W9-ypN">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="94"/>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-play" translatesAutoresizingMaskIntoConstraints="NO" id="a91-do-esB">
+                        <rect key="frame" x="38" y="15" width="64" height="64"/>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="fiR-W9-ypN" secondAttribute="trailing" constant="10" id="Gj3-oY-Zdf"/>
+                    <constraint firstItem="a91-do-esB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="X3d-fw-pnk"/>
+                    <constraint firstItem="a91-do-esB" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-10" id="YSm-bb-fJX"/>
                     <constraint firstAttribute="bottom" secondItem="fiR-W9-ypN" secondAttribute="bottom" id="Yrl-1q-iq6"/>
                     <constraint firstItem="fiR-W9-ypN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="aU8-mn-nCv"/>
                     <constraint firstItem="fiR-W9-ypN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vme-Nv-ngT"/>
@@ -32,7 +37,10 @@
             <connections>
                 <outlet property="imgSlider" destination="fiR-W9-ypN" id="bUV-ip-cN1"/>
             </connections>
-            <point key="canvasLocation" x="-84.5" y="-806.5"/>
+            <point key="canvasLocation" x="-85" y="-806.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ic-play" width="64" height="64"/>
+    </resources>
 </document>

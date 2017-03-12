@@ -11,8 +11,8 @@ import FacebookLogin
 import FacebookCore
 import Google
 import GoogleSignIn
-
-class LoginViewController: BasedViewController, GIDSignInUIDelegate {
+import EAIntroView
+class LoginViewController: BasedViewController, GIDSignInUIDelegate,EAIntroDelegate {
 
     @IBOutlet weak var btnLoginFace: UIButton!
     @IBOutlet weak var btnGoogle: GIDSignInButton!
@@ -23,9 +23,26 @@ class LoginViewController: BasedViewController, GIDSignInUIDelegate {
         // Do any additional setup after loading the view.
         GIDSignIn.sharedInstance().uiDelegate = self
         btnLoginFace.isSelected = false
-    
+        showIntro()
     }
-
+    
+    func showIntro(){
+        let page = EAIntroPage()
+        page.bgImage = UIImage(named:"intro1")
+        
+        let page1 = EAIntroPage()
+        page1.bgImage = UIImage(named:"intro1")
+        
+        let page2 = EAIntroPage()
+        page2.bgImage = UIImage(named:"intro1")
+        
+        
+        let intro = EAIntroView(frame: self.view.bounds, andPages: [page,page1,page2])
+        intro?.delegate = self
+        intro?.skipButton.setTitle("Skip >>", for: .normal)
+        intro?.show(in: self.view, animateDuration: 0.3)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

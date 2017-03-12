@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
 class FavouriteTabBarCell: UICollectionViewCell {
 
     @IBOutlet weak var lblTitle: UILabel!
+    var indicatorInfo: IndicatorInfo!
     
     @IBOutlet weak var viewContent: UIView!
     override func awakeFromNib() {

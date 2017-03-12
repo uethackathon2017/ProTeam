@@ -15,6 +15,7 @@ class NeckExcerciseViewController: BasedViewController {
     let lblDescribe = "Describe"
     var exercise = Exercise()
     var btnLike = UIButton(type: .custom)
+    var textView = UITextView()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +24,7 @@ class NeckExcerciseViewController: BasedViewController {
         if let youtube_id = exercise.youtube_id {
             viewPlayer.initPlayerView(videoID: youtube_id)
         }
-        
+        self.view.addSubview(textView)
         self.view.addSubview(viewPlayer)
         viewPlayer.snp.makeConstraints { (make) in
             make.top.equalTo(self.view).offset(118)
@@ -31,11 +32,31 @@ class NeckExcerciseViewController: BasedViewController {
             make.trailing.equalTo(self.view).offset(-20)
             make.height.equalTo(210)
         }
+        
+        textView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.view).offset(220 + 118)
+            make.leading.equalTo(self.view).offset(20)
+            make.trailing.equalTo(self.view).offset(-20)
+            make.bottom.equalTo(self.view).offset(-20)
+        }
+        
+        
         viewPlayer.setCornerRadius(radius: 5)
         self.navigationController?.navigationBar.isHidden = false
         createRightBar()
+        loadData()
     }
-
+    
+    func loadData(){
+        
+        APIModel.getExerciseSingle(exercise._id, completion: { (excer) in
+            let a: NSAttributedString = (excer.describe?.html2AttributedString)!
+            self.textView.attributedText = a
+        }) { (error) in
+            
+        }
+    }
+    
     func createRightBar(){
         
         btnLike.frame = CGRect(x: 0, y: 0, width: 45, height: 45)
@@ -53,7 +74,7 @@ class NeckExcerciseViewController: BasedViewController {
             
             btnLike.isUserInteractionEnabled = false
             APIModel.likeExercise(exercise._id, completion: { (mes) in
-                self.btnLike.setImage(UIImage(named: "ic-excercise"), for: .normal)
+                self.btnLike.setImage(UIImage(named: "icon_loved"), for: .normal)
                 self.btnLike.isUserInteractionEnabled = true
             }, failure: { (error) in
                self.btnLike.isUserInteractionEnabled = true

@@ -8,26 +8,57 @@
 
 import UIKit
 import XLPagerTabStrip
-
-class ExFavouriteViewController: BasedTableViewController, IndicatorInfoProvider {
+import DZNEmptyDataSet
+class ExFavouriteViewController: BasedTableViewController, IndicatorInfoProvider,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
     var dataSource = [String]()
     var cellIdentifier:String! = "FavoriteExTableViewCell"
-    
+    var arrExcer = [Exercise]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        dataSource.insert("img-demo", at: 0)
-        dataSource.insert("img-demo", at: 1)
-        dataSource.insert("img-demo", at: 2)
+        dataSource = ["fav_ex_logo", "fav_eat_logo", "fav_ex_logo"]
         
         self.tableView.separatorStyle = .none
         self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
-       
+       loadData()
     }
     
+    func loadData(){
+        self.showProgress()
+ 
+        APIModel.getFavoriteExercise(completion: { (list) in
+            self.arrExcer = list
+            self.tableView.reloadData()
+            self.tableView.emptyDataSetSource = self
+            self.tableView.emptyDataSetDelegate = self
+            self.tableView.reloadEmptyDataSet()
+            self.dismissProgress()
+        }) { (error) in
+            self.dismissProgress()
+        }
+    }
     
+    //MARK: EmptyData
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        let img = UIImage(named:"nodata_icon")
+        return img!
+    }
+    
+    func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+        return -self.tableView!.frame.size.height/5
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let attributes = [NSFontAttributeName: UIFont(name: "UTM-Neo-Sans-Intel", size: 16)!]
+        return NSAttributedString(string: "Không có dữ liệu", attributes: attributes)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        loadData()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -36,19 +67,31 @@ class ExFavouriteViewController: BasedTableViewController, IndicatorInfoProvider
     
     // MARK: - INDICATORINFO Provider
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo.init(title: "")
+        return IndicatorInfo.init(title: "Exercises")
     }
     
     // MARK: - Action
     
     func btnDeleteClicked(_ sender: UIButton) {
         let index = sender.tag
-        self.dataSource.remove(at: index)
-        self.tableView.reloadData()
+        let exercise = arrExcer[index]
+        self.showProgress()
+        APIModel.unlikeExercise(exercise._id, completion: { (mes) in
+        self.dismissProgress()
+        self.loadData()
+        }, failure: { (error) in
+        self.dismissProgress()
+        })
+        
     }
     
     func btnPlayClicked(_ sender: UIButton) {
         let index = sender.tag
+        let exercise = arrExcer[index]
+        let neckExcercise = NeckExcerciseViewController()
+        neckExcercise.exercise = exercise
+        neckExcercise.title = exercise.name
+        self.navigationController?.pushViewController(neckExcercise, animated: true)
     }
     
     @IBAction func btnBackTouch(_ sender: Any) {
@@ -62,7 +105,7 @@ class ExFavouriteViewController: BasedTableViewController, IndicatorInfoProvider
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        return arrExcer.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -86,20 +129,25 @@ class ExFavouriteViewController: BasedTableViewController, IndicatorInfoProvider
             cell = FavoriteExTableViewCell.init(style: .default, reuseIdentifier: cellIdentifier)
         }
         
-        cell.imvContent.image = UIImage.init(named: dataSource[indexPath.row])
+        if let img = arrExcer[indexPath.row].thumnail {
+            cell.imvContent.sd_setImage(with: URL.init(string: img))
+        }
         
-        cell.btnClose.addTarget(self, action: #selector(ExFavouriteViewController.btnDeleteClicked(_ :)), for: .touchUpInside)
+        
+        cell.btnClose.addTarget(self, action: #selector(ExFavouriteViewController.btnDeleteClicked(_:)), for: .touchUpInside)
         cell.btnClose.tag = indexPath.row
         
         cell.btnPlay.addTarget(self, action: #selector(ExFavouriteViewController.btnPlayClicked(_ :)), for: .touchUpInside)
         cell.btnPlay.tag = indexPath.row
+        
+        print(indexPath.row)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //tableView.deselectRow(at: indexPath, animated: true)
-       
+       print(indexPath.row)
         
     }
 

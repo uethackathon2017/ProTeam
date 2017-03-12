@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="224"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tb0-K0-Baw" id="D96-zA-oXE">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="223.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="223"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FOr-xS-fvm">
@@ -42,8 +42,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kp-iZ-kDX">
-                                <rect key="frame" x="304" y="0.0" width="56" height="29"/>
-                                <fontDescription key="fontDescription" name="UTM-Neo-Sans-Intel" family="UTM Neo Sans Intel" pointSize="12"/>
+                                <rect key="frame" x="291" y="0.0" width="69" height="33"/>
+                                <fontDescription key="fontDescription" name="UTM-Neo-Sans-Intel" family="UTM Neo Sans Intel" pointSize="15"/>
                                 <state key="normal" title="see all &gt;&gt;&gt;">
                                     <color key="titleColor" red="0.27843137254901962" green="0.082352941176470587" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>

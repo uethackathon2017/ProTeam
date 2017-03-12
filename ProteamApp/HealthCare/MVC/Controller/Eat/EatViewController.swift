@@ -121,8 +121,13 @@ extension EatViewController{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let mainStoryboard: UIStoryboard! = UIStoryboard.init(name: "Main", bundle: Bundle.main)
-        let vc: UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: "DetailFoodViewController")
+        let vc: DetailFoodViewController! = mainStoryboard.instantiateViewController(withIdentifier: "DetailFoodViewController") as! DetailFoodViewController
         vc.title = "Detail"
+        if collectionView == collectionView1 {
+            vc._id = lunchs[indexPath.row]._id
+        } else {
+            vc._id = dinners[indexPath.row]._id
+        }
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

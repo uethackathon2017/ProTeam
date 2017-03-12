@@ -60,8 +60,9 @@ class FoodViewController: BasedCollectionViewController {
         collectionView.deselectItem(at: indexPath, animated: true)
         
         let mainStoryboard: UIStoryboard! = UIStoryboard.init(name: "Main", bundle: Bundle.main)
-        let vc: UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: "DetailFoodViewController")
+        let vc: DetailFoodViewController! = mainStoryboard.instantiateViewController(withIdentifier: "DetailFoodViewController") as! DetailFoodViewController
         vc.title = "Detail"
+        vc._id = arrFood[indexPath.row]._id
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

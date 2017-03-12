@@ -11,8 +11,8 @@ import SDWebImage
 import DZNEmptyDataSet
 class ExcercisSeeAllVC: BasedViewController,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate  {
     
-    let cellWidth = Constants.Systems.screen_size.width*(163/375)
-    let cellHeight = (Constants.Systems.screen_size.height - 109)*(109/558)
+    let cellWidth = Constants.Systems.screen_size.width*(160/375)
+    let cellHeight = (Constants.Systems.screen_size.height - 117)*(117/558)
     
     let cellIdentifier = "ExcercisSeeAllCell"
     var exercises = [Exercise]()

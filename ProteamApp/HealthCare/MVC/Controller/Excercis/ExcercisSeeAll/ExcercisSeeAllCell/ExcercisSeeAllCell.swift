@@ -14,6 +14,7 @@ class ExcercisSeeAllCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        imgVideo.setCornerRadius(radius: 2)
     }
 
 }

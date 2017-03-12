@@ -19,6 +19,7 @@ struct Eat{
         if let img = jsonData["img"] as? String {
             self.img = img
         }
+        
     }
     
     init(){

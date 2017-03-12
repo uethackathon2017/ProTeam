@@ -19,4 +19,5 @@ target 'HealthCare' do
     pod 'PopupDialog'
     pod 'SDWebImage'
     pod 'DZNEmptyDataSet'
+    pod 'EAIntroView'
 end
