@@ -115,7 +115,7 @@ module.exports = {
     getAllCategory : function(req, res){
         Category
             .find()
-            .select('_id name items')
+            .select('_id name items guide')
             .populate({
                 path: 'items',
                 select: '_id name img'
